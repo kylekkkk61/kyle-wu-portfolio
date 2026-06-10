@@ -1,30 +1,39 @@
 export const profile = {
   name: "Kyle Wu",
-  positioning: "FinTech Builder / Crypto Market Research / Trading Systems",
+  positioning: "FinTech Builder / Crypto Markets / Applied Research",
   heroDescription:
-    "FinTech Builder & Researcher. I build applied trading infrastructure and study market microstructure, focusing on execution quality and risk-aware automation.",
+    "I turn market, product, and trading ideas into practical fintech systems — combining business thinking, data analysis, and software execution across crypto markets and applied research.",
+  whatIDo: {
+    eyebrow: "What I Do",
+    title:
+      "I work on the bridge between business problems and technical execution.",
+    body: [
+      "My projects usually start from a real operational or market question: how users make decisions, how trading workflows break down, how apparent market edge decays, or how data can support better execution.",
+      "I then turn those questions into structured systems, research workflows, dashboards, or public-facing products.",
+    ],
+  },
   about:
-    "I am a crypto trader, fintech builder, and incoming MSc Financial Technology student at Warwick Business School. My work focuses on the intersection of trading operations, market structure, risk management, and applied software engineering.\n\nI have built public projects around Telegram-based trading signal execution and prediction-market execution research, with an emphasis on workflow design, execution quality, public-safe research communication, and risk-aware automation.",
-  focusAreas: [
+    "I am a crypto trader, fintech builder, and incoming MSc Financial Technology student at Warwick Business School. My work sits between market operations, product thinking, and software systems.\n\nMy current public projects focus on Telegram-based trading execution workflows and prediction-market execution research, with an emphasis on risk controls, public-safe analysis, and practical market infrastructure.",
+  capabilities: [
     {
-      title: "Trading Infrastructure",
+      title: "Business-to-System Thinking",
       description:
-        "Telegram workflows, exchange API integration, execution confirmation, credential security, state management, and audit trails.",
+        "Turning abstract business ideas, user pain points, and trading workflow problems into structured products, tools, and execution systems.",
     },
     {
-      title: "Market Microstructure",
+      title: "Data & Market Analysis",
       description:
-        "Spread, fill probability, latency, short-horizon markets, settlement outcomes, and the gap between theoretical and executable edge.",
+        "Using data analysis, market reasoning, and research workflows to evaluate behavior, risk, and execution quality.",
     },
     {
-      title: "Applied Research",
+      title: "FinTech & Trading Infrastructure",
       description:
-        "Public-safe datasets, notebooks, research reports, probability calibration, ML diagnostics, and risk simulation.",
+        "Building practical systems around crypto trading workflows, exchange APIs, confirmation flows, audit trails, and operational risk controls.",
     },
     {
-      title: "Product & Community",
+      title: "Product & Community Insight",
       description:
-        "Crypto trading education, community operations, user workflow design, and risk-aware product decisions.",
+        "Understanding user behavior from operating crypto communities, education workflows, and product-facing trading operations.",
     },
   ],
 }

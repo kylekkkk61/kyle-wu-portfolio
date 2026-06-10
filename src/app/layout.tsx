@@ -14,27 +14,27 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kylekkkk.com"),
+  metadataBase: new URL("https://www.kylekkkk.com"),
   title: {
-    default: "Kyle Wu — FinTech Builder & Crypto Market Research",
+    default: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     template: "%s | Kyle Wu",
   },
   description:
-    "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, execution quality, market microstructure, and risk-aware automation.",
+    "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
   openGraph: {
-    title: "Kyle Wu — FinTech Builder & Crypto Market Research",
+    title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     description:
-      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, execution quality, market microstructure, and risk-aware automation.",
-    url: "https://kylekkkk.com",
+      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
+    url: "https://www.kylekkkk.com",
     siteName: "Kyle Wu Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kyle Wu — FinTech Builder & Crypto Market Research",
+    title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     description:
-      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, execution quality, market microstructure, and risk-aware automation.",
+      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
   },
   robots: {
     index: true,

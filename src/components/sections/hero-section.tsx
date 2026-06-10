@@ -19,14 +19,12 @@ export function HeroSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="space-y-4"
         >
-          <div className="border-primary/20 bg-primary/5 text-primary inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium">
+          <h1 className="text-foreground text-4xl leading-[1.1] font-semibold tracking-tighter md:text-5xl lg:text-6xl">
+            {profile.name}
+          </h1>
+          <div className="text-primary text-xl font-medium tracking-tight md:text-2xl">
             {profile.positioning}
           </div>
-          <h1 className="text-foreground text-4xl leading-[1.1] font-semibold tracking-tighter md:text-5xl lg:text-6xl">
-            Bridging theoretical models and{" "}
-            <span className="text-primary">executable edge</span> in crypto
-            markets.
-          </h1>
         </motion.div>
 
         <motion.p
@@ -45,19 +43,28 @@ export function HeroSection() {
           className="flex flex-wrap items-center gap-4 pt-4"
         >
           <a
-            href="#projects"
+            href="#work"
             className={cn(buttonVariants({ size: "lg" }), "font-medium")}
           >
-            View Selected Projects
+            View Work
           </a>
           <a
-            href="#contact"
+            href="#about"
             className={cn(
               buttonVariants({ size: "lg", variant: "secondary" }),
               "font-medium",
             )}
           >
-            Contact Me
+            About Kyle
+          </a>
+          <a
+            href="#contact"
+            className={cn(
+              buttonVariants({ size: "lg", variant: "outline" }),
+              "font-medium",
+            )}
+          >
+            Contact
           </a>
         </motion.div>
       </div>

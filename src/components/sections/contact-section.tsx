@@ -25,8 +25,9 @@ export function ContactSection() {
             Let&apos;s Talk
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl">
-            For collaboration, fintech research, trading infrastructure, or
-            product discussions, feel free to reach out.
+            Open to conversations around fintech projects, crypto trading
+            infrastructure, data-driven product work, market-structure research,
+            and business-to-system implementation.
           </p>
         </div>
 
