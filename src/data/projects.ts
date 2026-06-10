@@ -20,6 +20,12 @@ export type ProjectSection = {
   items?: string[]
 }
 
+export type ProjectArtifact = {
+  id: string
+  title: string
+  description: string
+}
+
 export type ProjectDetail = {
   whyItMatters?: {
     title: string
@@ -31,6 +37,10 @@ export type ProjectDetail = {
   demonstrates: ProjectSection
   techStack: string[]
   disclaimer?: string
+  artifacts?: {
+    title: string
+    items: ProjectArtifact[]
+  }
 }
 
 export type Project = {
@@ -140,6 +150,29 @@ export const projects: Project[] = [
       ],
       disclaimer:
         "This project is presented as an engineering and workflow-design portfolio project. It does not represent financial advice or a claim of trading profitability.",
+      artifacts: {
+        title: "Representative Artifacts",
+        items: [
+          {
+            id: "kaiyn-signal",
+            title: "Signal Workflow",
+            description:
+              "Parsing unstructured Telegram messages into strict, validated JSON payloads.",
+          },
+          {
+            id: "kaiyn-confirmation",
+            title: "Confirmation-First Flow",
+            description:
+              "Interactive Telegram UI requiring explicit user approval before execution.",
+          },
+          {
+            id: "kaiyn-audit",
+            title: "Backend Audit Pipeline",
+            description:
+              "Immutable state tracking in PostgreSQL ensuring no duplicated orders.",
+          },
+        ],
+      },
     },
   },
   {
@@ -230,6 +263,29 @@ export const projects: Project[] = [
       ],
       disclaimer:
         "This project is presented as a public research and portfolio artifact. It does not represent financial advice, trading advice, or a claim of trading profitability.",
+      artifacts: {
+        title: "Representative Artifacts",
+        items: [
+          {
+            id: "pm-lab-funnel",
+            title: "Execution Funnel",
+            description:
+              "Visualizing the degradation of theoretical edge into executable edge due to frictions.",
+          },
+          {
+            id: "pm-lab-calibration",
+            title: "Calibration Simulation",
+            description:
+              "Modeling probability accuracy and risk exposure across varied market conditions.",
+          },
+          {
+            id: "pm-lab-dashboard",
+            title: "Research Dashboard",
+            description:
+              "Abstract view of market depth, liquidity metrics, and execution diagnostics.",
+          },
+        ],
+      },
     },
   },
 ]

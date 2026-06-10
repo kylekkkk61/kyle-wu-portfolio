@@ -11,6 +11,35 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink, Play } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
+import {
+  KaiynSignalArtifact,
+  KaiynConfirmationArtifact,
+  KaiynAuditArtifact,
+} from "@/components/project-artifacts/kaiyn-artifacts"
+import {
+  PmLabFunnelArtifact,
+  PmLabCalibrationArtifact,
+  PmLabDashboardArtifact,
+} from "@/components/project-artifacts/pm-lab-artifacts"
+
+function ArtifactPreview({ id }: { id: string }) {
+  switch (id) {
+    case "kaiyn-signal":
+      return <KaiynSignalArtifact />
+    case "kaiyn-confirmation":
+      return <KaiynConfirmationArtifact />
+    case "kaiyn-audit":
+      return <KaiynAuditArtifact />
+    case "pm-lab-funnel":
+      return <PmLabFunnelArtifact />
+    case "pm-lab-calibration":
+      return <PmLabCalibrationArtifact />
+    case "pm-lab-dashboard":
+      return <PmLabDashboardArtifact />
+    default:
+      return null
+  }
+}
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -35,6 +64,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.shortDescription || project.description,
+    openGraph: {
+      title: project.title,
+      description: project.shortDescription || project.description,
+      images: [{ url: "/og/portfolio-og.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.shortDescription || project.description,
+      images: ["/og/portfolio-og.png"],
+    },
   }
 }
 
@@ -233,6 +273,32 @@ export default async function ProjectPage({ params }: Props) {
                   ))}
                 </ul>
               </section>
+
+              {/* Representative Artifacts */}
+              {project.detail.artifacts && (
+                <section className="space-y-8">
+                  <h2 className="text-2xl font-semibold tracking-tight">
+                    {project.detail.artifacts.title}
+                  </h2>
+                  <div className="grid grid-cols-1 gap-8">
+                    {project.detail.artifacts.items.map((artifact) => (
+                      <div key={artifact.id} className="space-y-4">
+                        <div className="space-y-1">
+                          <h3 className="text-lg font-medium tracking-tight">
+                            {artifact.title}
+                          </h3>
+                          <p className="text-muted-foreground text-base">
+                            {artifact.description}
+                          </p>
+                        </div>
+                        <div className="bg-muted/30 border-border/50 relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-xl border">
+                          <ArtifactPreview id={artifact.id} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* Tech Stack */}
               <section className="space-y-4">

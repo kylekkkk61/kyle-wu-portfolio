@@ -13,7 +13,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="group border-border/50 bg-card/50 hover:border-primary/20 overflow-hidden transition-colors">
       <div className="flex flex-col lg:flex-row">
-        {/* Visual / Screenshot Area */}
+        {/* Project visual preview */}
         <div className="bg-muted/30 relative flex min-h-[240px] w-full shrink-0 items-center justify-center lg:w-[40%] xl:w-[45%]">
           <ProjectVisual type={project.visual} />
         </div>
