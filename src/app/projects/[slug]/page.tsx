@@ -130,6 +130,18 @@ export default async function ProjectPage({ params }: Props) {
 
             {/* Content Sections */}
             <div className="mx-auto max-w-3xl space-y-16">
+              {/* Why It Matters */}
+              {project.detail.whyItMatters && (
+                <section className="bg-primary/5 border-primary/10 space-y-4 rounded-xl border p-6">
+                  <h2 className="text-primary text-2xl font-semibold tracking-tight">
+                    {project.detail.whyItMatters.title}
+                  </h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {project.detail.whyItMatters.body}
+                  </p>
+                </section>
+              )}
+
               {/* Context */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-semibold tracking-tight">
