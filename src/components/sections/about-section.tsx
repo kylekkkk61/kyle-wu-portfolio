@@ -5,9 +5,10 @@ import { motion, useReducedMotion } from "motion/react"
 import { profile } from "@/data/profile"
 import { links } from "@/data/links"
 import { SectionContainer } from "@/components/layout/section-container"
+import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Download } from "lucide-react"
+import { FileText } from "lucide-react"
 
 export function AboutSection() {
   const reduce = useReducedMotion()
@@ -43,18 +44,16 @@ export function AboutSection() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="pt-4"
           >
-            <a
+            <Link
               href={links.resume}
-              target="_blank"
-              rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "group",
               )}
             >
-              <Download className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-              Download Resume
-            </a>
+              <FileText className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+              See my resume
+            </Link>
           </motion.div>
         </div>
       </div>
