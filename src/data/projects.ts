@@ -9,49 +9,69 @@ export type ProjectLink = {
     | "external"
     | "landing-page"
     | "video"
+    | "internal"
+}
+
+export type ProjectVisualType = "kaiyn-workflow" | "pm-lab-research" | "default"
+
+export type ProjectSection = {
+  title: string
+  body?: string
+  items?: string[]
 }
 
 export type Project = {
   slug: string
   title: string
   subtitle: string
+  shortDescription: string
   description: string
   category: string
   status?: string
   year?: string
+  capabilities: string[]
   highlights: string[]
   tags: string[]
   links: ProjectLink[]
+  visual: ProjectVisualType
   featured?: boolean
-  image?: string // Path to screenshot
-  video?: string // Path to demo video
+  image?: string
+  video?: string
   order?: number
+  detail: {
+    context: ProjectSection
+    whatIBuilt: ProjectSection
+    process: ProjectSection
+    demonstrates: ProjectSection
+    techStack: string[]
+    disclaimer?: string
+  }
 }
 
 export const projects: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
-    subtitle: "Production-style Telegram trading signal execution workflow.",
+    subtitle: "Trading signal execution workflow for crypto communities.",
+    shortDescription:
+      "A Telegram-based execution workflow that turns community trading signals into a structured, confirmation-first order process.",
     description:
       "A Telegram-based execution workflow for crypto trading communities, designed around confirmation-first order flow, fixed-risk sizing, exchange-rule validation, encrypted API credentials, PostgreSQL-backed state, audit records, and Docker-first deployment.",
     category: "Trading Infrastructure",
     status: "Public GitHub project",
     year: "2026",
+    visual: "kaiyn-workflow",
+    capabilities: [
+      "Signal-to-execution workflow",
+      "Risk-aware order validation",
+      "Audit-ready backend infrastructure",
+    ],
+    tags: ["Python", "PostgreSQL", "Docker", "Telegram", "Exchange API"],
     highlights: [
       "Transforms Telegram trading signals into a structured execution workflow.",
       "Uses confirmation-first execution and fixed 1R risk sizing.",
       "Includes encrypted API credential storage, audit trails, backups, and CI checks.",
       "Designed as a production-style workflow rather than a profit-guaranteeing trading bot.",
-    ],
-    tags: [
-      "Python",
-      "Telegram Bot",
-      "PostgreSQL",
-      "Docker",
-      "Bitget API",
-      "Risk Controls",
-      "CI/CD",
     ],
     links: [
       {
@@ -64,39 +84,75 @@ export const projects: Project[] = [
         href: "https://github.com/kaiyn-capital/kaiyn-trading-bot",
         type: "github",
       },
-      // {
-      //   label: "Demo Video",
-      //   href: "#", // Placeholder for video
-      //   type: "video",
-      // },
     ],
     featured: true,
     order: 1,
+    detail: {
+      context: {
+        title: "Context",
+        body: "Crypto trading communities often distribute signals through Telegram, but manual execution introduces friction, inconsistent sizing, repeated actions, and unclear confirmation flow.",
+      },
+      whatIBuilt: {
+        title: "What I Built",
+        body: "I built a structured execution workflow that connects Telegram-based signal delivery with confirmation-first trading operations, exchange-rule validation, risk sizing, and backend audit records.",
+      },
+      process: {
+        title: "Workflow",
+        items: [
+          "Signal parsing",
+          "User confirmation",
+          "Fixed-risk sizing",
+          "Exchange contract validation",
+          "Order preparation",
+          "Execution",
+          "Audit trail",
+        ],
+      },
+      demonstrates: {
+        title: "What This Demonstrates",
+        items: [
+          "Translating community workflow problems into software systems",
+          "Designing risk-aware trading infrastructure",
+          "Building backend workflows with state, validation, and auditability",
+          "Thinking beyond scripts toward production-style operations",
+        ],
+      },
+      techStack: [
+        "Python",
+        "Telegram Bot",
+        "PostgreSQL",
+        "Docker",
+        "Bitget API",
+        "CI/CD",
+      ],
+      disclaimer:
+        "This project is presented as an engineering and workflow-design portfolio project. It does not represent financial advice or a claim of trading profitability.",
+    },
   },
   {
     slug: "prediction-market-execution-lab",
     title: "Prediction Market Execution Lab",
     subtitle:
       "Testing executable edge in Polymarket BTC short-horizon markets.",
+    shortDescription:
+      "A public research lab testing whether short-horizon prediction-market edge survives real execution frictions.",
     description:
       "A public fintech and market microstructure research lab studying whether apparent short-horizon prediction-market pricing edge can survive real execution frictions such as spread, fill probability, latency, position limits, and settlement outcomes.",
     category: "Market Microstructure Research",
     status: "Public research lab",
     year: "2026",
+    visual: "pm-lab-research",
+    capabilities: [
+      "Execution-quality analysis",
+      "Probability calibration",
+      "Public-safe research dashboard",
+    ],
+    tags: ["Python", "Streamlit", "Polymarket", "Research", "Data Analysis"],
     highlights: [
       "Separates theoretical pricing edge from executable edge.",
       "Includes public-safe sample data, research reports, notebooks, and a live dashboard.",
       "Analyzes execution funnel, probability calibration, ML filtering, and risk simulation.",
       "Explicitly avoids profitability claims and private execution-sensitive details.",
-    ],
-    tags: [
-      "Python",
-      "Streamlit",
-      "Polymarket",
-      "Market Microstructure",
-      "Execution Quality",
-      "Probability Modeling",
-      "Research",
     ],
     links: [
       {
@@ -117,5 +173,46 @@ export const projects: Project[] = [
     ],
     featured: true,
     order: 2,
+    detail: {
+      context: {
+        title: "Context",
+        body: "Short-horizon prediction markets may show apparent pricing edge, but apparent edge is not the same as executable edge.",
+      },
+      whatIBuilt: {
+        title: "What I Built",
+        body: "I built a public research lab with sample data, notebooks, reports, dashboard, execution diagnostics, calibration analysis, ML filtering, and risk simulation.",
+      },
+      process: {
+        title: "Research Workflow",
+        items: [
+          "Market data sample",
+          "Signal construction",
+          "Execution funnel",
+          "Fill diagnostics",
+          "Calibration analysis",
+          "Risk simulation",
+          "Public-safe reporting",
+        ],
+      },
+      demonstrates: {
+        title: "What This Demonstrates",
+        items: [
+          "Market microstructure reasoning",
+          "Data analysis and research communication",
+          "Separating theoretical signal from executable outcome",
+          "Building public-safe research artifacts without exposing sensitive execution data",
+        ],
+      },
+      techStack: [
+        "Python",
+        "Streamlit",
+        "Polymarket",
+        "Market Microstructure",
+        "Probability Modeling",
+        "Execution Quality",
+      ],
+      disclaimer:
+        "This project is presented as a public research and portfolio artifact. It does not represent financial advice, trading advice, or a claim of trading profitability.",
+    },
   },
 ]

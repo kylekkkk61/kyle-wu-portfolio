@@ -10,14 +10,15 @@ export function ProjectsSection() {
   const reduce = useReducedMotion()
 
   return (
-    <SectionContainer id="projects" className="bg-muted/10">
+    <SectionContainer id="work" className="bg-muted/10">
       <div className="mb-12 md:mb-16">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          Selected Projects
+          Selected Work
         </h2>
         <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
-          Recent work focusing on execution workflows and market structure
-          analysis.
+          Public projects that show how I translate trading workflows, market
+          questions, and data problems into practical systems and research
+          artifacts.
         </p>
       </div>
 
