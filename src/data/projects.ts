@@ -50,6 +50,7 @@ export type Project = {
   featured?: boolean
   image?: string
   video?: string
+  videoPoster?: string
   order?: number
   detail: ProjectDetail
 }
@@ -93,6 +94,10 @@ export const projects: Project[] = [
     ],
     featured: true,
     order: 1,
+    video:
+      "https://res.cloudinary.com/dwe8684ce/video/upload/f_auto,q_auto/v1781118516/kaiyn-demo.mp4",
+    videoPoster:
+      "https://res.cloudinary.com/dwe8684ce/video/upload/f_auto,q_auto/v1781118516/kaiyn-demo.jpg",
     detail: {
       whyItMatters: {
         title: "Why It Matters",

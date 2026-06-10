@@ -129,7 +129,28 @@ export default async function ProjectPage({ params }: Props) {
             </div>
 
             {/* Content Sections */}
-            <div className="mx-auto max-w-3xl space-y-16">
+            <div className="mx-auto mt-16 max-w-3xl space-y-16">
+              {/* Video Demo */}
+              {project.video && (
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-semibold tracking-tight">
+                    Live Demo
+                  </h2>
+                  <div className="border-border/50 bg-muted/30 overflow-hidden rounded-xl border shadow-2xl">
+                    <video
+                      src={project.video}
+                      poster={project.videoPoster}
+                      controls
+                      playsInline
+                      preload="none"
+                      className="aspect-video w-full object-cover"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </section>
+              )}
+
               {/* Why It Matters */}
               {project.detail.whyItMatters && (
                 <section className="bg-primary/5 border-primary/10 space-y-4 rounded-xl border p-6">

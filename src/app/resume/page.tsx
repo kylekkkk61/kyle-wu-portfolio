@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { ArrowLeft, Download } from "lucide-react"
-import { ResumeViewerWrapper } from "@/components/resume-viewer-wrapper"
+import { ResumeViewer } from "@/components/resume-viewer"
 
 export const metadata = {
   title: "Resume",
@@ -39,8 +39,8 @@ export default function ResumePage() {
           </a>
         </div>
 
-        {/* PDF Viewer */}
-        <ResumeViewerWrapper fileUrl={links.resumePdf} />
+        {/* Resume Image Viewer */}
+        <ResumeViewer imageUrl={links.resumeImage} />
       </SectionContainer>
     </div>
   )
