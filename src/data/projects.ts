@@ -50,6 +50,7 @@ export type Project = {
   featured?: boolean
   image?: string
   video?: string
+  videoPoster?: string
   order?: number
   detail: ProjectDetail
 }
@@ -93,6 +94,8 @@ export const projects: Project[] = [
     ],
     featured: true,
     order: 1,
+    video: "https://cv.kylekkkk.com/kaiyn-demo.mp4",
+    videoPoster: "https://cv.kylekkkk.com/kaiyn-demo-poster.webp",
     detail: {
       whyItMatters: {
         title: "Why It Matters",
