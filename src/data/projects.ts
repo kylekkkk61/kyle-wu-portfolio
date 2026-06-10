@@ -20,6 +20,19 @@ export type ProjectSection = {
   items?: string[]
 }
 
+export type ProjectDetail = {
+  whyItMatters?: {
+    title: string
+    body: string
+  }
+  context: ProjectSection
+  whatIBuilt: ProjectSection
+  process: ProjectSection
+  demonstrates: ProjectSection
+  techStack: string[]
+  disclaimer?: string
+}
+
 export type Project = {
   slug: string
   title: string
@@ -38,14 +51,7 @@ export type Project = {
   image?: string
   video?: string
   order?: number
-  detail: {
-    context: ProjectSection
-    whatIBuilt: ProjectSection
-    process: ProjectSection
-    demonstrates: ProjectSection
-    techStack: string[]
-    disclaimer?: string
-  }
+  detail: ProjectDetail
 }
 
 export const projects: Project[] = [
@@ -88,6 +94,10 @@ export const projects: Project[] = [
     featured: true,
     order: 1,
     detail: {
+      whyItMatters: {
+        title: "Why It Matters",
+        body: "This project shows how trading-community workflows can be converted into safer, auditable, confirmation-first execution systems.",
+      },
       context: {
         title: "Context",
         body: "Crypto trading communities often distribute signals through Telegram, but manual execution introduces friction, inconsistent sizing, repeated actions, and unclear confirmation flow.",
@@ -174,6 +184,10 @@ export const projects: Project[] = [
     featured: true,
     order: 2,
     detail: {
+      whyItMatters: {
+        title: "Why It Matters",
+        body: "This project separates apparent market edge from executable edge, which is closer to how real trading and execution research should be evaluated.",
+      },
       context: {
         title: "Context",
         body: "Short-horizon prediction markets may show apparent pricing edge, but apparent edge is not the same as executable edge.",

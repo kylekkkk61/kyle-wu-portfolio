@@ -11,7 +11,7 @@ export function HeroSection() {
   const reduce = useReducedMotion()
 
   return (
-    <SectionContainer className="flex min-h-[90dvh] items-center pt-20 pb-16 md:pt-24 lg:pt-32">
+    <SectionContainer className="relative flex min-h-[72dvh] flex-col justify-center overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
       <div className="max-w-3xl space-y-8">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 16 }}

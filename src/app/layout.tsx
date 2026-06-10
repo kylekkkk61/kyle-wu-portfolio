@@ -29,12 +29,21 @@ export const metadata: Metadata = {
     siteName: "Kyle Wu Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og/portfolio-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Kyle Wu Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     description:
       "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
+    images: ["/og/portfolio-og.png"],
   },
   robots: {
     index: true,
