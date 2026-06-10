@@ -8,12 +8,12 @@ const ResumeViewer = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex min-h-[600px] w-full max-w-[800px] mx-auto flex-col items-center justify-center text-muted-foreground border rounded-xl bg-card">
-        <Loader2 className="mb-4 h-8 w-8 animate-spin text-primary" />
+      <div className="text-muted-foreground bg-card mx-auto flex min-h-[600px] w-full max-w-[800px] flex-col items-center justify-center rounded-xl border">
+        <Loader2 className="text-primary mb-4 h-8 w-8 animate-spin" />
         <p>Loading resume viewer...</p>
       </div>
     ),
-  }
+  },
 )
 
 export function ResumeViewerWrapper({ fileUrl }: { fileUrl: string }) {
