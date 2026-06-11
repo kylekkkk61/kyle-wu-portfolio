@@ -1,25 +1,15 @@
-"use client"
-
 import * as React from "react"
-import { motion, useReducedMotion } from "motion/react"
 import { links } from "@/data/links"
 import { SectionContainer } from "@/components/layout/section-container"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Mail, ArrowUpRight } from "lucide-react"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function ContactSection() {
-  const reduce = useReducedMotion()
-
   return (
     <SectionContainer id="contact" className="py-24 md:py-32">
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="mx-auto flex max-w-2xl flex-col items-center space-y-8 text-center"
-      >
+      <FadeIn className="mx-auto flex max-w-2xl flex-col items-center space-y-8 text-center">
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
             Let&apos;s Talk
@@ -55,7 +45,7 @@ export function ContactSection() {
             <ArrowUpRight className="ml-2 h-5 w-5 opacity-70" />
           </a>
         </div>
-      </motion.div>
+      </FadeIn>
     </SectionContainer>
   )
 }
