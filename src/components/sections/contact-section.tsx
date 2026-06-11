@@ -22,7 +22,7 @@ export function ContactSection() {
   }
 
   return (
-    <SectionContainer id="contact" className="py-24 md:py-32">
+    <SectionContainer id="contact">
       <FadeIn
         className={cn(
           surfaceClass,
@@ -30,7 +30,7 @@ export function ContactSection() {
         )}
       >
         <div className="relative z-10 space-y-4">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Let&apos;s Talk
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">

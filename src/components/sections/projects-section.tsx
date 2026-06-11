@@ -6,9 +6,23 @@ import { FadeIn } from "@/components/ui/fade-in"
 
 export function ProjectsSection() {
   return (
-    <SectionContainer id="work" className="bg-muted/10">
-      <div className="mb-12 md:mb-16">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+    <SectionContainer id="work" variant="transparent">
+      {/* Subtle Dot Matrix inside the color block */}
+
+      {/* Subtle Dot Matrix */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+          maskImage: "linear-gradient(to bottom, black, transparent 80%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black, transparent 80%)",
+        }}
+      />
+
+      <div className="relative z-10 mb-16 md:mb-24">
+        <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
           Selected Work
         </h2>
         <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
