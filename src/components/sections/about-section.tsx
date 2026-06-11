@@ -4,7 +4,7 @@ import { links } from "@/data/links"
 import { SectionContainer } from "@/components/layout/section-container"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { cn, surfaceClass } from "@/lib/utils"
 import { FileText } from "lucide-react"
 import { FadeIn } from "@/components/ui/fade-in"
 
@@ -19,25 +19,27 @@ export function AboutSection() {
         </div>
 
         <div className="space-y-6 md:col-span-7 lg:col-span-8">
-          <FadeIn className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-none">
-            {profile.about.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-lg leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </FadeIn>
+          <FadeIn className={cn(surfaceClass, "space-y-6 p-8 md:p-10")}>
+            <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-none">
+              {profile.about.split("\n\n").map((paragraph, i) => (
+                <p key={i} className="text-lg leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-          <FadeIn delay={100} className="pt-4">
-            <Link
-              href={links.resume}
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "group",
-              )}
-            >
-              <FileText className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-              See my resume
-            </Link>
+            <div className="pt-4">
+              <Link
+                href={links.resume}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "group",
+                )}
+              >
+                <FileText className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+                See my resume
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { links } from "@/data/links"
 import { profile } from "@/data/profile"
-import { Mail } from "lucide-react"
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react"
+import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
+import { SiGithub } from "@icons-pack/react-simple-icons"
 
 export function SiteFooter() {
   return (
@@ -28,7 +28,7 @@ export function SiteFooter() {
               className="hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
-              <IconBrandGithub className="h-5 w-5" />
+              <SiGithub className="h-5 w-5" />
             </a>
             <a
               href={links.linkedin}
@@ -37,14 +37,14 @@ export function SiteFooter() {
               className="hover:text-foreground transition-colors"
               aria-label="LinkedIn"
             >
-              <IconBrandLinkedin className="h-5 w-5" />
+              <IconBrandLinkedinFilled className="h-5 w-5" />
             </a>
             <a
               href={links.email}
               className="hover:text-foreground transition-colors"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" />
+              <IconMailFilled className="h-5 w-5" />
             </a>
           </div>
         </div>

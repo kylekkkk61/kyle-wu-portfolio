@@ -142,11 +142,11 @@ export const projects: Project[] = [
       },
       techStack: [
         "Python",
-        "Telegram Bot",
+        "Telegram",
         "PostgreSQL",
+        "SQLAlchemy",
         "Docker",
-        "Bitget API",
-        "CI/CD",
+        "GitHub Actions",
       ],
       disclaimer:
         "This project is presented as an engineering and workflow-design portfolio project. It does not represent financial advice or a claim of trading profitability.",
@@ -253,14 +253,7 @@ export const projects: Project[] = [
           "Building public-safe research artifacts without exposing sensitive execution data",
         ],
       },
-      techStack: [
-        "Python",
-        "Streamlit",
-        "Polymarket",
-        "Market Microstructure",
-        "Probability Modeling",
-        "Execution Quality",
-      ],
+      techStack: ["Python", "Streamlit", "Pandas", "NumPy"],
       disclaimer:
         "This project is presented as a public research and portfolio artifact. It does not represent financial advice, trading advice, or a claim of trading profitability.",
       artifacts: {

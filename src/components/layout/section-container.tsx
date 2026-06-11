@@ -13,7 +13,8 @@ export function SectionContainer({
   ...props
 }: SectionContainerProps) {
   return (
-    <section className={cn("py-16 md:py-24", className)} {...props}>
+    <section className={cn("relative py-16 md:py-24", className)} {...props}>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       <div
         className={cn(
           "mx-auto w-full max-w-7xl px-6 md:px-8",

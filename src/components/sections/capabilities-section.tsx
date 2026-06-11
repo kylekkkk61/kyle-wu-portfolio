@@ -1,14 +1,13 @@
-"use client"
-
 import * as React from "react"
 import { profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
 import { FadeIn } from "@/components/ui/fade-in"
+import { cn, surfaceClass } from "@/lib/utils"
 
 export function CapabilitiesSection() {
   return (
-    <SectionContainer id="capabilities" className="py-20 md:py-32">
-      <div className="mb-12 md:mb-16">
+    <SectionContainer id="capabilities" className="relative py-20 md:py-32">
+      <div className="relative z-10 mb-12 md:mb-16">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
           Capabilities
         </h2>
@@ -18,16 +17,16 @@ export function CapabilitiesSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
+      <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
         {profile.capabilities.map((item, index) => (
           <FadeIn
             key={item.title}
             delay={index * 100}
-            className="group space-y-4"
+            className={cn(surfaceClass, "group p-6 md:p-8")}
           >
             <div className="flex items-start gap-4">
               <span
-                className="text-muted-foreground/30 font-mono text-xl font-medium tracking-tight select-none"
+                className="text-primary/40 font-mono text-xl font-medium tracking-tight select-none"
                 aria-hidden="true"
               >
                 {String(index + 1).padStart(2, "0")}

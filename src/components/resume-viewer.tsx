@@ -57,17 +57,17 @@ export function ResumeViewer({ fileUrl }: ResumeViewerProps) {
               </p>
             </div>
           }
-          className="flex flex-col items-center"
+          className="flex flex-col items-center gap-4"
         >
           {containerWidth > 0 &&
             Array.from(new Array(numPages), (el, index) => (
-              <div key={`page_${index + 1}`} className="mb-4 w-full">
+              <div key={`page_${index + 1}`} className="flex w-full flex-col">
                 <Page
                   pageNumber={index + 1}
                   width={containerWidth}
                   renderTextLayer={true}
                   renderAnnotationLayer={true}
-                  className="overflow-hidden bg-white shadow-sm"
+                  className="overflow-hidden bg-white shadow-sm [&_canvas]:!block"
                 />
               </div>
             ))}
