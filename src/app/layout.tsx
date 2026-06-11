@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SiteBackground } from "@/components/layout/site-background"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,14 +65,17 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
+      <body className="bg-background text-foreground relative flex min-h-full flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <SiteBackground />
+          <div className="relative z-0 flex min-h-screen flex-col">
+            {children}
+          </div>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

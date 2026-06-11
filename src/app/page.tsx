@@ -7,16 +7,27 @@ import { CapabilitiesSection } from "@/components/sections/capabilities-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
 
+const SectionDivider = () => (
+  <div className="mx-auto w-full max-w-5xl px-6 md:px-8">
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+  </div>
+)
+
 export default function Home() {
   return (
     <>
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+        <SectionDivider />
         <WhatIDoSection />
+        <SectionDivider />
         <ProjectsSection />
+        <SectionDivider />
         <CapabilitiesSection />
+        <SectionDivider />
         <AboutSection />
+        <SectionDivider />
         <ContactSection />
       </main>
       <SiteFooter />
