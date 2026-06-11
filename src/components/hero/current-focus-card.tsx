@@ -4,7 +4,15 @@ import * as React from "react"
 import { surfaceClass } from "@/lib/utils"
 import { cn } from "@/lib/utils"
 import { motion, useMotionTemplate, useMotionValue } from "motion/react"
-import { GraduationCap, Code2, Target, GitBranch, Terminal, LineChart, Network } from "lucide-react"
+import {
+  GraduationCap,
+  Code2,
+  Target,
+  GitBranch,
+  Terminal,
+  LineChart,
+  Network,
+} from "lucide-react"
 
 export function CurrentFocusCard() {
   const mouseX = useMotionValue(0)
@@ -41,8 +49,8 @@ export function CurrentFocusCard() {
       <div className="relative z-10 flex flex-col gap-8">
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-primary/80" />
-            <span className="font-mono text-[10px] font-medium tracking-widest text-primary uppercase">
+            <span className="bg-primary/80 flex h-2 w-2 rounded-full" />
+            <span className="text-primary font-mono text-[10px] font-medium tracking-widest uppercase">
               Current Focus
             </span>
           </div>
@@ -55,13 +63,13 @@ export function CurrentFocusCard() {
           {/* Education */}
           <div className="flex gap-3">
             <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-              <GraduationCap className="h-4 w-4 text-muted-foreground" />
+              <GraduationCap className="text-muted-foreground h-4 w-4" />
             </div>
             <div>
-              <p className="text-sm font-medium text-foreground">
+              <p className="text-foreground text-sm font-medium">
                 MSc Financial Technology
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Warwick Business School (Incoming)
               </p>
             </div>
@@ -70,18 +78,22 @@ export function CurrentFocusCard() {
           {/* Projects */}
           <div className="flex gap-3">
             <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-              <Code2 className="h-4 w-4 text-muted-foreground" />
+              <Code2 className="text-muted-foreground h-4 w-4" />
             </div>
-            <div className="space-y-2 w-full">
-              <p className="text-sm font-medium text-foreground">Building</p>
+            <div className="w-full space-y-2">
+              <p className="text-foreground text-sm font-medium">Building</p>
               <div className="flex flex-col gap-2">
                 <div className="group flex items-center justify-between rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
-                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Kaiyn Trading Bot</span>
-                  <Terminal className="h-3.5 w-3.5 text-muted-foreground/50" />
+                  <span className="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+                    Kaiyn Trading Bot
+                  </span>
+                  <Terminal className="text-muted-foreground/50 h-3.5 w-3.5" />
                 </div>
                 <div className="group flex items-center justify-between rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
-                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">PM Execution Lab</span>
-                  <LineChart className="h-3.5 w-3.5 text-muted-foreground/50" />
+                  <span className="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+                    PM Execution Lab
+                  </span>
+                  <LineChart className="text-muted-foreground/50 h-3.5 w-3.5" />
                 </div>
               </div>
             </div>
@@ -90,24 +102,24 @@ export function CurrentFocusCard() {
           {/* Focus Areas */}
           <div className="flex gap-3">
             <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-              <Target className="h-4 w-4 text-muted-foreground" />
+              <Target className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="space-y-2">
-              <p className="text-sm font-medium text-foreground">Focus Areas</p>
+              <p className="text-foreground text-sm font-medium">Focus Areas</p>
               <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs text-muted-foreground">
+                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Network className="h-3 w-3" />
                   Trading Infra
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs text-muted-foreground">
+                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <LineChart className="h-3 w-3" />
                   Data Analysis
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs text-muted-foreground">
+                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <GitBranch className="h-3 w-3" />
                   Market Microstructure
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs text-muted-foreground">
+                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Terminal className="h-3 w-3" />
                   Business-to-System
                 </span>

@@ -1,8 +1,7 @@
+import { FadeIn } from "@/components/ui/fade-in"
 import * as React from "react"
 import { profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
-import { FadeIn } from "@/components/ui/fade-in"
-import { cn } from "@/lib/utils"
 
 export function CapabilitiesSection() {
   return (
@@ -43,9 +42,9 @@ export function CapabilitiesSection() {
           </FadeIn>
         ))}
       </div>
-      
+
       {/* Subtle bottom divider like Image 1 */}
-      <div className="mt-8 border-b border-white/[0.06] w-full" />
+      <div className="mt-8 w-full border-b border-white/[0.06]" />
     </SectionContainer>
   )
 }

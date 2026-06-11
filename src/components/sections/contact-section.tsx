@@ -23,7 +23,6 @@ export function ContactSection() {
 
   return (
     <SectionContainer id="contact">
-
       <FadeIn
         className={cn(
           surfaceClass,

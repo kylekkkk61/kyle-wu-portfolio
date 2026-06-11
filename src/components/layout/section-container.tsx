@@ -20,9 +20,13 @@ export function SectionContainer({
   const outerClasses = cn(
     "relative py-16 md:py-24 my-4", // Added my-4 for vertical spacing between blocks
     isColorBlock ? "mx-2 md:mx-4 lg:mx-6 rounded-[2.5rem]" : "",
-    variant === "teal" ? "bg-[#202b2e] border border-white/[0.06] shadow-2xl" : "",
-    variant === "plum" ? "bg-[#251723] border border-white/[0.06] shadow-2xl" : "",
-    className
+    variant === "teal"
+      ? "bg-[#202b2e] border border-white/[0.06] shadow-2xl"
+      : "",
+    variant === "plum"
+      ? "bg-[#251723] border border-white/[0.06] shadow-2xl"
+      : "",
+    className,
   )
 
   const sectionStyle = {
