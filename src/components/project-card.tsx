@@ -18,7 +18,7 @@ export function ProjectCard({ project }: { project: Project }) {
       )}
     >
       {/* Project visual preview */}
-      <div className="bg-muted/30 relative flex min-h-[240px] w-full shrink-0 items-center justify-center lg:w-[40%] xl:w-[45%]">
+      <div className="bg-white/[0.02] border-white/[0.04] border-r relative flex min-h-[240px] w-full shrink-0 items-center justify-center lg:w-[40%] xl:w-[45%]">
         <ProjectVisual type={project.visual} />
       </div>
 
@@ -76,12 +76,12 @@ export function ProjectCard({ project }: { project: Project }) {
         {/* Bottom Area: Tech Stack + Links */}
         <div className="flex flex-col">
           {project.detail?.techStack && (
-            <div className="border-border/30 border-t py-2">
+            <div className="border-white/5 border-t py-2">
               <ProjectTechStack techStack={project.detail.techStack} />
             </div>
           )}
 
-          <div className="border-border/30 flex flex-wrap items-center gap-3 border-t pt-3">
+          <div className="border-white/5 flex flex-wrap items-center gap-3 border-t pt-3">
             <Link
               href={`/projects/${project.slug}`}
               className={cn(
