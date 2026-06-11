@@ -7,7 +7,10 @@ import { CurrentFocusCard } from "@/components/hero/current-focus-card"
 
 export function HeroSection() {
   return (
-    <SectionContainer className="relative flex min-h-[90dvh] flex-col justify-center overflow-hidden py-12 md:py-20">
+    <SectionContainer
+      id="hero"
+      className="relative flex min-h-[75dvh] flex-col justify-center overflow-hidden py-12 md:py-20"
+    >
       <div className="relative z-10 grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
         <div className="max-w-2xl space-y-8">
           <div className="animate-fade-up space-y-4">

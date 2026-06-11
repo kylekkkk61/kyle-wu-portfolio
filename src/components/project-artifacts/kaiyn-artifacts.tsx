@@ -9,34 +9,35 @@ import {
 
 export function KaiynSignalArtifact() {
   return (
-    <div className="bg-background/50 border-border/50 flex h-full w-full flex-col items-center justify-center rounded-xl border p-6">
+    <div className="flex h-full w-full flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-4">
-        <div className="flex items-center gap-2 text-blue-400">
+        <div className="flex items-center gap-2 text-sky-300">
           <Terminal className="h-5 w-5" />
           <span className="font-mono text-sm font-semibold">
             Signal Webhook Payload
           </span>
         </div>
         <div className="bg-muted/30 text-muted-foreground border-border/50 rounded-lg border p-4 font-mono text-xs shadow-inner">
-          <div className="text-blue-300">{"{"}</div>
+          <div className="text-sky-200">{"{"}</div>
           <div className="pl-4">
-            <span className="text-purple-400">&quot;asset&quot;</span>:{" "}
-            <span className="text-amber-300">&quot;BTC-USDT&quot;</span>,
+            <span className="text-fuchsia-300">&quot;asset&quot;</span>:{" "}
+            <span className="text-yellow-200">&quot;BTC-USDT&quot;</span>,
             <br />
-            <span className="text-purple-400">&quot;action&quot;</span>:{" "}
-            <span className="text-amber-300">&quot;LONG&quot;</span>,
+            <span className="text-fuchsia-300">&quot;action&quot;</span>:{" "}
+            <span className="text-yellow-200">&quot;LONG&quot;</span>,
             <br />
-            <span className="text-purple-400">
+            <span className="text-fuchsia-300">
               &quot;risk_level&quot;
-            </span>: <span className="text-amber-300">&quot;1R&quot;</span>,
+            </span>: <span className="text-yellow-200">&quot;1R&quot;</span>,
             <br />
-            <span className="text-purple-400">&quot;timestamp&quot;</span>:{" "}
-            <span className="text-green-300">1709283741</span>
+            <span className="text-fuchsia-300">
+              &quot;timestamp&quot;
+            </span>: <span className="text-emerald-300">1709283741</span>
           </div>
-          <div className="text-blue-300">{"}"}</div>
+          <div className="text-sky-200">{"}"}</div>
         </div>
         <div className="text-muted-foreground flex items-center gap-2 text-xs">
-          <ShieldAlert className="h-3 w-3 text-amber-500" />
+          <ShieldAlert className="h-3 w-3 text-yellow-400" />
           <span>Strict JSON validation enforced</span>
         </div>
       </div>
@@ -46,9 +47,9 @@ export function KaiynSignalArtifact() {
 
 export function KaiynConfirmationArtifact() {
   return (
-    <div className="bg-background/50 border-border/50 flex h-full w-full flex-col items-center justify-center rounded-xl border p-6">
+    <div className="flex h-full w-full flex-col items-center justify-center p-6">
       <div className="w-full max-w-xs space-y-3">
-        <div className="flex items-center gap-2 text-amber-400">
+        <div className="flex items-center gap-2 text-yellow-200">
           <MessageCircle className="h-5 w-5" />
           <span className="font-mono text-sm font-semibold">
             Interactive Auth
@@ -62,10 +63,10 @@ export function KaiynConfirmationArtifact() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <button className="rounded-md bg-red-500/10 py-2 text-xs font-medium text-red-500 transition-colors hover:bg-red-500/20">
+            <button className="rounded-md bg-rose-400/10 py-2 text-xs font-medium text-rose-400 transition-colors hover:bg-rose-400/20">
               REJECT
             </button>
-            <button className="flex items-center justify-center gap-1 rounded-md bg-green-500/10 py-2 text-xs font-medium text-green-500 transition-colors hover:bg-green-500/20">
+            <button className="flex items-center justify-center gap-1 rounded-md bg-emerald-400/10 py-2 text-xs font-medium text-emerald-400 transition-colors hover:bg-emerald-400/20">
               <CheckCircle2 className="h-3 w-3" />
               CONFIRM
             </button>
@@ -78,16 +79,16 @@ export function KaiynConfirmationArtifact() {
 
 export function KaiynAuditArtifact() {
   return (
-    <div className="bg-background/50 border-border/50 flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-xl border p-6">
+    <div className="flex h-full w-full flex-col items-center justify-center overflow-hidden p-6">
       <div className="w-full max-w-md space-y-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-green-400">
+          <div className="flex items-center gap-2 text-emerald-300">
             <Database className="h-5 w-5" />
             <span className="font-mono text-sm font-semibold">
               Immutable Audit Trail
             </span>
           </div>
-          <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+          <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
         </div>
         <div className="space-y-2 font-mono text-[10px] sm:text-xs">
           {[
@@ -103,7 +104,7 @@ export function KaiynAuditArtifact() {
             >
               <span className="text-muted-foreground">{log.time}</span>
               <span className="text-foreground/80 flex-1">{log.msg}</span>
-              <span className="text-green-400">[{log.status}]</span>
+              <span className="text-emerald-300">[{log.status}]</span>
             </div>
           ))}
         </div>

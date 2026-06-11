@@ -18,7 +18,7 @@ export function AboutSection() {
         <div className="space-y-6 md:col-span-7 lg:col-span-8">
           <FadeIn className="rounded-[2rem] border-2 border-white/20 bg-white/[0.02] p-2 shadow-2xl">
             <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.04] p-8 md:p-10">
-              <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-none">
+              <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-none space-y-4">
                 {profile.about.split("\n\n").map((paragraph, i) => (
                   <p key={i} className="text-lg leading-relaxed">
                     {paragraph}

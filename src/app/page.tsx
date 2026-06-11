@@ -6,6 +6,7 @@ import { ProjectsSection } from "@/components/sections/projects-section"
 import { CapabilitiesSection } from "@/components/sections/capabilities-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
+import { SiteTrack } from "@/components/layout/site-track"
 
 const SectionDivider = () => (
   <div className="mx-auto w-full max-w-5xl px-6 md:px-8">
@@ -17,7 +18,8 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main className="relative flex-1">
+        <SiteTrack />
         <HeroSection />
         <SectionDivider />
         <WhatIDoSection />

@@ -42,12 +42,12 @@ export function SiteHeader() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="text-muted-foreground hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="text-muted-foreground hidden items-center gap-12 text-sm font-medium md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-primary transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               {link.label}
             </Link>
@@ -59,7 +59,7 @@ export function SiteHeader() {
           <Link
             href="/#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className={cn(buttonVariants({ size: "sm" }))}
+            className={cn(buttonVariants({ variant: "outline" }))}
           >
             Contact
           </Link>
@@ -81,7 +81,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-primary text-lg font-medium transition-colors"
+                className="text-foreground text-lg font-medium transition-colors hover:text-white"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
