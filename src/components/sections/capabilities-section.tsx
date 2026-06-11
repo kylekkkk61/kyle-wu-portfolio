@@ -2,13 +2,13 @@ import * as React from "react"
 import { profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
 import { FadeIn } from "@/components/ui/fade-in"
-import { cn, surfaceClass } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 export function CapabilitiesSection() {
   return (
-    <SectionContainer id="capabilities" className="relative py-20 md:py-32">
+    <SectionContainer id="capabilities" variant="teal">
       <div className="relative z-10 mb-12 md:mb-16">
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+        <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
           Capabilities
         </h2>
         <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
@@ -22,7 +22,7 @@ export function CapabilitiesSection() {
           <FadeIn
             key={item.title}
             delay={index * 100}
-            className={cn(surfaceClass, "group p-6 md:p-8")}
+            className="group py-6 md:py-8"
           >
             <div className="flex items-start gap-4">
               <span
@@ -43,6 +43,9 @@ export function CapabilitiesSection() {
           </FadeIn>
         ))}
       </div>
+      
+      {/* Subtle bottom divider like Image 1 */}
+      <div className="mt-8 border-b border-white/[0.06] w-full" />
     </SectionContainer>
   )
 }
