@@ -1,33 +1,28 @@
 "use client"
 
 import * as React from "react"
-import { motion, useReducedMotion } from "motion/react"
 import { profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function CapabilitiesSection() {
-  const reduce = useReducedMotion()
-
   return (
-    <SectionContainer id="capabilities" className="py-24 md:py-32">
-      <div className="mb-16 md:mb-24">
+    <SectionContainer id="capabilities" className="py-20 md:py-32">
+      <div className="mb-12 md:mb-16">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
           Capabilities
         </h2>
+        <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
+          The technical and domain-specific skills I use to build systems and
+          conduct research.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
         {profile.capabilities.map((item, index) => (
-          <motion.div
+          <FadeIn
             key={item.title}
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.1,
-              ease: "easeOut",
-            }}
+            delay={index * 100}
             className="group space-y-4"
           >
             <div className="flex items-start gap-4">
@@ -46,7 +41,7 @@ export function CapabilitiesSection() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
         ))}
       </div>
     </SectionContainer>

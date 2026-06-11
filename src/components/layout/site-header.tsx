@@ -6,7 +6,6 @@ import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "motion/react"
 
 export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -75,30 +74,22 @@ export function SiteHeader() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="bg-background border-border/40 absolute top-16 left-0 w-full border-b shadow-lg md:hidden"
-          >
-            <nav className="flex flex-col gap-6 p-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground hover:text-primary text-lg font-medium transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isMobileMenuOpen && (
+        <div className="bg-background border-border/40 animate-fade-up absolute top-16 left-0 w-full border-b shadow-lg md:hidden">
+          <nav className="flex flex-col gap-6 p-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground hover:text-primary text-lg font-medium transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
