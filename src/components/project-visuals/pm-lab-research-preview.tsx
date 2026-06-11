@@ -11,14 +11,14 @@ export function PmLabResearchPreview() {
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
+            <div className="h-2 w-2 rounded-full bg-[#8da3b5] shadow-[0_0_8px_rgba(141,163,181,0.5)]" />
             <span className="text-muted-foreground font-mono text-xs font-medium tracking-wider uppercase">
               Execution Lab
             </span>
           </div>
           <Badge
             variant="outline"
-            className="border-sky-400/20 bg-sky-400/10 text-[10px] text-sky-300"
+            className="border-[#8da3b5]/30 bg-[#8da3b5]/15 text-[10px] text-[#8da3b5]"
           >
             Active Analysis
           </Badge>
@@ -32,7 +32,7 @@ export function PmLabResearchPreview() {
               Theoretical Edge
             </span>
             <div className="flex h-16 items-end gap-1 pt-2">
-              <div className="h-[90%] w-full rounded-t-sm bg-sky-400/30 transition-all hover:bg-sky-400/50" />
+              <div className="h-[90%] w-full rounded-t-sm bg-[#8da3b5]/40 transition-all hover:bg-[#8da3b5]/60" />
             </div>
             <div className="text-foreground/80 mt-1 text-center font-mono text-[10px]">
               100%
@@ -45,7 +45,7 @@ export function PmLabResearchPreview() {
               Frictions
             </span>
             <div className="flex h-16 items-end gap-1 pt-2">
-              <div className="h-[65%] w-full rounded-t-sm bg-amber-400/30 transition-all hover:bg-amber-400/50" />
+              <div className="h-[65%] w-full rounded-t-sm bg-[#c4a56c]/40 transition-all hover:bg-[#c4a56c]/60" />
             </div>
             <div className="text-foreground/80 mt-1 text-center font-mono text-[10px]">
               65%
@@ -58,13 +58,13 @@ export function PmLabResearchPreview() {
               Executable
             </span>
             <div className="z-10 flex h-16 items-end gap-1 pt-2">
-              <div className="h-[42%] w-full rounded-t-sm bg-emerald-500/50 transition-all hover:bg-emerald-500/70" />
+              <div className="h-[42%] w-full rounded-t-sm bg-[#9fb396]/60 transition-all hover:bg-[#9fb396]/80" />
             </div>
-            <div className="z-10 mt-1 text-center font-mono text-[10px] font-semibold text-emerald-400">
+            <div className="z-10 mt-1 text-center font-mono text-[10px] font-semibold text-[#9fb396]">
               42%
             </div>
             {/* Abstract gradient for edge */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-emerald-500/20 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#9fb396]/30 to-transparent" />
           </div>
         </div>
 

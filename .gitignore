@@ -44,3 +44,7 @@ next-env.d.ts
 /tmp
 AGENTS.md
 CLAUDE.md
+
+# codegraph
+.codegraph
+.cursor
