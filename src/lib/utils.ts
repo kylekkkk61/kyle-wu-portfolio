@@ -6,4 +6,4 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const surfaceClass =
-  "rounded-2xl md:rounded-3xl border border-white/[0.06] bg-white/[0.03] transition-all hover:border-white/10 hover:bg-white/[0.05]"
+  "rounded-2xl md:rounded-3xl border border-white/[0.06] bg-[#161616] transition-all hover:border-white/10 hover:bg-[#1a1a1a]"

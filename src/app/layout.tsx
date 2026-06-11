@@ -79,9 +79,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SiteBackground />
-          <div className="relative z-0 flex min-h-screen flex-col">
-            {children}
-          </div>
+          <div className="relative flex min-h-screen flex-col">{children}</div>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

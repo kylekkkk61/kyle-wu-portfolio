@@ -38,8 +38,8 @@ export function CurrentFocusCard() {
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              400px circle at ${mouseX}px ${mouseY}px,
-              rgba(91, 69, 137, 0.15),
+              200px circle at ${mouseX}px ${mouseY}px,
+              rgba(240, 234, 221, 0.1),
               transparent 80%
             )
           `,

@@ -9,11 +9,11 @@ export function KaiynWorkflowPreview() {
       <div className="relative z-10 flex w-full max-w-lg flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         {/* Layer 1: Signal Payload */}
         <div className="flex flex-1 flex-col items-center gap-3">
-          <div className="group relative w-full rounded-xl border border-white/10 bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" />
+          <div className="group relative w-full rounded-xl border border-white/[0.06] bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
-              <Terminal className="h-4 w-4 text-blue-400" />
-              <span className="font-mono text-xs font-semibold text-blue-400">
+              <Terminal className="h-4 w-4 text-sky-300" />
+              <span className="font-mono text-xs font-semibold text-sky-300">
                 Signal Ingress
               </span>
             </div>
@@ -29,10 +29,10 @@ export function KaiynWorkflowPreview() {
         {/* Layer 2: Confirmation UI */}
         <div className="flex flex-1 flex-col items-center gap-3">
           <div className="group relative w-full rounded-xl border border-white/10 bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
-              <MessageCircle className="h-4 w-4 text-amber-400" />
-              <span className="font-mono text-xs font-semibold text-amber-400">
+              <MessageCircle className="h-4 w-4 text-yellow-200" />
+              <span className="font-mono text-xs font-semibold text-yellow-200">
                 Telegram Auth
               </span>
             </div>
@@ -41,10 +41,10 @@ export function KaiynWorkflowPreview() {
                 Confirm Execute
               </span>
               <div className="flex gap-1.5">
-                <div className="flex h-5 flex-1 items-center justify-center rounded border border-green-500/20 bg-green-500/10 text-[9px] font-medium text-green-400">
+                <div className="flex h-5 flex-1 items-center justify-center rounded border border-emerald-500/20 bg-emerald-500/10 text-[9px] font-medium text-emerald-400">
                   YES
                 </div>
-                <div className="flex h-5 flex-1 items-center justify-center rounded border border-red-500/20 bg-red-500/10 text-[9px] font-medium text-red-400">
+                <div className="flex h-5 flex-1 items-center justify-center rounded border border-rose-400/20 bg-rose-400/10 text-[9px] font-medium text-rose-300">
                   NO
                 </div>
               </div>
@@ -57,10 +57,10 @@ export function KaiynWorkflowPreview() {
         {/* Layer 3: Backend State */}
         <div className="flex flex-1 flex-col items-center gap-3">
           <div className="group relative w-full rounded-xl border border-white/10 bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green-400/30 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
-              <Database className="h-4 w-4 text-green-400" />
-              <span className="font-mono text-xs font-semibold text-green-400">
+              <Database className="h-4 w-4 text-emerald-300" />
+              <span className="font-mono text-xs font-semibold text-emerald-300">
                 Audit State
               </span>
             </div>
@@ -69,7 +69,7 @@ export function KaiynWorkflowPreview() {
                 <span className="text-muted-foreground text-[10px] tracking-wider uppercase">
                   Status
                 </span>
-                <span className="rounded bg-green-500/10 px-1.5 py-0.5 text-[10px] font-medium text-green-400">
+                <span className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400">
                   Filled
                 </span>
               </div>
