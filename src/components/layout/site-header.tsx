@@ -35,7 +35,17 @@ export function SiteHeader() {
           <Link
             href="/"
             className="relative z-50 flex items-center gap-2 font-semibold"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={(e) => {
+              setIsMobileMenuOpen(false)
+              if (
+                typeof window !== "undefined" &&
+                window.location.pathname === "/"
+              ) {
+                e.preventDefault()
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                window.history.pushState(null, "", "/")
+              }
+            }}
           >
             <span className="text-xl tracking-tight">{profile.name}</span>
           </Link>
