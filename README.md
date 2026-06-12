@@ -13,7 +13,7 @@
 
 A modern personal portfolio showcasing fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.
 
-[Live Site](https://www.kylekkkk.com) 
+[Live Site](https://www.kylekkkk.com)
 
 </div>
 
