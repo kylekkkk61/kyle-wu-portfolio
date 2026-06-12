@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils"
 import { motion, useMotionTemplate, useMotionValue } from "motion/react"
 import {
   GraduationCap,
-  Code2,
   Target,
+  Compass,
   GitBranch,
   Terminal,
   LineChart,
@@ -75,25 +75,35 @@ export function CurrentFocusCard() {
             </div>
           </div>
 
-          {/* Projects */}
+          {/* Career Interests */}
           <div className="flex gap-3">
             <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-              <Code2 className="text-muted-foreground h-4 w-4" />
+              <Compass className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="w-full space-y-2">
-              <p className="text-foreground text-sm font-medium">Building</p>
-              <div className="flex flex-col gap-2">
-                <div className="group flex items-center justify-between rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
-                  <span className="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-                    Kaiyn Trading Bot
+              <p className="text-foreground text-sm font-medium">
+                Career Interests
+              </p>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                  <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
+                    FinTech Product & Strategy
                   </span>
-                  <Terminal className="text-muted-foreground/50 h-3.5 w-3.5" />
                 </div>
-                <div className="group flex items-center justify-between rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
-                  <span className="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-                    PM Execution Lab
+                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                  <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
+                    Trading / Market Operations
                   </span>
-                  <LineChart className="text-muted-foreground/50 h-3.5 w-3.5" />
+                </div>
+                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                  <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
+                    Data & Business Analysis
+                  </span>
+                </div>
+                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                  <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
+                    Market Infrastructure
+                  </span>
                 </div>
               </div>
             </div>
@@ -107,19 +117,19 @@ export function CurrentFocusCard() {
             <div className="space-y-2">
               <p className="text-foreground text-sm font-medium">Focus Areas</p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Network className="h-3 w-3" />
                   Trading Infra
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <LineChart className="h-3 w-3" />
                   Data Analysis
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <GitBranch className="h-3 w-3" />
                   Market Microstructure
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Terminal className="h-3 w-3" />
                   Business-to-System
                 </span>
