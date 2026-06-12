@@ -13,7 +13,7 @@
 
 A modern personal portfolio showcasing fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.
 
-[Live Site](https://www.kylekkkk.com) · [Contact](https://www.kylekkkk.com/#contact)
+[Live Site](https://www.kylekkkk.com) 
 
 </div>
 
@@ -30,6 +30,13 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 | **Package Manager**   | `pnpm 9.15.9`                                |
 | **Lint / Format**     | `eslint 9` + `prettier 3`                    |
 | **Deployment & CI**   | Vercel + GitHub Actions                      |
+
+## Design & Architecture
+
+- **Dark Morandi Aesthetic**: A custom color palette balancing warm off-whites with deep grays and muted accents, enforcing a highly readable, premium interface.
+- **Unified UI Surfaces**: All card components converge on a centralized `surfaceClass` architecture, ensuring consistent styles without background grid-bleed.
+- **Code-Driven Visuals**: Project previews bypass static images in favor of live React components (`framer-motion` + syntax highlighting) to demonstrate real execution flows dynamically.
+- **Intersection-Aware Navigation**: A custom "Railway Timeline" track (`site-track.tsx`) automatically scales and color-binds to viewport scroll progression.
 
 ## Local Development
 
@@ -64,23 +71,26 @@ src/
 │   ├── resume/page.tsx        # Integrated Resume Viewer
 │   └── projects/[slug]/       # Dynamic Project Detail Pages
 ├── components/
-│   ├── sections/              # Homepage UI sections (Hero, What I Do, Capabilities, etc.)
-│   ├── project-visuals/       # React-based visual previews for projects
-│   └── layout/                # Global layout (Header, Footer, Section containers)
-└── data/
-    ├── profile.ts             # Profile copy, positioning, and capabilities
-    ├── projects.ts            # Project data models and content configuration
-    └── links.ts               # Centralized internal & external links
+│   ├── sections/              # Homepage UI sections
+│   ├── project-artifacts/     # Detail page content & MDX-like components
+│   ├── project-visuals/       # React-based dynamic visual previews
+│   └── layout/                # Global layout (Header, Footer, site-track.tsx)
+├── data/
+│   ├── profile.ts             # Profile copy and capabilities
+│   ├── projects.ts            # Project data models
+│   └── links.ts               # Internal & external links
+└── lib/
+    └── utils.ts               # Core utilities and shared surfaceClasses
 ```
 
 ## Adding a New Project
 
 1. Add a new project object to `src/data/projects.ts`.
 2. Define the `slug`, `visual`, `capabilities`, `tags`, `links`, and nested `detail` sections.
-3. If necessary, create a new visual preview component in `src/components/project-visuals` and map it in `project-visual.tsx`.
+3. Create a new dynamic preview component in `src/components/project-visuals` and map it in `project-visual.tsx`.
 4. Verify the new page renders properly at `/projects/[slug]`.
-5. Run `pnpm lint`, `pnpm typecheck`, and `pnpm build` before committing.
+5. Run `pnpm format`, `pnpm lint`, `pnpm typecheck`, and `pnpm build` before committing.
 
 ## License
 
-This repository is built for personal portfolio demonstration purposes. All structural and research-related code is open-source, but specific personal data and context remain proprietary. Nothing on the live site should be interpreted as financial or trading advice.
+[MIT](LICENSE) © Kyle Wu 2026
