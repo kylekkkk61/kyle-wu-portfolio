@@ -10,7 +10,7 @@ import { ProjectVisual } from "@/components/project-visuals/project-visual"
 import { buttonVariants } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { Link } from "@/i18n/routing"
+import { Link, routing } from "@/i18n/routing"
 import { ArrowLeft, ExternalLink, Play } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
 import {
@@ -48,9 +48,12 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({
-    slug: p.slug,
-  }))
+  return routing.locales.flatMap((locale) =>
+    projects.map((p) => ({
+      locale,
+      slug: p.slug,
+    })),
+  )
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

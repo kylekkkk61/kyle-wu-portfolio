@@ -35,8 +35,9 @@ export function SiteHeader({ profile }: { profile: Profile }) {
 
   const toggleLanguage = () => {
     const nextLocale = locale === "en" ? "zh-TW" : "en"
-    // Since Next-Intl uses [locale] dynamic segment, router.replace handles it natively
-    router.replace(pathname, { locale: nextLocale })
+    const hash = typeof window !== "undefined" ? window.location.hash : ""
+    // Append hash to pathname so next-intl router routes to the translated anchor
+    router.replace(pathname + hash, { locale: nextLocale })
   }
 
   return (
