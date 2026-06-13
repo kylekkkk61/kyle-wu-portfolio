@@ -3,7 +3,7 @@
 import * as React from "react"
 import { surfaceClass } from "@/lib/utils"
 import { cn } from "@/lib/utils"
-import { motion, useMotionTemplate, useMotionValue } from "motion/react"
+
 import {
   GraduationCap,
   Target,
@@ -17,13 +17,11 @@ import { useTranslations } from "next-intl"
 
 export function CurrentFocusCard() {
   const t = useTranslations("CurrentFocus")
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 })
 
   function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect()
-    mouseX.set(clientX - left)
-    mouseY.set(clientY - top)
+    setMousePos({ x: clientX - left, y: clientY - top })
   }
 
   return (
@@ -35,16 +33,10 @@ export function CurrentFocusCard() {
       onMouseMove={onMouseMove}
     >
       {/* Magnetic Spotlight */}
-      <motion.div
+      <div
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover/card:opacity-100"
         style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              rgba(240, 234, 221, 0.1),
-              transparent 80%
-            )
-          `,
+          background: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, rgba(240, 234, 221, 0.1), transparent 80%)`,
         }}
       />
 
