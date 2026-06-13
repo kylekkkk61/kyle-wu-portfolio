@@ -16,6 +16,7 @@ const SectionDivider = () => (
 
 import { getProfile } from "@/data/profile"
 import { getProjects } from "@/data/projects"
+import { setRequestLocale } from "next-intl/server"
 
 export default async function Home({
   params,
@@ -23,6 +24,7 @@ export default async function Home({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  setRequestLocale(locale)
   const profile = getProfile(locale)
   const projectsData = getProjects(locale)
 
