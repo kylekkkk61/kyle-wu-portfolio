@@ -70,7 +70,7 @@ export type Project = {
   detail: ProjectDetail
 }
 
-export const projects: Project[] = [
+const projectsEn: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
@@ -301,3 +301,238 @@ export const projects: Project[] = [
     },
   },
 ]
+
+const projectsZh: Project[] = [
+  {
+    slug: "kaiyn-trading-bot",
+    title: "Kaiyn Trading Bot",
+    subtitle: "專為加密貨幣社群設計的交易訊號執行系統",
+    shortDescription:
+      "一個基於 Telegram 的執行工作流，將社群交易訊號轉化為結構化、需確認優先的下單流程。",
+    description:
+      "專為加密貨幣交易社群設計的 Telegram 執行工作流。系統強調「確認優先 (Confirmation-first)」的訂單流程、固定風險部位控管 (Fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核紀錄，以及 Docker 優先的部署架構。",
+    category: "交易基礎設施",
+    status: "開源 GitHub 專案",
+    year: "2026",
+    visual: "kaiyn-workflow",
+    capabilities: [
+      "訊號到執行的工作流",
+      "具備風險意識的訂單驗證",
+      "符合稽核標準的後端基礎設施",
+    ],
+    tags: ["Python", "PostgreSQL", "Docker", "Telegram", "Exchange API"],
+    highlights: [
+      "將 Telegram 上的交易訊號無縫轉換為結構化執行工作流。",
+      "採用確認優先的執行機制與固定 1R 風險部位控管。",
+      "內建加密 API 憑證儲存、稽核軌跡、資料庫備份與 CI 檢查流程。",
+      "設計理念為生產級的營運工具，而非標榜獲利的自動交易機器人。",
+    ],
+    links: [
+      {
+        label: "專案首頁",
+        href: "https://kaiyn.kylekkkk.com/",
+        type: "landing-page",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/kaiyn-capital/kaiyn-trading-bot",
+        type: "github",
+      },
+    ],
+    featured: true,
+    order: 1,
+    video: "https://cv.kylekkkk.com/kaiyn-demo.mp4",
+    videoPoster: "https://cv.kylekkkk.com/kaiyn-demo-poster.webp",
+    detail: {
+      whyItMatters: {
+        title: "專案價值",
+        body: "本專案展示了如何將混亂的交易社群流程，轉化為更安全、可稽核、且需操作確認的系統化執行機制。",
+      },
+      communityContext: {
+        title: "社群背景與痛點",
+        paragraphs: [
+          "Kaiyn Trading Bot 源自我創立並營運近三年的加密貨幣交易社群 Kaiyn Capital 內部的實際營運問題。",
+          "在以 Telegram 為主的交易社群中，市場評論、交易訊號、圖表更新和風險討論的流動速度非常快。這種即時性很有用，但也帶來了摩擦：用戶必須在時間壓力下解讀訊號、管理風險、確認訂單細節，並盡可能避免執行錯誤。",
+          "建立這個專案是為了讓該工作流更加結構化。我們不再將交易訊號視為純文字訊息，而是透過機器人將其轉化為具備驗證、固定風險部位控制與清晰稽核紀錄的「確認優先」執行流程。",
+        ],
+        links: [
+          {
+            label: "Kaiyn Capital Telegram",
+            href: "https://t.me/kaiyncapital",
+          },
+        ],
+      },
+      context: {
+        title: "背景與挑戰",
+        body: "加密貨幣交易社群經常透過 Telegram 發送訊號，但手動執行往往帶來摩擦、不一致的部位大小、重複操作以及模糊的確認流程。",
+      },
+      whatIBuilt: {
+        title: "解決方案",
+        body: "我建立了一個結構化的執行工作流，將 Telegram 上的訊號傳遞與確認優先的交易操作、交易所規則驗證、風險部位計算及後端稽核紀錄相互連結。",
+      },
+      process: {
+        title: "工作流程",
+        items: [
+          "訊號解析",
+          "用戶確認",
+          "固定風險部位計算",
+          "交易所合約驗證",
+          "訂單準備",
+          "訂單執行",
+          "稽核追蹤",
+        ],
+      },
+      demonstrates: {
+        title: "核心能力展現",
+        items: [
+          "將社群工作流程的問題轉化為軟體系統設計",
+          "設計具備風險意識的交易基礎設施",
+          "建構具備狀態管理、驗證與稽核能力的後端工作流",
+          "跳脫單純腳本思維，邁向生產級營運工具設計",
+        ],
+      },
+      techStack: [
+        "Python",
+        "Telegram",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "Docker",
+        "GitHub Actions",
+      ],
+      disclaimer:
+        "本專案作為工程與工作流設計的作品集展示。不代表任何財務建議或交易獲利保證。",
+      artifacts: {
+        title: "代表性產出",
+        items: [
+          {
+            id: "kaiyn-signal",
+            title: "訊號解析工作流",
+            description:
+              "將非結構化的 Telegram 訊息解析為嚴謹且經過驗證的 JSON 格式資料。",
+          },
+          {
+            id: "kaiyn-confirmation",
+            title: "確認優先流程",
+            description:
+              "互動式 Telegram 使用者介面，要求用戶在訂單執行前進行明確授權。",
+          },
+          {
+            id: "kaiyn-audit",
+            title: "後端稽核管線",
+            description:
+              "透過 PostgreSQL 進行不可變的狀態追蹤，確保訂單絕不重複執行。",
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: "prediction-market-execution-lab",
+    title: "Prediction Market Execution Lab",
+    subtitle: "在 Polymarket BTC 短期預測市場中測試可執行優勢",
+    shortDescription:
+      "一個公開的研究項目，旨在測試短期的預測市場定價優勢是否能在真實的執行摩擦中存活。",
+    description:
+      "這是一個公開的金融科技與市場微觀結構研究項目，主要研究短期預測市場中看似存在的「定價優勢 (Pricing edge)」，是否能在滑價、成交機率、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
+    category: "市場微觀結構研究",
+    status: "公開 GitHub 研究報告",
+    year: "2026",
+    visual: "pm-lab-research",
+    capabilities: [
+      "執行品質分析",
+      "機率校準 (Probability calibration)",
+      "安全公開的研究儀表板",
+    ],
+    tags: ["Python", "Streamlit", "Polymarket", "Research", "Data Analysis"],
+    highlights: [
+      "嚴格區分「理論定價優勢」與實際的「可執行優勢」。",
+      "包含安全公開的樣本數據、研究報告、Notebooks 以及即時互動的儀表板。",
+      "深入分析執行漏斗 (Execution funnel)、機率校準、機器學習過濾與風險模擬。",
+      "明確避免不實的獲利宣稱與隱私執行資料的暴露。",
+    ],
+    links: [
+      {
+        label: "研究作品頁面",
+        href: "https://pm-lab.kylekkkk.com/",
+        type: "case-study",
+      },
+      {
+        label: "即時儀表板",
+        href: "https://prediction-market-execution-lab-4byaayq2atzengbe26nkfb.streamlit.app/",
+        type: "dashboard",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/kylekkkk61/prediction-market-execution-lab",
+        type: "github",
+      },
+    ],
+    featured: true,
+    order: 2,
+    detail: {
+      whyItMatters: {
+        title: "專案價值",
+        body: "這個專案區分了表面上的市場優勢與實際的可執行優勢，這更貼近真實交易與執行研究應該被評估的方式。",
+      },
+      context: {
+        title: "背景與挑戰",
+        body: "短期預測市場有時會展現出理論上的定價優勢，但理論優勢並不等於最終能落袋的可執行優勢。",
+      },
+      whatIBuilt: {
+        title: "解決方案",
+        body: "我建立了一個包含樣本數據、Notebooks、分析報告、儀表板、執行診斷、校準分析、機器學習過濾與風險模擬的公開研究實驗室。",
+      },
+      process: {
+        title: "研究工作流程",
+        items: [
+          "市場資料抽樣",
+          "訊號建構",
+          "執行漏斗分析",
+          "成交診斷",
+          "機率校準分析",
+          "風險模擬",
+          "安全公開的報告生成",
+        ],
+      },
+      demonstrates: {
+        title: "核心能力展現",
+        items: [
+          "市場微觀結構邏輯推論",
+          "數據分析與研究報告的溝通能力",
+          "區分理論訊號與實際可執行結果",
+          "在不暴露敏感執行資料的前提下，建置安全公開的研究產出",
+        ],
+      },
+      techStack: ["Python", "Streamlit", "Pandas", "NumPy"],
+      disclaimer:
+        "本專案作為公開研究與作品集展示。不代表任何財務建議、交易建議或獲利保證。",
+      artifacts: {
+        title: "代表性產出",
+        items: [
+          {
+            id: "pm-lab-funnel",
+            title: "執行漏斗分析",
+            description:
+              "視覺化呈現理論優勢如何因市場摩擦而衰減成最終的可執行優勢。",
+          },
+          {
+            id: "pm-lab-calibration",
+            title: "機率校準模擬",
+            description: "在不同的市場條件下，建立機率準確性與風險曝險的模型。",
+          },
+          {
+            id: "pm-lab-dashboard",
+            title: "研究儀表板",
+            description: "摘要呈現市場深度、流動性指標與執行診斷的抽象視圖。",
+          },
+        ],
+      },
+    },
+  },
+]
+
+export function getProjects(locale: string): Project[] {
+  return locale === "zh-TW" ? projectsZh : projectsEn
+}
+
+export const projects = projectsEn

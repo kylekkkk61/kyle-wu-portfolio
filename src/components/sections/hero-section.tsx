@@ -1,5 +1,5 @@
 import * as React from "react"
-import { profile } from "@/data/profile"
+import type { Profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -7,8 +7,10 @@ import { CurrentFocusCard } from "@/components/hero/current-focus-card"
 import { SiGithub, SiTelegram } from "@icons-pack/react-simple-icons"
 import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
 import { links } from "@/data/links"
+import { useTranslations } from "next-intl"
 
-export function HeroSection() {
+export function HeroSection({ profile }: { profile: Profile }) {
+  const t = useTranslations("Hero")
   return (
     <SectionContainer
       id="hero"
@@ -18,7 +20,7 @@ export function HeroSection() {
         <div className="max-w-2xl space-y-8">
           <div className="animate-fade-up space-y-4">
             <span className="bg-primary/20 text-primary inline-block rounded-md px-3 py-1 text-sm font-medium">
-              Personal Portfolio
+              {t("PersonalPortfolio")}
             </span>
             <h1 className="font-heading text-foreground text-4xl leading-[1.1] font-semibold tracking-tighter md:text-5xl lg:text-6xl">
               {profile.name}
@@ -46,7 +48,7 @@ export function HeroSection() {
                 "h-12 w-full px-8 text-base font-medium sm:w-auto",
               )}
             >
-              View Work
+              {t("ViewWork")}
             </a>
             <a
               href="#contact"
@@ -55,7 +57,7 @@ export function HeroSection() {
                 "h-12 w-full px-8 text-base font-medium sm:w-auto",
               )}
             >
-              Contact
+              {t("Contact")}
             </a>
           </div>
 

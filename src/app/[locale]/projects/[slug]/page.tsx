@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
-import { projects } from "@/data/projects"
+import { getProjects, projects } from "@/data/projects"
+import { getProfile } from "@/data/profile"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SectionContainer } from "@/components/layout/section-container"
+import { getTranslations } from "next-intl/server"
 import { ProjectVisual } from "@/components/project-visuals/project-visual"
 import { buttonVariants } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { ArrowLeft, ExternalLink, Play } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
 import {
@@ -42,7 +44,7 @@ function ArtifactPreview({ id }: { id: string }) {
 }
 
 type Props = {
-  params: Promise<{ slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -52,7 +54,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = (await params).slug
+  const { slug, locale } = await params
+  const projects = getProjects(locale)
   const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
@@ -79,7 +82,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const slug = (await params).slug
+  const { slug, locale } = await params
+  const projects = getProjects(locale)
+  const profile = getProfile(locale)
+  const t = await getTranslations("ProjectDetail")
+
   const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
@@ -88,7 +95,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <SiteHeader />
+      <SiteHeader profile={profile} />
       <main className="flex-1 pt-12 pb-24 md:pt-16 md:pb-32">
         <SectionContainer>
           {/* Back link */}
@@ -98,7 +105,7 @@ export default async function ProjectPage({ params }: Props) {
               className="text-muted-foreground hover:text-foreground inline-flex items-center text-sm font-medium transition-colors"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Selected Work
+              {t("BackToWork")}
             </Link>
           </div>
 
@@ -208,7 +215,7 @@ export default async function ProjectPage({ params }: Props) {
               {project.video && (
                 <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    Live Demo
+                    {t("LiveDemo")}
                   </h2>
                   <div className="border-border/50 bg-muted/30 overflow-hidden rounded-xl border shadow-2xl">
                     <video
@@ -277,7 +284,7 @@ export default async function ProjectPage({ params }: Props) {
               {/* Key Highlights (from top level) */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-semibold tracking-tight">
-                  Key Highlights
+                  {t("KeyHighlights")}
                 </h2>
                 <ul className="text-muted-foreground space-y-2 text-lg">
                   {project.highlights.map((item, idx) => (
@@ -337,7 +344,7 @@ export default async function ProjectPage({ params }: Props) {
               {/* Tech Stack */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-semibold tracking-tight">
-                  Tech Stack
+                  {t("TechStack")}
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {project.detail.techStack.map((tech) => (
@@ -364,7 +371,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </SectionContainer>
       </main>
-      <SiteFooter />
+      <SiteFooter profile={profile} />
     </>
   )
 }

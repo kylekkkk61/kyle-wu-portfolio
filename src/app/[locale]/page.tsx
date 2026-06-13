@@ -14,25 +14,36 @@ const SectionDivider = () => (
   </div>
 )
 
-export default function Home() {
+import { getProfile } from "@/data/profile"
+import { getProjects } from "@/data/projects"
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const profile = getProfile(locale)
+  const projectsData = getProjects(locale)
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader profile={profile} />
       <main className="relative flex-1">
         <SiteTrack />
-        <HeroSection />
+        <HeroSection profile={profile} />
         <SectionDivider />
-        <WhatIDoSection />
+        <WhatIDoSection profile={profile} />
         <SectionDivider />
-        <ProjectsSection />
+        <ProjectsSection projects={projectsData} />
         <SectionDivider />
-        <CapabilitiesSection />
+        <CapabilitiesSection profile={profile} />
         <SectionDivider />
-        <AboutSection />
+        <AboutSection profile={profile} />
         <SectionDivider />
         <ContactSection />
       </main>
-      <SiteFooter />
+      <SiteFooter profile={profile} />
     </>
   )
 }

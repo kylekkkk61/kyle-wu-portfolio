@@ -2,7 +2,7 @@ import { links } from "@/data/links"
 import { SectionContainer } from "@/components/layout/section-container"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { ArrowLeft, Download } from "lucide-react"
 import { ResumeViewerWrapper } from "@/components/resume-viewer-wrapper"
 

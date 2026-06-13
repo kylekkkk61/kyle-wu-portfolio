@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { cn, surfaceClass } from "@/lib/utils"
 import { ExternalLink, Play, ArrowRight } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { ProjectVisual } from "./project-visuals/project-visual"
 import { ProjectTechStack } from "./project-tech-stack"
 

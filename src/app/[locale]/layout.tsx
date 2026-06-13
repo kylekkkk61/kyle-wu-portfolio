@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Newsreader } from "next/font/google"
-import "./globals.css"
+import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -60,29 +60,51 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages } from "next-intl/server"
+import { notFound } from "next/navigation"
+import { routing } from "@/i18n/routing"
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode
+  params: Promise<{ locale: string }>
 }>) {
+  const { locale } = await params
+
+  // Ensure that the incoming `locale` is valid
+  if (!(routing.locales as readonly string[]).includes(locale)) {
+    notFound()
+  }
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages()
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} dark h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground relative flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <SiteBackground />
-          <div className="relative flex min-h-screen flex-col">{children}</div>
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <SiteBackground />
+            <div className="relative flex min-h-screen flex-col">
+              {children}
+            </div>
+          </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

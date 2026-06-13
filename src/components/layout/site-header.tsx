@@ -1,14 +1,19 @@
 "use client"
 
 import * as React from "react"
-import { profile } from "@/data/profile"
+import type { Profile } from "@/data/profile"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Link, usePathname, useRouter } from "@/i18n/routing"
+import { Menu, X, Globe } from "lucide-react"
+import { useTranslations, useLocale } from "next-intl"
 
-export function SiteHeader() {
+export function SiteHeader({ profile }: { profile: Profile }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const t = useTranslations("Navigation")
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
 
   // Prevent scrolling when mobile menu is open
   React.useEffect(() => {
@@ -23,10 +28,16 @@ export function SiteHeader() {
   }, [isMobileMenuOpen])
 
   const navLinks = [
-    { href: "/#work", label: "Work" },
-    { href: "/#capabilities", label: "Capabilities" },
-    { href: "/#about", label: "About" },
+    { href: "/#work", label: t("Work") },
+    { href: "/#capabilities", label: t("Capabilities") },
+    { href: "/#about", label: t("About") },
   ]
+
+  const toggleLanguage = () => {
+    const nextLocale = locale === "en" ? "zh-TW" : "en"
+    // Since Next-Intl uses [locale] dynamic segment, router.replace handles it natively
+    router.replace(pathname, { locale: nextLocale })
+  }
 
   return (
     <header className="bg-background sticky top-0 z-50 w-full">
@@ -38,12 +49,14 @@ export function SiteHeader() {
             onClick={(e) => {
               setIsMobileMenuOpen(false)
               if (
-                typeof window !== "undefined" &&
-                window.location.pathname === "/"
+                (typeof window !== "undefined" &&
+                  window.location.pathname === "/") ||
+                window.location.pathname === `/${locale}`
               ) {
+                // Next-intl link handles prefix, but smooth scroll custom logic
                 e.preventDefault()
                 window.scrollTo({ top: 0, behavior: "smooth" })
-                window.history.pushState(null, "", "/")
+                window.history.pushState(null, "", `/${locale}`)
               }
             }}
           >
@@ -66,13 +79,27 @@ export function SiteHeader() {
 
         {/* Desktop & Mobile Actions */}
         <div className="relative z-50 flex items-center gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm font-medium transition-colors"
+          >
+            <Globe size={16} />
+            <span className="hidden sm:inline">
+              {locale === "en" ? "中文" : "EN"}
+            </span>
+          </button>
+
           <Link
             href="/#contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className={cn(buttonVariants({ variant: "outline" }))}
+            className={cn(
+              buttonVariants({ variant: "outline" }),
+              "hidden sm:inline-flex",
+            )}
           >
-            Contact
+            {t("Contact")}
           </Link>
+
           <button
             className="text-muted-foreground hover:text-foreground -mr-2 p-2 transition-colors md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,6 +124,13 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/#contact"
+              className="text-foreground text-lg font-medium transition-colors hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {t("Contact")}
+            </Link>
           </nav>
         </div>
       )}

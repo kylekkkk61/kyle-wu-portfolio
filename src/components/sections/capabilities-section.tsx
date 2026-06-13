@@ -1,18 +1,20 @@
 import { FadeIn } from "@/components/ui/fade-in"
 import * as React from "react"
-import { profile } from "@/data/profile"
+import type { Profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
+import { useTranslations } from "next-intl"
 
-export function CapabilitiesSection() {
+export function CapabilitiesSection({ profile }: { profile: Profile }) {
+  const t = useTranslations("Sections")
+
   return (
     <SectionContainer id="capabilities" variant="teal">
       <div className="relative z-10 mb-12 md:mb-16">
         <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-          Capabilities
+          {t("Capabilities")}
         </h2>
         <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
-          The technical and domain-specific skills I use to build systems and
-          conduct research.
+          {t("CapabilitiesDesc")}
         </p>
       </div>
 

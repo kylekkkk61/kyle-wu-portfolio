@@ -1,10 +1,13 @@
 import * as React from "react"
-import { projects } from "@/data/projects"
+import type { Project } from "@/data/projects"
 import { SectionContainer } from "@/components/layout/section-container"
 import { ProjectCard } from "@/components/project-card"
 import { FadeIn } from "@/components/ui/fade-in"
+import { useTranslations } from "next-intl"
 
-export function ProjectsSection() {
+export function ProjectsSection({ projects }: { projects: Project[] }) {
+  const t = useTranslations("Sections")
+
   return (
     <SectionContainer id="work" variant="transparent">
       {/* Subtle Dot Matrix inside the color block */}
@@ -23,12 +26,10 @@ export function ProjectsSection() {
 
       <div className="relative z-10 mb-16 md:mb-24">
         <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-          Selected Work
+          {t("SelectedWork")}
         </h2>
         <p className="text-muted-foreground mt-4 max-w-[65ch] text-lg">
-          Public projects that show how I translate trading workflows, market
-          questions, and data problems into practical systems and research
-          artifacts.
+          {t("SelectedWorkDesc")}
         </p>
       </div>
 
