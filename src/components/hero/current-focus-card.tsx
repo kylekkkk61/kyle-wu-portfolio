@@ -13,8 +13,10 @@ import {
   LineChart,
   Network,
 } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function CurrentFocusCard() {
+  const t = useTranslations("CurrentFocus")
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -51,11 +53,11 @@ export function CurrentFocusCard() {
           <div className="flex items-center gap-2">
             <span className="bg-primary/80 flex h-2 w-2 rounded-full" />
             <span className="text-primary font-mono text-[10px] font-medium tracking-widest uppercase">
-              Current Focus
+              {t("CurrentFocus")}
             </span>
           </div>
           <h3 className="text-xl font-semibold tracking-tight">
-            Building & Learning
+            {t("BuildingAndLearning")}
           </h3>
         </div>
 
@@ -67,10 +69,10 @@ export function CurrentFocusCard() {
             </div>
             <div>
               <p className="text-foreground text-sm font-medium">
-                MSc Financial Technology
+                {t("Education")}
               </p>
               <p className="text-muted-foreground text-sm">
-                Warwick Business School (Incoming)
+                {t("School")}
               </p>
             </div>
           </div>
@@ -82,27 +84,27 @@ export function CurrentFocusCard() {
             </div>
             <div className="w-full space-y-2">
               <p className="text-foreground text-sm font-medium">
-                Career Interests
+                {t("CareerInterests")}
               </p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
-                    FinTech Product & Strategy
+                    {t("FinTechProduct")}
                   </span>
                 </div>
                 <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
-                    Trading / Market Operations
+                    {t("TradingOps")}
                   </span>
                 </div>
                 <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
-                    Data & Business Analysis
+                    {t("DataAnalysis")}
                   </span>
                 </div>
                 <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
-                    Market Infrastructure
+                    {t("MarketInfra")}
                   </span>
                 </div>
               </div>
@@ -115,23 +117,23 @@ export function CurrentFocusCard() {
               <Target className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="space-y-2">
-              <p className="text-foreground text-sm font-medium">Focus Areas</p>
+              <p className="text-foreground text-sm font-medium">{t("FocusAreas")}</p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Network className="h-3 w-3" />
-                  Trading Infra
+                  {t("TradingInfra")}
                 </span>
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <LineChart className="h-3 w-3" />
-                  Data Analysis
+                  {t("DataAnalysisSkill")}
                 </span>
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <GitBranch className="h-3 w-3" />
-                  Market Microstructure
+                  {t("MarketMicrostructure")}
                 </span>
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Terminal className="h-3 w-3" />
-                  Business-to-System
+                  {t("BusinessToSystem")}
                 </span>
               </div>
             </div>

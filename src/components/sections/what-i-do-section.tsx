@@ -1,9 +1,9 @@
 import * as React from "react"
-import { profile } from "@/data/profile"
+import type { Profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
 import { FadeIn } from "@/components/ui/fade-in"
 
-export function WhatIDoSection() {
+export function WhatIDoSection({ profile }: { profile: Profile }) {
   return (
     <SectionContainer id="what-i-do" className="py-20 md:py-32">
       <div className="mx-auto max-w-3xl space-y-12 text-center md:text-left">

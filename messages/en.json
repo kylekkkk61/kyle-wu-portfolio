@@ -1,0 +1,52 @@
+{
+  "Navigation": {
+    "Work": "Work",
+    "Capabilities": "Capabilities",
+    "About": "About",
+    "Contact": "Contact"
+  },
+  "Hero": {
+    "PersonalPortfolio": "Personal Portfolio",
+    "ViewWork": "View Work",
+    "Contact": "Contact"
+  },
+  "Contact": {
+    "LetsTalk": "Let's Talk",
+    "Description": "Open to conversations around fintech projects, crypto trading infrastructure, data-driven product work, market-structure research, and business-to-system implementation."
+  },
+  "ProjectDetail": {
+    "BackToWork": "Back to Selected Work",
+    "LiveDemo": "Live Demo",
+    "KeyHighlights": "Key Highlights",
+    "TechStack": "Tech Stack"
+  },
+  "Footer": {
+    "BuiltWith": "Built with",
+    "And": "and",
+    "AllRightsReserved": "All rights reserved."
+  },
+  "Sections": {
+    "SelectedWork": "Selected Work",
+    "SelectedWorkDesc": "Public projects that show how I translate trading workflows, market questions, and data problems into practical systems and research artifacts.",
+    "Capabilities": "Capabilities",
+    "CapabilitiesDesc": "The technical and domain-specific skills I use to build systems and conduct research.",
+    "Background": "Background",
+    "SeeMyResume": "See my resume"
+  },
+  "CurrentFocus": {
+    "CurrentFocus": "Current Focus",
+    "BuildingAndLearning": "Building & Learning",
+    "Education": "MSc Financial Technology",
+    "School": "Warwick Business School (Incoming)",
+    "CareerInterests": "Career Interests",
+    "FinTechProduct": "FinTech Product & Strategy",
+    "TradingOps": "Trading / Market Operations",
+    "DataAnalysis": "Data & Business Analysis",
+    "MarketInfra": "Market Infrastructure",
+    "FocusAreas": "Focus Areas",
+    "TradingInfra": "Trading Infra",
+    "DataAnalysisSkill": "Data Analysis",
+    "MarketMicrostructure": "Market Microstructure",
+    "BusinessToSystem": "Business-to-System"
+  }
+}

@@ -8,9 +8,11 @@ import { cn, surfaceClass } from "@/lib/utils"
 import { ArrowUpRight, Check } from "lucide-react"
 import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
 import { FadeIn } from "@/components/ui/fade-in"
+import { useTranslations } from "next-intl"
 
 export function ContactSection() {
   const [copied, setCopied] = React.useState(false)
+  const t = useTranslations("Contact")
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -31,12 +33,10 @@ export function ContactSection() {
       >
         <div className="relative z-10 space-y-4">
           <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Let&apos;s Talk
+            {t("LetsTalk")}
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
-            Open to conversations around fintech projects, crypto trading
-            infrastructure, data-driven product work, market-structure research,
-            and business-to-system implementation.
+            {t("Description")}
           </p>
         </div>
 

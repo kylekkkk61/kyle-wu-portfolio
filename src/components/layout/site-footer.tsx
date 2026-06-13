@@ -1,16 +1,18 @@
 import { links } from "@/data/links"
-import { profile } from "@/data/profile"
+import type { Profile } from "@/data/profile"
 import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
 import { SiGithub } from "@icons-pack/react-simple-icons"
+import { useTranslations } from "next-intl"
 
-export function SiteFooter() {
+export function SiteFooter({ profile }: { profile: Profile }) {
+  const t = useTranslations("Footer")
   return (
     <footer className="bg-background border-border/40 text-muted-foreground relative z-50 border-t py-8 text-sm">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start">
           <div className="max-w-md text-center md:text-left">
             <p>
-              © {new Date().getFullYear()} {profile.name}. All rights reserved.
+              © {new Date().getFullYear()} {profile.name}. {t("AllRightsReserved")}
             </p>
           </div>
           <div className="flex items-center gap-4">
