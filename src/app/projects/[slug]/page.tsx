@@ -170,6 +170,40 @@ export default async function ProjectPage({ params }: Props) {
 
             {/* Content Sections */}
             <div className="mx-auto mt-16 max-w-3xl space-y-16">
+              {/* Community Context */}
+              {project.detail.communityContext && (
+                <section className="bg-primary/5 border-primary/10 space-y-4 rounded-xl border p-6">
+                  <h2 className="text-primary text-2xl font-semibold tracking-tight">
+                    {project.detail.communityContext.title}
+                  </h2>
+                  <div className="text-muted-foreground space-y-4 text-lg leading-relaxed">
+                    {project.detail.communityContext.paragraphs.map(
+                      (p, idx) => (
+                        <p key={idx}>{p}</p>
+                      ),
+                    )}
+                  </div>
+                  {project.detail.communityContext.links && (
+                    <div className="mt-6 flex flex-wrap gap-4">
+                      {project.detail.communityContext.links.map(
+                        (link, idx) => (
+                          <a
+                            key={idx}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-primary hover:text-primary/80 inline-flex items-center text-base font-medium transition-colors"
+                          >
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            {link.label}
+                          </a>
+                        ),
+                      )}
+                    </div>
+                  )}
+                </section>
+              )}
+
               {/* Video Demo */}
               {project.video && (
                 <section className="space-y-4">
