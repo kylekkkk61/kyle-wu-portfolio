@@ -52,7 +52,7 @@ export async function generateStaticParams() {
     projects.map((p) => ({
       locale,
       slug: p.slug,
-    }))
+    })),
   )
 }
 
