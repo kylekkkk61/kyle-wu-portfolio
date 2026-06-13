@@ -31,6 +31,11 @@ export type ProjectDetail = {
     title: string
     body: string
   }
+  communityContext?: {
+    title: string
+    paragraphs: string[]
+    links?: { label: string; href: string }[]
+  }
   context: ProjectSection
   whatIBuilt: ProjectSection
   process: ProjectSection
@@ -110,6 +115,20 @@ export const projects: Project[] = [
       whyItMatters: {
         title: "Why It Matters",
         body: "This project shows how trading-community workflows can be converted into safer, auditable, confirmation-first execution systems.",
+      },
+      communityContext: {
+        title: "Community Context",
+        paragraphs: [
+          "Kaiyn Trading Bot came from a real operating problem inside Kaiyn Capital, a crypto trading community that I founded and have operated for around three years.",
+          "In a Telegram-based trading community, market commentary, trading signals, chart updates, and risk discussions often move quickly. That speed is useful, but it also creates friction: users need to interpret signals, manage risk, confirm order details, and avoid execution mistakes under time pressure.",
+          "This project was built to make that workflow more structured. Instead of treating trading signals as plain text messages, the bot turns them into a confirmation-first execution process with validation, fixed-risk sizing, and clearer audit records.",
+        ],
+        links: [
+          {
+            label: "Kaiyn Capital Telegram",
+            href: "https://t.me/kaiyncapital",
+          },
+        ],
       },
       context: {
         title: "Context",
