@@ -4,6 +4,9 @@ import { SectionContainer } from "@/components/layout/section-container"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CurrentFocusCard } from "@/components/hero/current-focus-card"
+import { SiGithub, SiTelegram } from "@icons-pack/react-simple-icons"
+import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
+import { links } from "@/data/links"
 
 export function HeroSection() {
   return (
@@ -53,6 +56,47 @@ export function HeroSection() {
               )}
             >
               Contact
+            </a>
+          </div>
+
+          {/* Social Icons */}
+          <div
+            className="animate-fade-up flex items-center gap-5 pt-8 sm:pt-6"
+            style={{ animationDelay: "300ms" }}
+          >
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              aria-label="GitHub"
+            >
+              <SiGithub className="h-6 w-6" />
+            </a>
+            <a
+              href={links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              aria-label="LinkedIn"
+            >
+              <IconBrandLinkedinFilled className="h-6 w-6" />
+            </a>
+            <a
+              href={links.email}
+              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              aria-label="Email"
+            >
+              <IconMailFilled className="h-6 w-6" />
+            </a>
+            <a
+              href={links.telegram}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              aria-label="Telegram"
+            >
+              <SiTelegram className="h-6 w-6" />
             </a>
           </div>
         </div>
