@@ -5,13 +5,20 @@ import { cn } from "@/lib/utils"
 import { Link } from "@/i18n/routing"
 import { ArrowLeft, Download } from "lucide-react"
 import { ResumeViewerWrapper } from "@/components/resume-viewer-wrapper"
+import { setRequestLocale } from "next-intl/server"
 
 export const metadata = {
   title: "Resume",
   description: "Kyle Wu's Professional Resume and Curriculum Vitae",
 }
 
-export default function ResumePage() {
+export default async function ResumePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return (
     <div className="bg-background min-h-screen pt-24 pb-20">
       <SectionContainer>
