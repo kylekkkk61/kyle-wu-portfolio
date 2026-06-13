@@ -71,9 +71,7 @@ export function CurrentFocusCard() {
               <p className="text-foreground text-sm font-medium">
                 {t("Education")}
               </p>
-              <p className="text-muted-foreground text-sm">
-                {t("School")}
-              </p>
+              <p className="text-muted-foreground text-sm">{t("School")}</p>
             </div>
           </div>
 
@@ -117,7 +115,9 @@ export function CurrentFocusCard() {
               <Target className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="space-y-2">
-              <p className="text-foreground text-sm font-medium">{t("FocusAreas")}</p>
+              <p className="text-foreground text-sm font-medium">
+                {t("FocusAreas")}
+              </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Network className="h-3 w-3" />

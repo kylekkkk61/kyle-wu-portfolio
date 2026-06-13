@@ -2,14 +2,14 @@ export type ProjectLink = {
   label: string
   href: string
   type:
-  | "github"
-  | "demo"
-  | "dashboard"
-  | "case-study"
-  | "external"
-  | "landing-page"
-  | "video"
-  | "internal"
+    | "github"
+    | "demo"
+    | "dashboard"
+    | "case-study"
+    | "external"
+    | "landing-page"
+    | "video"
+    | "internal"
 }
 
 export type ProjectVisualType = "kaiyn-workflow" | "pm-lab-research" | "default"
