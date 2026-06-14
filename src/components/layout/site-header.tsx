@@ -37,7 +37,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
     const nextLocale = locale === "en" ? "zh-TW" : "en"
     const hash = typeof window !== "undefined" ? window.location.hash : ""
     // Append hash to pathname so next-intl router routes to the translated anchor
-    router.replace(pathname + hash, { locale: nextLocale })
+    router.replace(pathname + hash, { locale: nextLocale, scroll: false })
   }
 
   return (
