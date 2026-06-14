@@ -98,7 +98,7 @@ const projectsEn: Project[] = [
     links: [
       {
         label: "Landing Page",
-        href: "https://kaiyn.kylekkkk.com/",
+        href: "https://kaiyn.kylewu.me/",
         type: "landing-page",
       },
       {
@@ -109,8 +109,8 @@ const projectsEn: Project[] = [
     ],
     featured: true,
     order: 1,
-    video: "https://cv.kylekkkk.com/kaiyn-demo.mp4",
-    videoPoster: "https://cv.kylekkkk.com/kaiyn-demo-poster.webp",
+    video: "https://cv.kylewu.me/kaiyn-demo.mp4",
+    videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
       whyItMatters: {
         title: "Why It Matters",
@@ -222,7 +222,7 @@ const projectsEn: Project[] = [
     links: [
       {
         label: "Portfolio Page",
-        href: "https://pm-lab.kylekkkk.com/",
+        href: "https://pm-lab.kylewu.me/",
         type: "case-study",
       },
       {
@@ -330,7 +330,7 @@ const projectsZh: Project[] = [
     links: [
       {
         label: "專案首頁",
-        href: "https://kaiyn.kylekkkk.com/",
+        href: "https://kaiyn.kylewu.me/",
         type: "landing-page",
       },
       {
@@ -341,8 +341,8 @@ const projectsZh: Project[] = [
     ],
     featured: true,
     order: 1,
-    video: "https://cv.kylekkkk.com/kaiyn-demo.mp4",
-    videoPoster: "https://cv.kylekkkk.com/kaiyn-demo-poster.webp",
+    video: "https://cv.kylewu.me/kaiyn-demo.mp4",
+    videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
       whyItMatters: {
         title: "專案價值",
@@ -453,7 +453,7 @@ const projectsZh: Project[] = [
     links: [
       {
         label: "研究作品頁面",
-        href: "https://pm-lab.kylekkkk.com/",
+        href: "https://pm-lab.kylewu.me/",
         type: "case-study",
       },
       {
