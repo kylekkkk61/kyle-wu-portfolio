@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://kylekkkk.com/sitemap.xml",
+    sitemap: "https://kylewu.me/sitemap.xml",
   }
 }

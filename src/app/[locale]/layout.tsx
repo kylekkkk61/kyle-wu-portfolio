@@ -23,7 +23,7 @@ const newsreader = Newsreader({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.kylekkkk.com"),
+  metadataBase: new URL("https://kylewu.me"),
   title: {
     default: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     template: "%s | Kyle Wu",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     description:
       "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
-    url: "https://www.kylekkkk.com",
+    url: "https://kylewu.me",
     siteName: "Kyle Wu Portfolio",
     locale: "en_US",
     type: "website",
