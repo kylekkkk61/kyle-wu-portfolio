@@ -22,42 +22,50 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
 })
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://kylewu.me"),
-  title: {
-    default: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
-    template: "%s | Kyle Wu",
-  },
-  description:
-    "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
-  openGraph: {
-    title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
-    description:
-      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
-    url: "https://kylewu.me",
-    siteName: "Kyle Wu Portfolio",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/og/portfolio-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Kyle Wu Portfolio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
-    description:
-      "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
-    images: ["/og/portfolio-og.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+import { getTranslations } from "next-intl/server"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Metadata" })
+
+  return {
+    metadataBase: new URL("https://kylewu.me"),
+    title: {
+      default: t("title"),
+      template: `%s | ${t("titleShort")}`,
+    },
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: "https://kylewu.me",
+      siteName: t("titleShort"),
+      locale: locale === "zh-TW" ? "zh_TW" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/og/portfolio-og.png",
+          width: 1200,
+          height: 630,
+          alt: t("titleShort"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og/portfolio-og.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
 }
 
 import { NextIntlClientProvider } from "next-intl"
