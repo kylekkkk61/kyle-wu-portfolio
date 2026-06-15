@@ -48,5 +48,12 @@
     "DataAnalysisSkill": "數據分析",
     "MarketMicrostructure": "市場微結構",
     "BusinessToSystem": "商業邏輯落地"
+  },
+  "Metadata": {
+    "title": "Kyle Wu — FinTech 系統建置與加密貨幣市場應用研究",
+    "titleShort": "Kyle Wu",
+    "description": "Kyle Wu 的個人作品集，專注於金融科技系統實作、加密貨幣交易工作流、數據驅動的市場研究與商業邏輯落地。",
+    "resumeTitle": "個人履歷 | Kyle Wu",
+    "resumeDescription": "Kyle Wu 的專業履歷與背景資料"
   }
 }

@@ -73,7 +73,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: project.title,
       description: project.shortDescription || project.description,
-      images: [{ url: "/og/portfolio-og.png" }],
+      locale: locale === "zh-TW" ? "zh_TW" : "en_US",
+      type: "article",
+      images: [
+        {
+          url: "/og/portfolio-og.png",
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

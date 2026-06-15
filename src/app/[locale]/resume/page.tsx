@@ -7,9 +7,20 @@ import { ArrowLeft, Download } from "lucide-react"
 import { ResumeViewerWrapper } from "@/components/resume-viewer-wrapper"
 import { setRequestLocale } from "next-intl/server"
 
-export const metadata = {
-  title: "Resume",
-  description: "Kyle Wu's Professional Resume and Curriculum Vitae",
+import { getTranslations } from "next-intl/server"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Metadata" })
+
+  return {
+    title: t("resumeTitle"),
+    description: t("resumeDescription"),
+  }
 }
 
 export default async function ResumePage({

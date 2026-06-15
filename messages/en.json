@@ -48,5 +48,12 @@
     "DataAnalysisSkill": "Data Analysis",
     "MarketMicrostructure": "Market Microstructure",
     "BusinessToSystem": "Business-to-System"
+  },
+  "Metadata": {
+    "title": "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
+    "titleShort": "Kyle Wu",
+    "description": "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
+    "resumeTitle": "Resume | Kyle Wu",
+    "resumeDescription": "Kyle Wu's Professional Resume and Curriculum Vitae"
   }
 }
