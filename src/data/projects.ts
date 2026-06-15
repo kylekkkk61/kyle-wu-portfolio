@@ -306,11 +306,11 @@ const projectsZh: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
-    subtitle: "專為加密貨幣社群設計的交易訊號執行系統",
+    subtitle: "專為加密貨幣社群打造的交易訊號執行工作流",
     shortDescription:
-      "一個基於 Telegram 的執行工作流，將社群交易訊號轉化為結構化、需確認優先的下單流程。",
+      "一個基於 Telegram 的執行工作流，將社群交易訊號轉化為結構化且「確認優先」的下單流程。",
     description:
-      "專為加密貨幣交易社群設計的 Telegram 執行工作流。系統強調「確認優先 (Confirmation-first)」的訂單流程、固定風險部位控管 (Fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核紀錄，以及 Docker 優先的部署架構。",
+      "專為加密貨幣交易社群設計的 Telegram 執行工作流。系統強調「確認優先 (Confirmation-first)」的訂單流程、固定風險部位控管 (Fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核軌跡，以及 Docker 優先的部署架構。",
     category: "交易基礎設施",
     status: "開源 GitHub 專案",
     year: "2026",
@@ -322,7 +322,7 @@ const projectsZh: Project[] = [
     ],
     tags: ["Python", "PostgreSQL", "Docker", "Telegram", "Exchange API"],
     highlights: [
-      "將 Telegram 上的交易訊號無縫轉換為結構化執行工作流。",
+      "將 Telegram 上的交易訊號無縫轉換為結構化的執行工作流。",
       "採用確認優先的執行機制與固定 1R 風險部位控管。",
       "內建加密 API 憑證儲存、稽核軌跡、資料庫備份與 CI 檢查流程。",
       "設計理念為生產級的營運工具，而非標榜獲利的自動交易機器人。",
@@ -352,8 +352,8 @@ const projectsZh: Project[] = [
         title: "社群背景與痛點",
         paragraphs: [
           "Kaiyn Trading Bot 源自我創立並營運近三年的加密貨幣交易社群 Kaiyn Capital 內部的實際營運問題。",
-          "在以 Telegram 為主的交易社群中，市場評論、交易訊號、圖表更新和風險討論的流動速度非常快。這種即時性很有用，但也帶來了摩擦：用戶必須在時間壓力下解讀訊號、管理風險、確認訂單細節，並盡可能避免執行錯誤。",
-          "建立這個專案是為了讓該工作流更加結構化。我們不再將交易訊號視為純文字訊息，而是透過機器人將其轉化為具備驗證、固定風險部位控制與清晰稽核紀錄的「確認優先」執行流程。",
+          "在以 Telegram 為主的交易社群中，市場新聞、行情討論、交易訊號和圖表更新的速度非常快。這種即時性對交易來說很有用，但也帶來了一定程度的操作摩擦：用戶必須在短時間內解讀訊號、計算與管理風險與下單，在多個應用程式內切換的過程，總是難以避免的出現執行錯誤。",
+          "建立這個專案是為了讓此工作流更加結構化。我們不再將交易訊號視為純文字訊息，而是透過機器人將其轉化為具備驗證、固定風險部位控制與清晰稽核紀錄的一站式執行流程。",
         ],
         links: [
           {
@@ -429,11 +429,11 @@ const projectsZh: Project[] = [
   {
     slug: "prediction-market-execution-lab",
     title: "Prediction Market Execution Lab",
-    subtitle: "在 Polymarket BTC 短期預測市場中測試可執行優勢",
+    subtitle: "在 Polymarket 短期預測市場中驗證「可執行優勢」",
     shortDescription:
       "一個公開的研究項目，旨在測試短期的預測市場定價優勢是否能在真實的執行摩擦中存活。",
     description:
-      "這是一個公開的金融科技與市場微觀結構研究項目，主要研究短期預測市場中看似存在的「定價優勢 (Pricing edge)」，是否能在滑價、成交機率、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
+      "這是一個公開的金融科技與市場微結構研究項目，主要探討短期預測市場中看似存在的「定價優勢 (Pricing edge)」，是否能在滑價、成交機率、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
     category: "市場微觀結構研究",
     status: "公開 GitHub 研究報告",
     year: "2026",
@@ -441,14 +441,14 @@ const projectsZh: Project[] = [
     capabilities: [
       "執行品質分析",
       "機率校準 (Probability calibration)",
-      "安全公開的研究儀表板",
+      "完成數據清洗的公開研究儀表板",
     ],
     tags: ["Python", "Streamlit", "Polymarket", "Research", "Data Analysis"],
     highlights: [
       "嚴格區分「理論定價優勢」與實際的「可執行優勢」。",
-      "包含安全公開的樣本數據、研究報告、Notebooks 以及即時互動的儀表板。",
+      "提供安全公開的樣本數據、研究報告、Notebooks 以及即時互動儀表板。",
       "深入分析執行漏斗 (Execution funnel)、機率校準、機器學習過濾與風險模擬。",
-      "明確避免不實的獲利宣稱與隱私執行資料的暴露。",
+      "明確避免不實的獲利宣稱與暴露敏感的真實交易執行資料。",
     ],
     links: [
       {
@@ -480,7 +480,7 @@ const projectsZh: Project[] = [
       },
       whatIBuilt: {
         title: "解決方案",
-        body: "我建立了一個包含樣本數據、Notebooks、分析報告、儀表板、執行診斷、校準分析、機器學習過濾與風險模擬的公開研究實驗室。",
+        body: "我建立了一個包含樣本數據、Notebooks、分析報告、儀表板、執行診斷、校準分析、機器學習過濾與風險模報告。",
       },
       process: {
         title: "研究工作流程",
