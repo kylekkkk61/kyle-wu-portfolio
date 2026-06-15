@@ -30,14 +30,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Check formatting
-        run: pnpm prettier --check .
-
-      - name: Run ESLint
-        run: pnpm lint
-
-      - name: Run Typecheck
-        run: pnpm typecheck
-
-      - name: Build project
-        run: pnpm build
+      - name: Validate project
+        run: pnpm run validate:ci
