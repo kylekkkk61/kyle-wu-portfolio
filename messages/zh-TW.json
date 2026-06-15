@@ -7,46 +7,46 @@
   },
   "Hero": {
     "PersonalPortfolio": "個人作品集",
-    "ViewWork": "查看專案",
-    "Contact": "聯絡我"
+    "ViewWork": "瀏覽專案",
+    "Contact": "與我聯絡"
   },
   "Contact": {
-    "LetsTalk": "歡迎聯絡",
-    "Description": "歡迎針對金融科技專案、加密貨幣交易基礎建設、數據驅動產品、市場結構研究及商業系統實作進行交流。"
+    "LetsTalk": "歡迎交流",
+    "Description": "對金融科技專案、加密貨幣交易基建、數據驅動產品、市場微結構研究，以及商業邏輯的系統落地有任何想法嗎？歡迎隨時與我聊聊！"
   },
   "ProjectDetail": {
     "BackToWork": "返回專案列表",
-    "LiveDemo": "操作展示",
+    "LiveDemo": "線上 Demo",
     "KeyHighlights": "專案亮點",
-    "TechStack": "技術棧"
+    "TechStack": "技術堆疊"
   },
   "Footer": {
-    "BuiltWith": "基於",
-    "And": "與",
+    "BuiltWith": "Powered by",
+    "And": "&",
     "AllRightsReserved": "版權所有"
   },
   "Sections": {
     "SelectedWork": "精選專案",
-    "SelectedWorkDesc": "這些公開專案展示了我如何將交易工作流、市場問題與數據挑戰轉化為實際系統與研究成果。",
-    "Capabilities": "專業能力",
-    "CapabilitiesDesc": "我用於建構系統與進行交易所涉及的技術及領域專業技能。",
+    "SelectedWorkDesc": "以下公開專案展現了我如何拆解複雜的交易工作流與市場問題，並將數據挑戰轉化為具體的系統實作與研究產出。",
+    "Capabilities": "核心能力",
+    "CapabilitiesDesc": "我在建構系統與進行深度研究時，所運用的核心技術與領域專業知識。",
     "Background": "個人背景",
-    "SeeMyResume": "查看我的履歷"
+    "SeeMyResume": "查看完整履歷"
   },
   "CurrentFocus": {
-    "CurrentFocus": "目前專注領域",
-    "BuildingAndLearning": "建設與學習",
-    "Education": "金融科技碩士",
+    "CurrentFocus": "目前狀態",
+    "BuildingAndLearning": "持續精進與實作",
+    "Education": "金融科技碩士 (MSc Financial Technology)",
     "School": "華威商學院 (即將入學)",
-    "CareerInterests": "職涯興趣",
+    "CareerInterests": "職涯發展方向",
     "FinTechProduct": "金融科技產品與策略",
     "TradingOps": "交易與市場營運",
     "DataAnalysis": "數據與商業分析",
     "MarketInfra": "市場基礎設施",
-    "FocusAreas": "關注領域",
+    "FocusAreas": "專注領域",
     "TradingInfra": "交易基建",
     "DataAnalysisSkill": "數據分析",
-    "MarketMicrostructure": "市場微觀結構",
-    "BusinessToSystem": "業務到系統"
+    "MarketMicrostructure": "市場微結構",
+    "BusinessToSystem": "商業邏輯落地"
   }
 }
