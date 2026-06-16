@@ -32,6 +32,7 @@ export function AboutSection({ profile }: { profile: Profile }) {
               <div className="pt-6">
                 <Link
                   href={links.resume}
+                  prefetch={false}
                   className="group inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/[0.04] px-6 py-3 text-base font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10"
                 >
                   {t("SeeMyResume")}
