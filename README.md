@@ -4,19 +4,14 @@
 
 **FinTech Builder & Applied Crypto Market Research**
 
-[![CI](https://img.shields.io/github/actions/workflow/status/kylekkkk61/kyle-wu-portfolio/ci.yml?branch=main&style=for-the-badge)](https://github.com/kylekkkk61/kyle-wu-portfolio/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-24-339933?style=for-the-badge&logo=node.js&logoColor=white)](./.nvmrc)
-[![pnpm](https://img.shields.io/badge/pnpm-11.6.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](./package.json)
-
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.9-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.7-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Biome](https://img.shields.io/badge/Biome-2.5.0-F8B334?style=for-the-badge&logo=biome&logoColor=white)](https://biomejs.dev/)
+
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
-[![next-intl](https://img.shields.io/badge/next--intl-4-3A86FF?style=for-the-badge)](https://next-intl.dev/)
-[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)](./.github/dependabot.yml)
+[![pnpm](https://img.shields.io/badge/pnpm-11.6.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](./package.json)
 
 <p align="center">
 A modern personal portfolio showcasing fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.
