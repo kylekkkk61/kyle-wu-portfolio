@@ -4,17 +4,27 @@
 
 **FinTech Builder & Applied Crypto Market Research**
 
+[![CI](https://img.shields.io/github/actions/workflow/status/kylekkkk61/kyle-wu-portfolio/ci.yml?branch=main&style=for-the-badge)](https://github.com/kylekkkk61/kyle-wu-portfolio/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-24-339933?style=for-the-badge&logo=node.js&logoColor=white)](./.nvmrc)
+[![pnpm](https://img.shields.io/badge/pnpm-11.6.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](./package.json)
+
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.9-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/React-19.2.7-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Biome](https://img.shields.io/badge/Biome-2.5.0-F8B334?style=for-the-badge&logo=biome&logoColor=white)](https://biomejs.dev/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
-[![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![next-intl](https://img.shields.io/badge/next--intl-4-3A86FF?style=for-the-badge)](https://next-intl.dev/)
+[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)](./.github/dependabot.yml)
 
+<p align="center">
 A modern personal portfolio showcasing fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.
+</p>
 
-[Live Site](https://kylewu.me)
+<p align="center">
+  <a href="https://kylewu.me">Live Site</a>
+</p>
 
 </div>
 
@@ -25,12 +35,15 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 | Area                  | Choice                                       |
 | :-------------------- | :------------------------------------------- |
 | **Runtime / Core**    | `Node.js 24` + `Next.js 16.2.9 (App Router)` |
-| **Language**          | `TypeScript 5.9.3`                           |
-| **UI & Styling**      | `React 19.2.4` + `Tailwind CSS 4.3`          |
+| **Language**          | `TypeScript 6.0.3` (strict)                  |
+| **UI & Styling**      | `React 19.2.7` + `Tailwind CSS 4.3.1`        |
 | **Component Library** | `shadcn/ui` + `motion/react`                 |
-| **Package Manager**   | `pnpm 9.15.9`                                |
+| **i18n**              | `next-intl` (`en` / `zh-TW`)                 |
+| **Package Manager**   | `pnpm 11.6.0` (Corepack pinned)              |
 | **Lint / Format**     | `Biome 2.5.0` (integrated Rust toolchain)    |
-| **Deployment & CI**   | Vercel + GitHub Actions                      |
+| **CI**                | GitHub Actions (parallel lint / typecheck / test / build) |
+| **Automation**        | Dependabot (weekly, npm + github-actions)    |
+| **Deployment**        | Vercel (Production / Preview)                |
 
 ## Design & Architecture
 
@@ -39,9 +52,18 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 - **Code-Driven Visuals**: Project previews bypass static images in favor of live React components (`framer-motion` + syntax highlighting) to demonstrate real execution flows dynamically.
 - **Intersection-Aware Navigation**: A custom "Railway Timeline" track (`site-track.tsx`) automatically scales and color-binds to viewport scroll progression.
 
-## Local Development
+## Getting Started
 
-Clone the repository and install dependencies using `pnpm`:
+### Prerequisites
+
+- **Node.js 24** — pinned in [`.nvmrc`](./.nvmrc). Use a Node version manager like `nvm` or `fnm` to automatically select the correct version.
+- **pnpm 11.6.0** — pinned via `packageManager` in [`package.json`](./package.json). Enable Corepack so the correct pnpm version is matched automatically:
+
+  ```bash
+  corepack enable
+  ```
+
+### Install and Run
 
 ```bash
 # Install dependencies
@@ -51,7 +73,10 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
+
+- **English (Default)**: http://localhost:3000/en
+- **Traditional Chinese**: http://localhost:3000/zh-TW
 
 ## Validation & CI Checks
 
