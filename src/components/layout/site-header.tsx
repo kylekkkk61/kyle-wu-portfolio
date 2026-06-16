@@ -82,6 +82,9 @@ export function SiteHeader({ profile }: { profile: Profile }) {
         <div className="relative z-50 flex items-center gap-4">
           <button
             onClick={toggleLanguage}
+            aria-label={
+              locale === "en" ? "Switch to Chinese" : "Switch to English"
+            }
             className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm font-medium transition-colors"
           >
             <Globe size={16} />

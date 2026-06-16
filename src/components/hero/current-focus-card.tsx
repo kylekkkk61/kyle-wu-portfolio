@@ -48,9 +48,9 @@ export function CurrentFocusCard() {
               {t("CurrentFocus")}
             </span>
           </div>
-          <h3 className="text-xl font-semibold tracking-tight">
+          <h2 className="text-xl font-semibold tracking-tight">
             {t("BuildingAndLearning")}
-          </h3>
+          </h2>
         </div>
 
         <div className="flex flex-col gap-6">

@@ -7,5 +7,6 @@ export const config = {
   // Use edge runtime for fast TTFB (<50ms) instead of Node.js cold start (~1.5s)
   runtime: "experimental-edge",
   // Match only internationalized pathnames
-  matcher: ["/", "/(en|zh-TW)/:path*", "/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Optimize: Exclude localized paths (/en, /zh-TW) to bypass middleware entirely, allowing CDN-level static cache hits
+  matcher: ["/", "/((?!api|_next|_vercel|en|zh-TW|.*\\..*).*)"],
 }
