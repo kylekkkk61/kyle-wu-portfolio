@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react"
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "vitest"
 import { SectionContainer } from "./section-container"
-import React from "react"
 
 describe("SectionContainer", () => {
   it("renders children correctly", () => {

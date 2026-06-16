@@ -1,5 +1,4 @@
-import * as React from "react"
-import { Filter, Activity, PieChart, TrendingDown } from "lucide-react"
+import { Activity, Filter, PieChart, TrendingDown } from "lucide-react"
 
 export function PmLabFunnelArtifact() {
   return (
@@ -79,6 +78,7 @@ export function PmLabCalibrationArtifact() {
             <div className="relative mt-1 flex h-8 w-full items-center justify-center">
               {/* Abstract curve */}
               <svg
+                aria-hidden="true"
                 className="h-full w-full text-[#8da3b5]/50"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 20"
@@ -92,6 +92,7 @@ export function PmLabCalibrationArtifact() {
                 />
               </svg>
               <svg
+                aria-hidden="true"
                 className="absolute top-0 left-0 h-full w-full text-[#c4a56c]/50"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 20"

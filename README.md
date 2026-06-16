@@ -8,6 +8,7 @@
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Biome](https://img.shields.io/badge/Biome-2.5.0-F8B334?style=for-the-badge&logo=biome&logoColor=white)](https://biomejs.dev/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
 
@@ -28,7 +29,7 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 | **UI & Styling**      | `React 19.2.4` + `Tailwind CSS 4.3`          |
 | **Component Library** | `shadcn/ui` + `motion/react`                 |
 | **Package Manager**   | `pnpm 9.15.9`                                |
-| **Lint / Format**     | `eslint 9` + `prettier 3`                    |
+| **Lint / Format**     | `Biome 2.5.0` (integrated Rust toolchain)    |
 | **Deployment & CI**   | Vercel + GitHub Actions                      |
 
 ## Design & Architecture
@@ -54,12 +55,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Validation & CI Checks
 
-Before submitting a PR, ensure you pass all strict checks:
+Before committing or submitting a PR, run the local validation pipeline:
 
 ```bash
-pnpm lint       # Check for ESLint warnings/errors
-pnpm typecheck  # Check for TypeScript errors
-pnpm build      # Run a full Next.js production build
+pnpm validate   # Run Biome check, TypeScript typecheck, Vitest tests, and Next.js Build
+```
+
+Individual pipeline commands:
+
+```bash
+pnpm lint       # Lint and check code quality using Biome
+pnpm format     # Format all code using Biome
+pnpm typecheck  # Run TypeScript typechecker
+pnpm test       # Run unit tests with Vitest
+pnpm build      # Run a production Next.js build
 ```
 
 ## Project Structure
@@ -89,7 +98,7 @@ src/
 2. Define the `slug`, `visual`, `capabilities`, `tags`, `links`, and nested `detail` sections.
 3. Create a new dynamic preview component in `src/components/project-visuals` and map it in `project-visual.tsx`.
 4. Verify the new page renders properly at `/projects/[slug]`.
-5. Run `pnpm format`, `pnpm lint`, `pnpm typecheck`, and `pnpm build` before committing.
+5. Run `pnpm validate` to ensure linting, formatting, typechecking, tests, and build all pass before committing.
 
 ## License
 

@@ -1,13 +1,12 @@
-import * as React from "react"
-import type { Profile } from "@/data/profile"
-import { SectionContainer } from "@/components/layout/section-container"
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { CurrentFocusCard } from "@/components/hero/current-focus-card"
 import { SiGithub, SiTelegram } from "@icons-pack/react-simple-icons"
 import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
-import { links } from "@/data/links"
 import { useTranslations } from "next-intl"
+import { CurrentFocusCard } from "@/components/hero/current-focus-card"
+import { SectionContainer } from "@/components/layout/section-container"
+import { buttonVariants } from "@/components/ui/button"
+import { links } from "@/data/links"
+import type { Profile } from "@/data/profile"
+import { cn } from "@/lib/utils"
 
 export function HeroSection({ profile }: { profile: Profile }) {
   const t = useTranslations("Hero")

@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Badge } from "@/components/ui/badge"
 
 export function PmLabResearchPreview() {
@@ -71,6 +70,7 @@ export function PmLabResearchPreview() {
         {/* Bottom Abstract Chart curve */}
         <div className="mt-2 flex h-8 w-full items-center justify-between border-t border-dashed border-white/10 pt-4 opacity-50">
           <svg
+            aria-hidden="true"
             className="text-primary/40 h-4 w-full"
             preserveAspectRatio="none"
             viewBox="0 0 100 10"

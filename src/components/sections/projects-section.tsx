@@ -1,9 +1,8 @@
-import * as React from "react"
-import type { Project } from "@/data/projects"
+import { useTranslations } from "next-intl"
 import { SectionContainer } from "@/components/layout/section-container"
 import { ProjectCard } from "@/components/project-card"
 import { FadeIn } from "@/components/ui/fade-in"
-import { useTranslations } from "next-intl"
+import type { Project } from "@/data/projects"
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {
   const t = useTranslations("Sections")

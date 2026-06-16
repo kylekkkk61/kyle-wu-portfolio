@@ -1,8 +1,7 @@
-import * as React from "react"
-import { ProjectVisualType } from "@/data/projects"
+import type { ProjectVisualType } from "@/data/projects"
+import { DefaultProjectPreview } from "./default-project-preview"
 import { KaiynWorkflowPreview } from "./kaiyn-workflow-preview"
 import { PmLabResearchPreview } from "./pm-lab-research-preview"
-import { DefaultProjectPreview } from "./default-project-preview"
 
 export function ProjectVisual({ type }: { type: ProjectVisualType }) {
   switch (type) {
@@ -10,7 +9,6 @@ export function ProjectVisual({ type }: { type: ProjectVisualType }) {
       return <KaiynWorkflowPreview />
     case "pm-lab-research":
       return <PmLabResearchPreview />
-    case "default":
     default:
       return <DefaultProjectPreview />
   }

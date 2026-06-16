@@ -1,13 +1,11 @@
-import { links } from "@/data/links"
-import { SectionContainer } from "@/components/layout/section-container"
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { Link } from "@/i18n/routing"
 import { ArrowLeft, Download } from "lucide-react"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { SectionContainer } from "@/components/layout/section-container"
 import { ResumeViewerWrapper } from "@/components/resume-viewer-wrapper"
-import { setRequestLocale } from "next-intl/server"
-
-import { getTranslations } from "next-intl/server"
+import { buttonVariants } from "@/components/ui/button"
+import { links } from "@/data/links"
+import { Link } from "@/i18n/routing"
+import { cn } from "@/lib/utils"
 
 export async function generateMetadata({
   params,

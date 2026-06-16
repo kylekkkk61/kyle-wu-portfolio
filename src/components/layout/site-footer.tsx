@@ -1,8 +1,8 @@
+import { SiGithub } from "@icons-pack/react-simple-icons"
+import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
+import { useTranslations } from "next-intl"
 import { links } from "@/data/links"
 import type { Profile } from "@/data/profile"
-import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
-import { SiGithub } from "@icons-pack/react-simple-icons"
-import { useTranslations } from "next-intl"
 
 export function SiteFooter({ profile }: { profile: Profile }) {
   const t = useTranslations("Footer")

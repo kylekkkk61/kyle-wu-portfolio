@@ -1,20 +1,20 @@
-import * as React from "react"
 import {
-  SiPython,
   SiDocker,
-  SiPostgresql,
-  SiTelegram,
-  SiStreamlit,
   SiGithubactions,
-  SiReact,
   SiNextdotjs,
-  SiTailwindcss,
-  SiVercel,
-  SiTypescript,
-  SiPandas,
   SiNumpy,
+  SiPandas,
+  SiPostgresql,
+  SiPython,
+  SiReact,
   SiSqlalchemy,
+  SiStreamlit,
+  SiTailwindcss,
+  SiTelegram,
+  SiTypescript,
+  SiVercel,
 } from "@icons-pack/react-simple-icons"
+import type * as React from "react"
 
 export const techIconMap: Record<string, React.ReactNode> = {
   python: <SiPython className="h-5 w-5" />,
@@ -38,23 +38,22 @@ export function ProjectTechStack({ techStack }: { techStack: string[] }) {
     .map((tech) => {
       const key = tech.toLowerCase()
       if (key.includes("postgres"))
-        return { name: tech, icon: techIconMap["postgresql"] }
+        return { name: tech, icon: techIconMap.postgresql }
       if (key.includes("python"))
-        return { name: tech, icon: techIconMap["python"] }
+        return { name: tech, icon: techIconMap.python }
       if (key.includes("docker"))
-        return { name: tech, icon: techIconMap["docker"] }
+        return { name: tech, icon: techIconMap.docker }
       if (key.includes("telegram"))
-        return { name: tech, icon: techIconMap["telegram"] }
+        return { name: tech, icon: techIconMap.telegram }
       if (key.includes("streamlit"))
-        return { name: tech, icon: techIconMap["streamlit"] }
+        return { name: tech, icon: techIconMap.streamlit }
       if (key.includes("ci/cd") || key.includes("github actions"))
         return { name: tech, icon: techIconMap["github actions"] }
       if (key.includes("pandas"))
-        return { name: tech, icon: techIconMap["pandas"] }
-      if (key.includes("numpy"))
-        return { name: tech, icon: techIconMap["numpy"] }
+        return { name: tech, icon: techIconMap.pandas }
+      if (key.includes("numpy")) return { name: tech, icon: techIconMap.numpy }
       if (key.includes("sqlalchemy"))
-        return { name: tech, icon: techIconMap["sqlalchemy"] }
+        return { name: tech, icon: techIconMap.sqlalchemy }
 
       return { name: tech, icon: techIconMap[key] }
     })
@@ -64,9 +63,9 @@ export function ProjectTechStack({ techStack }: { techStack: string[] }) {
 
   return (
     <div className="flex items-center gap-2 overflow-hidden">
-      {icons.slice(0, 8).map((item, idx) => (
+      {icons.slice(0, 8).map((item) => (
         <div
-          key={idx}
+          key={item.name}
           className="text-muted-foreground/70 hover:text-foreground relative flex h-10 w-10 shrink-0 cursor-default items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white/[0.08] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] active:scale-95"
           title={item.name}
         >

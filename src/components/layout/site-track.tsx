@@ -80,7 +80,7 @@ export function SiteTrack() {
 
   const activeIndex = Math.max(0, SECTIONS.indexOf(activeSection))
   const currentTheme =
-    SECTION_THEMES[SECTIONS[activeIndex]] || SECTION_THEMES["hero"]
+    SECTION_THEMES[SECTIONS[activeIndex]] || SECTION_THEMES.hero
 
   return (
     <div className="pointer-events-none fixed inset-0 z-40 hidden w-full mix-blend-plus-lighter md:block">

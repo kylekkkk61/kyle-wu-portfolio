@@ -1,28 +1,28 @@
-import { notFound } from "next/navigation"
-import { Metadata } from "next"
-import { getProjects, projects } from "@/data/projects"
-import { getProfile } from "@/data/profile"
-import { SiteHeader } from "@/components/layout/site-header"
-import { SiteFooter } from "@/components/layout/site-footer"
-import { SectionContainer } from "@/components/layout/section-container"
-import { getTranslations, setRequestLocale } from "next-intl/server"
-import { ProjectVisual } from "@/components/project-visuals/project-visual"
-import { buttonVariants } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
-import { Link, routing } from "@/i18n/routing"
-import { ArrowLeft, ExternalLink, Play } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
+import { ArrowLeft, ExternalLink, Play } from "lucide-react"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { SectionContainer } from "@/components/layout/section-container"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
 import {
-  KaiynSignalArtifact,
-  KaiynConfirmationArtifact,
   KaiynAuditArtifact,
+  KaiynConfirmationArtifact,
+  KaiynSignalArtifact,
 } from "@/components/project-artifacts/kaiyn-artifacts"
 import {
-  PmLabFunnelArtifact,
   PmLabCalibrationArtifact,
   PmLabDashboardArtifact,
+  PmLabFunnelArtifact,
 } from "@/components/project-artifacts/pm-lab-artifacts"
+import { ProjectVisual } from "@/components/project-visuals/project-visual"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import { getProfile } from "@/data/profile"
+import { getProjects, projects } from "@/data/projects"
+import { Link, routing } from "@/i18n/routing"
+import { cn } from "@/lib/utils"
 
 function ArtifactPreview({ id }: { id: string }) {
   switch (id) {
@@ -197,28 +197,24 @@ export default async function ProjectPage({ params }: Props) {
                     {project.detail.communityContext.title}
                   </h2>
                   <div className="text-muted-foreground space-y-4 text-lg leading-relaxed">
-                    {project.detail.communityContext.paragraphs.map(
-                      (p, idx) => (
-                        <p key={idx}>{p}</p>
-                      ),
-                    )}
+                    {project.detail.communityContext.paragraphs.map((p) => (
+                      <p key={p}>{p}</p>
+                    ))}
                   </div>
                   {project.detail.communityContext.links && (
                     <div className="mt-6 flex flex-wrap gap-4">
-                      {project.detail.communityContext.links.map(
-                        (link, idx) => (
-                          <a
-                            key={idx}
-                            href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-primary hover:text-primary/80 inline-flex items-center text-base font-medium transition-colors"
-                          >
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            {link.label}
-                          </a>
-                        ),
-                      )}
+                      {project.detail.communityContext.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-primary hover:text-primary/80 inline-flex items-center text-base font-medium transition-colors"
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          {link.label}
+                        </a>
+                      ))}
                     </div>
                   )}
                 </section>
@@ -231,6 +227,7 @@ export default async function ProjectPage({ params }: Props) {
                     {t("LiveDemo")}
                   </h2>
                   <div className="border-border/50 bg-muted/30 overflow-hidden rounded-xl border shadow-2xl">
+                    {/* biome-ignore lint/a11y/useMediaCaption: screen recording demo without audio */}
                     <video
                       src={project.video}
                       poster={project.videoPoster}
@@ -283,8 +280,8 @@ export default async function ProjectPage({ params }: Props) {
                   {project.detail.process.title}
                 </h2>
                 <ul className="text-muted-foreground space-y-2 text-lg">
-                  {project.detail.process.items?.map((item, idx) => (
-                    <li key={idx} className="flex gap-3">
+                  {project.detail.process.items?.map((item) => (
+                    <li key={item} className="flex gap-3">
                       <span className="text-primary/70 mt-1.5 shrink-0 text-sm">
                         ▹
                       </span>
@@ -300,8 +297,8 @@ export default async function ProjectPage({ params }: Props) {
                   {t("KeyHighlights")}
                 </h2>
                 <ul className="text-muted-foreground space-y-2 text-lg">
-                  {project.highlights.map((item, idx) => (
-                    <li key={idx} className="flex gap-3">
+                  {project.highlights.map((item) => (
+                    <li key={item} className="flex gap-3">
                       <span className="text-primary/70 mt-1.5 shrink-0 text-sm">
                         ▹
                       </span>
@@ -317,8 +314,8 @@ export default async function ProjectPage({ params }: Props) {
                   {project.detail.demonstrates.title}
                 </h2>
                 <ul className="text-muted-foreground space-y-2 text-lg">
-                  {project.detail.demonstrates.items?.map((item, idx) => (
-                    <li key={idx} className="flex gap-3">
+                  {project.detail.demonstrates.items?.map((item) => (
+                    <li key={item} className="flex gap-3">
                       <span className="text-primary/70 mt-1.5 shrink-0 text-sm">
                         ▹
                       </span>

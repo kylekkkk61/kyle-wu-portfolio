@@ -1,10 +1,9 @@
-import * as React from "react"
-import type { Profile } from "@/data/profile"
-import { links } from "@/data/links"
-import { SectionContainer } from "@/components/layout/section-container"
-import { Link } from "@/i18n/routing"
-import { FadeIn } from "@/components/ui/fade-in"
 import { useTranslations } from "next-intl"
+import { SectionContainer } from "@/components/layout/section-container"
+import { FadeIn } from "@/components/ui/fade-in"
+import { links } from "@/data/links"
+import type { Profile } from "@/data/profile"
+import { Link } from "@/i18n/routing"
 
 export function AboutSection({ profile }: { profile: Profile }) {
   const t = useTranslations("Sections")
@@ -22,8 +21,8 @@ export function AboutSection({ profile }: { profile: Profile }) {
           <FadeIn className="rounded-[2rem] border-2 border-white/20 bg-white/[0.02] p-2 shadow-2xl">
             <div className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.04] p-8 md:p-10">
               <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-none space-y-4">
-                {profile.about.split("\n\n").map((paragraph, i) => (
-                  <p key={i} className="text-lg leading-relaxed">
+                {profile.about.split("\n\n").map((paragraph) => (
+                  <p key={paragraph} className="text-lg leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
@@ -37,6 +36,7 @@ export function AboutSection({ profile }: { profile: Profile }) {
                 >
                   {t("SeeMyResume")}
                   <svg
+                    aria-hidden="true"
                     className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5"
                     fill="none"
                     viewBox="0 0 24 24"

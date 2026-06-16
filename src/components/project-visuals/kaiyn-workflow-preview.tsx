@@ -1,6 +1,5 @@
-import * as React from "react"
+import { ArrowRight, Database, MessageCircle, Terminal } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Terminal, MessageCircle, Database } from "lucide-react"
 
 export function KaiynWorkflowPreview() {
   return (
