@@ -1,4 +1,3 @@
-import * as React from "react"
 import { ParticleBackground } from "./particle-background"
 
 export function SiteBackground() {

@@ -1,12 +1,12 @@
 "use client"
 
+import { Globe, Menu, X } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 import * as React from "react"
-import type { Profile } from "@/data/profile"
 import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import type { Profile } from "@/data/profile"
 import { Link, usePathname, useRouter } from "@/i18n/routing"
-import { Menu, X, Globe } from "lucide-react"
-import { useTranslations, useLocale } from "next-intl"
+import { cn } from "@/lib/utils"
 
 export function SiteHeader({ profile }: { profile: Profile }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -81,6 +81,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
         {/* Desktop & Mobile Actions */}
         <div className="relative z-50 flex items-center gap-4">
           <button
+            type="button"
             onClick={toggleLanguage}
             aria-label={
               locale === "en" ? "Switch to Chinese" : "Switch to English"
@@ -105,6 +106,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
           </Link>
 
           <button
+            type="button"
             className="text-muted-foreground hover:text-foreground -mr-2 p-2 transition-colors md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"

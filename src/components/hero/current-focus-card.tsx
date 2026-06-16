@@ -1,19 +1,17 @@
 "use client"
 
-import * as React from "react"
-import { surfaceClass } from "@/lib/utils"
-import { cn } from "@/lib/utils"
-
 import {
-  GraduationCap,
-  Target,
   Compass,
   GitBranch,
-  Terminal,
+  GraduationCap,
   LineChart,
   Network,
+  Target,
+  Terminal,
 } from "lucide-react"
 import { useTranslations } from "next-intl"
+import * as React from "react"
+import { cn, surfaceClass } from "@/lib/utils"
 
 export function CurrentFocusCard() {
   const t = useTranslations("CurrentFocus")
@@ -25,6 +23,7 @@ export function CurrentFocusCard() {
   }
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: purely decorative spotlight mouse effect
     <div
       className={cn(
         surfaceClass,

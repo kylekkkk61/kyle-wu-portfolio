@@ -1,13 +1,12 @@
-import * as React from "react"
-import { Project } from "@/data/projects"
+import { IconBrandGithub } from "@tabler/icons-react"
+import { ArrowRight, ExternalLink, Play } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
-import { cn, surfaceClass } from "@/lib/utils"
-import { ExternalLink, Play, ArrowRight } from "lucide-react"
-import { IconBrandGithub } from "@tabler/icons-react"
+import type { Project } from "@/data/projects"
 import { Link } from "@/i18n/routing"
-import { ProjectVisual } from "./project-visuals/project-visual"
+import { cn, surfaceClass } from "@/lib/utils"
 import { ProjectTechStack } from "./project-tech-stack"
+import { ProjectVisual } from "./project-visuals/project-visual"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -55,8 +54,8 @@ export function ProjectCard({ project }: { project: Project }) {
 
           {project.capabilities && project.capabilities.length > 0 && (
             <ul className="text-muted-foreground space-y-2 text-sm">
-              {project.capabilities.slice(0, 3).map((capability, idx) => (
-                <li key={idx} className="flex gap-2">
+              {project.capabilities.slice(0, 3).map((capability) => (
+                <li key={capability} className="flex gap-2">
                   <span className="text-primary/70 mt-0.5">▹</span>
                   <span>{capability}</span>
                 </li>

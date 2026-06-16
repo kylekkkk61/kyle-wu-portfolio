@@ -1,8 +1,7 @@
-import { FadeIn } from "@/components/ui/fade-in"
-import * as React from "react"
-import type { Profile } from "@/data/profile"
-import { SectionContainer } from "@/components/layout/section-container"
 import { useTranslations } from "next-intl"
+import { SectionContainer } from "@/components/layout/section-container"
+import { FadeIn } from "@/components/ui/fade-in"
+import type { Profile } from "@/data/profile"
 
 export function CapabilitiesSection({ profile }: { profile: Profile }) {
   const t = useTranslations("Sections")

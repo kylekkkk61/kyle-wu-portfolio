@@ -1,10 +1,9 @@
-import * as React from "react"
 import {
-  Terminal,
-  MessageCircle,
-  Database,
   CheckCircle2,
+  Database,
+  MessageCircle,
   ShieldAlert,
+  Terminal,
 } from "lucide-react"
 
 export function KaiynSignalArtifact() {
@@ -61,10 +60,16 @@ export function KaiynConfirmationArtifact() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <button className="rounded-md bg-[#b88e8e]/10 py-2 text-xs font-medium text-[#b88e8e] transition-colors hover:bg-[#b88e8e]/20">
+            <button
+              type="button"
+              className="rounded-md bg-[#b88e8e]/10 py-2 text-xs font-medium text-[#b88e8e] transition-colors hover:bg-[#b88e8e]/20"
+            >
               REJECT
             </button>
-            <button className="flex items-center justify-center gap-1 rounded-md bg-[#9fb396]/10 py-2 text-xs font-medium text-[#9fb396] transition-colors hover:bg-[#9fb396]/20">
+            <button
+              type="button"
+              className="flex items-center justify-center gap-1 rounded-md bg-[#9fb396]/10 py-2 text-xs font-medium text-[#9fb396] transition-colors hover:bg-[#9fb396]/20"
+            >
               <CheckCircle2 className="h-3 w-3" />
               CONFIRM
             </button>
@@ -95,9 +100,9 @@ export function KaiynAuditArtifact() {
             { time: "14:02:05", msg: "User confirmed", status: "ok" },
             { time: "14:02:06", msg: "Order executed", status: "ok" },
             { time: "14:02:06", msg: "State committed to DB", status: "ok" },
-          ].map((log, i) => (
+          ].map((log) => (
             <div
-              key={i}
+              key={log.msg}
               className="border-border/30 flex items-center gap-3 border-b py-1 last:border-0"
             >
               <span className="text-muted-foreground">{log.time}</span>

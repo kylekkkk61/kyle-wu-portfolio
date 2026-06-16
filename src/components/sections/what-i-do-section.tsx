@@ -1,7 +1,6 @@
-import * as React from "react"
-import type { Profile } from "@/data/profile"
 import { SectionContainer } from "@/components/layout/section-container"
 import { FadeIn } from "@/components/ui/fade-in"
+import type { Profile } from "@/data/profile"
 
 export function WhatIDoSection({ profile }: { profile: Profile }) {
   return (
@@ -20,8 +19,8 @@ export function WhatIDoSection({ profile }: { profile: Profile }) {
           delay={100}
           className="text-muted-foreground space-y-6 text-lg leading-relaxed"
         >
-          {profile.whatIDo.body.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+          {profile.whatIDo.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </FadeIn>
       </div>

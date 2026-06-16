@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Newsreader } from "next/font/google"
 import "../globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SiteBackground } from "@/components/layout/site-background"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,12 +68,11 @@ export async function generateMetadata({
   }
 }
 
-import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server"
-import { notFound } from "next/navigation"
-import { routing } from "@/i18n/routing"
-import { setRequestLocale } from "next-intl/server"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import { notFound } from "next/navigation"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages, setRequestLocale } from "next-intl/server"
+import { routing } from "@/i18n/routing"
 
 export default async function RootLayout({
   children,

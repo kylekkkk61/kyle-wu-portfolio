@@ -1,6 +1,6 @@
-import { MetadataRoute } from "next"
-import { routing } from "@/i18n/routing"
+import type { MetadataRoute } from "next"
 import { projects } from "@/data/projects"
+import { routing } from "@/i18n/routing"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://kylewu.me"

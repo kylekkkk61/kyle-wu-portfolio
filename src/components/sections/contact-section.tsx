@@ -1,14 +1,14 @@
 "use client"
 
+import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
+import { ArrowUpRight, Check } from "lucide-react"
+import { useTranslations } from "next-intl"
 import * as React from "react"
-import { links } from "@/data/links"
 import { SectionContainer } from "@/components/layout/section-container"
 import { buttonVariants } from "@/components/ui/button"
-import { cn, surfaceClass } from "@/lib/utils"
-import { ArrowUpRight, Check } from "lucide-react"
-import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
 import { FadeIn } from "@/components/ui/fade-in"
-import { useTranslations } from "next-intl"
+import { links } from "@/data/links"
+import { cn, surfaceClass } from "@/lib/utils"
 
 export function ContactSection() {
   const [copied, setCopied] = React.useState(false)
@@ -42,6 +42,7 @@ export function ContactSection() {
 
         <div className="relative z-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
           <button
+            type="button"
             onClick={handleCopyEmail}
             className={cn(
               buttonVariants({ size: "lg" }),

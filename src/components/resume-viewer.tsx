@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
@@ -60,7 +60,8 @@ export function ResumeViewer({ fileUrl }: ResumeViewerProps) {
           className="flex flex-col items-center gap-4"
         >
           {containerWidth > 0 &&
-            Array.from(new Array(numPages), (el, index) => (
+            Array.from(new Array(numPages), (_el, index) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: PDF pages are static and ordered by page number
               <div key={`page_${index + 1}`} className="flex w-full flex-col">
                 <Page
                   pageNumber={index + 1}
