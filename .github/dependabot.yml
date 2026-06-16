@@ -32,3 +32,8 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "ci(deps)"
+    # 將所有 GitHub Actions 更新打包在一個 PR
+    groups:
+      all-actions:
+        patterns:
+          - "*"
