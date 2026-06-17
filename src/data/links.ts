@@ -4,5 +4,5 @@ export const links = {
   telegram: "https://t.me/kylekkkkwu",
   github: "https://github.com/kylekkkk61",
   resume: "/resume",
-  resumePdf: "https://cv.kylewu.me/kyle-wu-resume.pdf",
+  resumePdf: "https://cv.kylewu.me/kyle-wu-resume.pdf?v=1",
 }
