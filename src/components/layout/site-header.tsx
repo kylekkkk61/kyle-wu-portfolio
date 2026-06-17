@@ -57,7 +57,11 @@ export function SiteHeader({ profile }: { profile: Profile }) {
                 // Next-intl link handles prefix, but smooth scroll custom logic
                 e.preventDefault()
                 window.scrollTo({ top: 0, behavior: "smooth" })
-                window.history.pushState(null, "", `/${locale}`)
+                window.history.pushState(
+                  null,
+                  "",
+                  locale === "en" ? "/" : `/${locale}`,
+                )
               }
             }}
           >
