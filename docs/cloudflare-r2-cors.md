@@ -19,7 +19,7 @@ To ensure the `Access-Control-Allow-Origin` and `Vary: Origin` headers are **alw
 ### Worker Code
 Create a Cloudflare Worker with the following JavaScript. It features:
 * **Dynamic Origin Whitelist**: Automatically allows `http://localhost:*` (local dev), `*.vercel.app` (Vercel previews), and `https://kylewu.me` (production) while denying untrusted origins.
-* **Conditional Request Handling**: Performs manual Etag verification to return `304 Not Modified` when the file hasn't changed, saving bandwidth and CPU.
+* **Conditional Request Handling**: Performs manual Etag verification to return `304 Not Modified` when the file hasn't changed (comparing client browser's cached Etag with R2 object's Etag), saving bandwidth and CPU.
 
 ```javascript
 export default {
@@ -67,6 +67,8 @@ export default {
     }
 
     // 🌟 5. Core Etag Verification (304 Not Modified logic)
+    // Compares client browser's cached Etag with R2 object's Etag.
+    // If they match, returns 304 with correct CORS headers.
     const ifNoneMatch = request.headers.get("If-None-Match");
     if (ifNoneMatch && (ifNoneMatch === object.httpEtag || ifNoneMatch.includes(object.httpEtag))) {
       return new Response(null, {
