@@ -17,7 +17,9 @@ When hosting static assets (like PDFs) on S3/R2 with custom subdomains:
 To ensure the `Access-Control-Allow-Origin` and `Vary: Origin` headers are **always** present in every response (regardless of whether the request has an `Origin` header), we route `cv.kylewu.me` through a Cloudflare Worker that proxies the R2 bucket.
 
 ### Worker Code
-Create a Cloudflare Worker with the following JavaScript:
+Create a Cloudflare Worker with the following JavaScript. It features:
+* **Dynamic Origin Whitelist**: Automatically allows `http://localhost:*` (local dev), `*.vercel.app` (Vercel previews), and `https://kylewu.me` (production) while denying untrusted origins.
+* **Conditional Request Handling**: Performs manual Etag verification to return `304 Not Modified` when the file hasn't changed, saving bandwidth and CPU.
 
 ```javascript
 export default {
@@ -26,11 +28,25 @@ export default {
     // Extract key (e.g., "kyle-wu-resume.pdf") from URL path
     const key = decodeURIComponent(url.pathname.slice(1)); 
 
-    // 1. Handle browser CORS preflight requests (OPTIONS)
+    // 1. Dynamic Origin Whitelist Verification
+    const origin = request.headers.get("Origin");
+    let allowedOrigin = "https://kylewu.me"; // Default fallback
+    
+    if (origin) {
+      const isLocalhost = origin.startsWith("http://localhost:") || origin === "http://localhost";
+      const isVercel = origin.endsWith(".vercel.app");
+      const isProd = origin === "https://kylewu.me";
+      
+      if (isLocalhost || isVercel || isProd) {
+        allowedOrigin = origin;
+      }
+    }
+
+    // 2. Handle browser CORS preflight requests (OPTIONS)
     if (request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
-          "Access-Control-Allow-Origin": "https://kylewu.me",
+          "Access-Control-Allow-Origin": allowedOrigin,
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Max-Age": "86400",
@@ -38,30 +54,42 @@ export default {
       });
     }
 
-    // 2. Limit methods to GET and HEAD
+    // 3. Limit methods to GET and HEAD
     if (request.method !== "GET" && request.method !== "HEAD") {
       return new Response("Method Not Allowed", { status: 405 });
     }
 
-    // 3. Read directly from the bound R2 Bucket (high speed, inside CF network)
+    // 4. Read directly from the bound R2 Bucket (high speed, inside CF network)
     const object = await env.BUCKET.get(key);
 
     if (object === null) {
       return new Response("File Not Found", { status: 404 });
     }
 
-    // 4. Set headers from R2 metadata
+    // 🌟 5. Core Etag Verification (304 Not Modified logic)
+    const ifNoneMatch = request.headers.get("If-None-Match");
+    if (ifNoneMatch && (ifNoneMatch === object.httpEtag || ifNoneMatch.includes(object.httpEtag))) {
+      return new Response(null, {
+        status: 304,
+        headers: {
+          "Access-Control-Allow-Origin": allowedOrigin,
+          "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+          "Vary": "Origin",
+          "etag": object.httpEtag,
+          "Cache-Control": "public, max-age=0, must-revalidate", // Validate with server every time
+        }
+      });
+    }
+
+    // 6. Etag mismatch (file updated) - return 200 OK with new content
     const headers = new Headers();
     object.writeHttpMetadata(headers);
     headers.set("etag", object.httpEtag);
     
-    // 5. Force CORS & Vary headers to prevent cache poisoning
-    headers.set("Access-Control-Allow-Origin", "https://kylewu.me");
+    headers.set("Access-Control-Allow-Origin", allowedOrigin);
     headers.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     headers.set("Vary", "Origin");
-
-    // 6. Set long browser & CDN cache duration for performance
-    headers.set("Cache-Control", "public, max-age=31536000"); 
+    headers.set("Cache-Control", "public, max-age=0, must-revalidate"); // Validate with server every time
 
     return new Response(object.body, { headers });
   },
@@ -90,11 +118,7 @@ export default {
 
 ## How to Update the PDF (Developer Workflow)
 
-Since browsers may have already cached the old, CORS-poisoned file, we use a query parameter to force clients to bypass their local cache and hit the new proxy.
-
-1. Upload the new PDF (e.g. `kyle-wu-resume.pdf`) to your Cloudflare R2 bucket.
-2. In [src/data/links.ts](file:///Users/kyle/Downloads/kyle-wu-portfolio/src/data/links.ts), increment the version query parameter `?v=X` on the `resumePdf` link:
-   ```typescript
-   resumePdf: "https://cv.kylewu.me/kyle-wu-resume.pdf?v=2", // Incremented from v=1
-   ```
-3. Commit and deploy the frontend update. This forces all clients to download the new PDF immediately, while ensuring they cache the new, CORS-enabled response for future visits.
+Because we configured the Cache-Control to **`public, max-age=0, must-revalidate`**:
+1. You only need to upload the new PDF (e.g., `kyle-wu-resume.pdf`) to your Cloudflare R2 bucket.
+2. The Worker will automatically detect the new `Etag` mismatch next time any user visits, serving them the new PDF immediately.
+3. **No further frontend code changes (like version query parameter bumps) are required** after the initial `?v=1` setup. The URL in `src/data/links.ts` can remain static forever.

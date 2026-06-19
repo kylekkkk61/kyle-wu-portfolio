@@ -12,7 +12,7 @@
   },
   "Contact": {
     "LetsTalk": "Let's Talk",
-    "Description": "Open to conversations around fintech projects, crypto trading infrastructure, data-driven product work, market-structure research, and business-to-system implementation."
+    "Description": "Open to conversations around fintech strategy, product and business analysis, digital finance, trading workflow automation, market-structure research, and AI-native product-building workflows."
   },
   "ProjectDetail": {
     "BackToWork": "Back to Selected Work",
@@ -27,9 +27,9 @@
   },
   "Sections": {
     "SelectedWork": "Selected Work",
-    "SelectedWorkDesc": "Public projects that show how I translate trading workflows, market questions, and data problems into practical systems and research artifacts.",
+    "SelectedWorkDesc": "Public projects that show how I translate market questions, product problems, and workflow frictions into practical systems, research outputs, and decision-support tools.",
     "Capabilities": "Capabilities",
-    "CapabilitiesDesc": "The technical and domain-specific skills I use to build systems and conduct research.",
+    "CapabilitiesDesc": "The strategy, analysis, and technical capabilities I use to turn market problems into practical fintech systems.",
     "Background": "Background",
     "SeeMyResume": "See my resume"
   },
@@ -39,15 +39,16 @@
     "Education": "MSc Financial Technology",
     "School": "Warwick Business School (Incoming)",
     "CareerInterests": "Career Interests",
-    "FinTechProduct": "FinTech Product & Strategy",
+    "FinTechProduct": "FinTech Strategy & Product",
     "TradingOps": "Trading / Market Operations",
-    "DataAnalysis": "Data & Business Analysis",
-    "MarketInfra": "Market Infrastructure",
+    "DataAnalysis": "Business / Data Analysis",
+    "MarketInfra": "Market & Risk Analysis",
     "FocusAreas": "Focus Areas",
-    "TradingInfra": "Trading Infra",
-    "DataAnalysisSkill": "Data Analysis",
-    "MarketMicrostructure": "Market Microstructure",
-    "BusinessToSystem": "Business-to-System"
+    "TradingInfra": "Product Strategy",
+    "DataAnalysisSkill": "Market Analysis",
+    "MarketMicrostructure": "Business Analysis",
+    "BusinessToSystem": "Execution Quality",
+    "AiNativeWorkflow": "AI-Native Workflow"
   },
   "Metadata": {
     "title": "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
