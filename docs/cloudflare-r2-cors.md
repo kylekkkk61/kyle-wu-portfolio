@@ -17,7 +17,9 @@ When hosting static assets (like PDFs) on S3/R2 with custom subdomains:
 To ensure the `Access-Control-Allow-Origin` and `Vary: Origin` headers are **always** present in every response (regardless of whether the request has an `Origin` header), we route `cv.kylewu.me` through a Cloudflare Worker that proxies the R2 bucket.
 
 ### Worker Code
-Create a Cloudflare Worker with the following JavaScript. It includes conditional request handling (`If-None-Match`/`Etag` comparison) to return `304 Not Modified` when the file has not changed, saving bandwidth and CPU.
+Create a Cloudflare Worker with the following JavaScript. It features:
+* **Dynamic Origin Whitelist**: Automatically allows `http://localhost:*` (local dev), `*.vercel.app` (Vercel previews), and `https://kylewu.me` (production) while denying untrusted origins.
+* **Conditional Request Handling**: Performs manual Etag verification to return `304 Not Modified` when the file hasn't changed (comparing client browser's cached Etag with R2 object's Etag), saving bandwidth and CPU.
 
 ```javascript
 export default {
@@ -26,11 +28,25 @@ export default {
     // Extract key (e.g., "kyle-wu-resume.pdf") from URL path
     const key = decodeURIComponent(url.pathname.slice(1)); 
 
-    // 1. Handle browser CORS preflight requests (OPTIONS)
+    // 1. Dynamic Origin Whitelist Verification
+    const origin = request.headers.get("Origin");
+    let allowedOrigin = "https://kylewu.me"; // Default fallback
+    
+    if (origin) {
+      const isLocalhost = origin.startsWith("http://localhost:") || origin === "http://localhost";
+      const isVercel = origin.endsWith(".vercel.app");
+      const isProd = origin === "https://kylewu.me";
+      
+      if (isLocalhost || isVercel || isProd) {
+        allowedOrigin = origin;
+      }
+    }
+
+    // 2. Handle browser CORS preflight requests (OPTIONS)
     if (request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
-          "Access-Control-Allow-Origin": "https://kylewu.me",
+          "Access-Control-Allow-Origin": allowedOrigin,
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
           "Access-Control-Allow-Headers": "*",
           "Access-Control-Max-Age": "86400",
@@ -38,19 +54,19 @@ export default {
       });
     }
 
-    // 2. Limit methods to GET and HEAD
+    // 3. Limit methods to GET and HEAD
     if (request.method !== "GET" && request.method !== "HEAD") {
       return new Response("Method Not Allowed", { status: 405 });
     }
 
-    // 3. Read directly from the bound R2 Bucket (high speed, inside CF network)
+    // 4. Read directly from the bound R2 Bucket (high speed, inside CF network)
     const object = await env.BUCKET.get(key);
 
     if (object === null) {
       return new Response("File Not Found", { status: 404 });
     }
 
-    // 🌟 4. Core Etag Verification (304 Not Modified logic)
+    // 🌟 5. Core Etag Verification (304 Not Modified logic)
     // Compares client browser's cached Etag with R2 object's Etag.
     // If they match, returns 304 with correct CORS headers.
     const ifNoneMatch = request.headers.get("If-None-Match");
@@ -58,7 +74,7 @@ export default {
       return new Response(null, {
         status: 304,
         headers: {
-          "Access-Control-Allow-Origin": "https://kylewu.me",
+          "Access-Control-Allow-Origin": allowedOrigin,
           "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
           "Vary": "Origin",
           "etag": object.httpEtag,
@@ -67,12 +83,12 @@ export default {
       });
     }
 
-    // 5. Etag mismatch (file updated) - return 200 OK with new content
+    // 6. Etag mismatch (file updated) - return 200 OK with new content
     const headers = new Headers();
     object.writeHttpMetadata(headers);
     headers.set("etag", object.httpEtag);
     
-    headers.set("Access-Control-Allow-Origin", "https://kylewu.me");
+    headers.set("Access-Control-Allow-Origin", allowedOrigin);
     headers.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
     headers.set("Vary", "Origin");
     headers.set("Cache-Control", "public, max-age=0, must-revalidate"); // Validate with server every time

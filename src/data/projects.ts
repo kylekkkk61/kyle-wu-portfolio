@@ -74,9 +74,10 @@ const projectsEn: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
-    subtitle: "Trading signal execution workflow for crypto communities.",
+    subtitle:
+      "Structured trading workflow system for community-based market operations.",
     shortDescription:
-      "A Telegram-based execution workflow that turns community trading signals into a structured, confirmation-first order process.",
+      "A Telegram-based workflow system that turns informal community trading signals into structured signal creation, chart updates, risk checks, and confirmation-first execution flows.",
     description:
       "A Telegram-based execution workflow for crypto trading communities, designed around confirmation-first order flow, fixed-risk sizing, exchange-rule validation, encrypted API credentials, PostgreSQL-backed state, audit records, and Docker-first deployment.",
     category: "Trading Infrastructure",
@@ -198,9 +199,9 @@ const projectsEn: Project[] = [
     slug: "prediction-market-execution-lab",
     title: "Prediction Market Execution Lab",
     subtitle:
-      "Testing executable edge in Polymarket BTC short-horizon markets.",
+      "Testing whether apparent pricing edge survives real execution frictions.",
     shortDescription:
-      "A public research lab testing whether short-horizon prediction-market edge survives real execution frictions.",
+      "A public research lab testing whether apparent short-horizon prediction-market pricing edge survives spread, failed fills, latency, risk limits, and settlement frictions.",
     description:
       "A public fintech and market microstructure research lab studying whether apparent short-horizon prediction-market pricing edge can survive real execution frictions such as spread, fill probability, latency, position limits, and settlement outcomes.",
     category: "Market Microstructure Research",
@@ -306,9 +307,9 @@ const projectsZh: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
-    subtitle: "專為加密貨幣社群打造的交易訊號執行工作流",
+    subtitle: "專為社群化市場營運設計的結構化交易工作流系統",
     shortDescription:
-      "一個基於 Telegram 的執行工作流，將社群交易訊號轉化為結構化且「確認優先」的下單流程。",
+      "一套基於 Telegram 的工作流系統，能將社群非正式的交易訊號，轉化為結構化的訊號生成、圖表同步、風險檢查與確認優先的執行流程。",
     description:
       "專為加密貨幣交易社群設計的 Telegram 執行工作流。系統強調「確認優先 (Confirmation-first)」的訂單流程、固定風險部位控管 (Fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核軌跡，以及 Docker 優先的部署架構。",
     category: "交易基礎設施",
@@ -429,9 +430,9 @@ const projectsZh: Project[] = [
   {
     slug: "prediction-market-execution-lab",
     title: "Prediction Market Execution Lab",
-    subtitle: "在 Polymarket 短期預測市場中驗證「可執行優勢」",
+    subtitle: "實測市場上看似存在的定價優勢，是否能在真實的執行摩擦中存活",
     shortDescription:
-      "一個公開的研究項目，旨在測試短期的預測市場定價優勢是否能在真實的執行摩擦中存活。",
+      "一個公開的研究實驗室，實測預測市場中短期定價的理論優勢，是否能克服價差（spread）、未成交（failed fills）、延遲、風險限制以及結算摩擦等真實執行阻礙。",
     description:
       "這是一個公開的金融科技與市場微結構研究項目，主要探討短期預測市場中看似存在的「定價優勢 (Pricing edge)」，是否能在滑價、成交機率、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
     category: "市場微觀結構研究",

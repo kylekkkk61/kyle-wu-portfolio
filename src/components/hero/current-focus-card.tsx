@@ -2,6 +2,7 @@
 
 import {
   Compass,
+  Cpu,
   GitBranch,
   GraduationCap,
   LineChart,
@@ -125,6 +126,10 @@ export function CurrentFocusCard() {
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
                   <Terminal className="h-3 w-3" />
                   {t("BusinessToSystem")}
+                </span>
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                  <Cpu className="h-3 w-3" />
+                  {t("AiNativeWorkflow")}
                 </span>
               </div>
             </div>

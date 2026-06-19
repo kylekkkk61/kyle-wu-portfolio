@@ -12,7 +12,7 @@
   },
   "Contact": {
     "LetsTalk": "歡迎交流",
-    "Description": "對金融科技專案、加密貨幣交易基建、數據驅動產品、市場微結構研究，以及商業邏輯的系統落地有任何想法嗎？歡迎隨時與我聊聊！"
+    "Description": "非常歡迎與我交流關於金融科技策略、產品與商業分析、數位金融、交易工作流自動化、市場微結構研究，以及 AI 原生產品開發流程等主題。"
   },
   "ProjectDetail": {
     "BackToWork": "返回專案列表",
@@ -27,9 +27,9 @@
   },
   "Sections": {
     "SelectedWork": "精選專案",
-    "SelectedWorkDesc": "以下公開專案展現了我如何拆解複雜的交易工作流與市場問題，並將數據挑戰轉化為具體的系統實作與研究產出。",
+    "SelectedWorkDesc": "以下公開專案展現了我如何將市場課題、產品痛點與工作流中的摩擦，轉化為實用的系統、研究產出以及決策輔助工具。",
     "Capabilities": "核心能力",
-    "CapabilitiesDesc": "我在建構系統與進行深度研究時，所運用的核心技術與領域專業知識。",
+    "CapabilitiesDesc": "我結合策略、數據分析與技術開發能力，致力於將市場問題轉化為實用的金融科技系統。",
     "Background": "個人背景",
     "SeeMyResume": "查看完整履歷"
   },
@@ -39,15 +39,16 @@
     "Education": "金融科技碩士 (MSc Financial Technology)",
     "School": "華威商學院 (即將入學)",
     "CareerInterests": "職涯發展方向",
-    "FinTechProduct": "金融科技產品與策略",
+    "FinTechProduct": "金融科技策略與產品",
     "TradingOps": "交易與市場營運",
-    "DataAnalysis": "數據與商業分析",
-    "MarketInfra": "市場基礎設施",
+    "DataAnalysis": "商業與數據分析",
+    "MarketInfra": "市場與風險分析",
     "FocusAreas": "專注領域",
-    "TradingInfra": "交易基建",
-    "DataAnalysisSkill": "數據分析",
-    "MarketMicrostructure": "市場微結構",
-    "BusinessToSystem": "商業邏輯落地"
+    "TradingInfra": "產品策略",
+    "DataAnalysisSkill": "市場分析",
+    "MarketMicrostructure": "商業分析",
+    "BusinessToSystem": "執行品質",
+    "AiNativeWorkflow": "AI 原生工作流"
   },
   "Metadata": {
     "title": "Kyle Wu — FinTech 系統建置與加密貨幣市場應用研究",
