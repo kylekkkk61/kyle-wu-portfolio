@@ -133,3 +133,43 @@ export function getProjectSchema(
     "@type": "CreativeWork",
   }
 }
+
+/**
+ * Generate VideoObject schema markup if project has a demo video
+ */
+export function getVideoSchema(
+  project: {
+    title: string
+    slug: string
+    shortDescription?: string
+    description: string
+    video?: string
+    videoPoster?: string
+    ogImage?: string
+    updatedAt?: string
+  },
+  locale: string,
+) {
+  if (!project.video) return null
+
+  const uploadDate = project.updatedAt
+    ? `${project.updatedAt}T08:00:00Z`
+    : "2026-06-22T08:00:00Z"
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name:
+      locale === "zh-TW"
+        ? `${project.title} 示範影片`
+        : `${project.title} Demo Video`,
+    description: project.shortDescription || project.description,
+    thumbnailUrl:
+      project.videoPoster ||
+      project.ogImage ||
+      `${siteConfig.url}/og/portfolio-og.png`,
+    uploadDate: uploadDate,
+    contentUrl: project.video,
+    embedUrl: project.video,
+  }
+}

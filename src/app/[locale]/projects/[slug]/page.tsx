@@ -24,7 +24,7 @@ import { getProfile } from "@/data/profile"
 import { getProjects, projects } from "@/data/projects"
 import { Link, routing } from "@/i18n/routing"
 import { siteConfig } from "@/lib/seo"
-import { getProjectSchema } from "@/lib/structured-data"
+import { getProjectSchema, getVideoSchema } from "@/lib/structured-data"
 import { cn } from "@/lib/utils"
 
 function ArtifactPreview({ id }: { id: string }) {
@@ -73,6 +73,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalPath =
     locale === "en" ? `/projects/${slug}` : `/${locale}/projects/${slug}`
 
+  const ogImageUrl = project.ogImage || "/og/portfolio-og.png"
+
   return {
     title: project.title,
     description: project.shortDescription || project.description,
@@ -92,7 +94,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       images: [
         {
-          url: "/og/portfolio-og.png",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: project.title,
@@ -103,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: project.title,
       description: project.shortDescription || project.description,
-      images: ["/og/portfolio-og.png"],
+      images: [ogImageUrl],
     },
   }
 }
@@ -122,10 +124,12 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   const projectSchema = getProjectSchema(project, locale)
+  const videoSchema = getVideoSchema(project, locale)
 
   return (
     <>
       <JsonLd data={projectSchema} />
+      {videoSchema && <JsonLd data={videoSchema} />}
       <SiteHeader profile={profile} />
       <main className="flex-1 pt-12 pb-24 md:pt-16 md:pb-32">
         <SectionContainer>
