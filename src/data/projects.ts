@@ -313,11 +313,12 @@ const projectsZh: Project[] = [
   {
     slug: "kaiyn-trading-bot",
     title: "Kaiyn Trading Bot",
-    subtitle: "專為社群化市場營運設計的結構化交易工作流系統",
+    subtitle:
+      "專為社群化市場營運設計的結構化交易工作流系統 (trading workflow automation)",
     shortDescription:
-      "一套基於 Telegram 的工作流系統，能將社群非正式的交易訊號，轉化為結構化的訊號生成、圖表同步、風險檢查與確認優先的執行流程。",
+      "一套基於 Telegram 的工作流系統 (trading workflow automation)，能將社群非正式的交易訊號，轉化為結構化的訊號生成、圖表同步、風險檢查與確認優先的執行流程 (confirmation-first execution)。",
     description:
-      "專為加密貨幣交易社群設計的 Telegram 執行工作流。系統強調「確認優先 (Confirmation-first)」的訂單流程、固定風險部位控管 (Fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核軌跡，以及 Docker 優先的部署架構。",
+      "專為加密貨幣交易社群設計的 Telegram 執行工作流 (trading workflow automation)。系統強調確認優先執行 (confirmation-first execution) 的訂單流程、固定風險部位控管 (fixed-risk sizing)、交易所規則驗證、加密 API 憑證儲存、以 PostgreSQL 為基礎的狀態管理、完整的稽核軌跡 (audit trail)，以及 Docker 優先的部署架構。",
     category: "交易基礎設施",
     status: "開源 GitHub 專案",
     year: "2026",
@@ -330,8 +331,8 @@ const projectsZh: Project[] = [
     tags: ["Python", "PostgreSQL", "Docker", "Telegram", "Exchange API"],
     highlights: [
       "將 Telegram 上的交易訊號無縫轉換為結構化的執行工作流。",
-      "採用確認優先的執行機制與固定 1R 風險部位控管。",
-      "內建加密 API 憑證儲存、稽核軌跡、資料庫備份與 CI 檢查流程。",
+      "採用確認優先執行 (confirmation-first execution) 機制與固定 1R 風險部位控管 (fixed-risk sizing)。",
+      "內建加密 API 憑證儲存、稽核軌跡 (audit trail)、資料庫備份與 CI 檢查流程。",
       "設計理念為生產級的營運工具，而非標榜獲利的自動交易機器人。",
     ],
     links: [
@@ -438,11 +439,12 @@ const projectsZh: Project[] = [
   {
     slug: "prediction-market-execution-lab",
     title: "Prediction Market Execution Lab",
-    subtitle: "實測市場上看似存在的定價優勢，是否能在真實的執行摩擦中存活",
+    subtitle:
+      "實測市場上看似存在的定價優勢 (pricing edge)，是否能在真實的執行摩擦 (execution frictions) 中存活",
     shortDescription:
-      "一個公開的研究實驗室，實測預測市場中短期定價的理論優勢，是否能克服價差（spread）、未成交（failed fills）、延遲、風險限制以及結算摩擦等真實執行阻礙。",
+      "一個公開的研究實驗室 (prediction market execution research)，實測預測市場中短期定價的理論優勢，是否能克服價差 (spread)、未成交 (failed fills)、延遲、風險限制以及結算摩擦等真實執行阻礙。",
     description:
-      "這是一個公開的金融科技與市場微結構研究項目，主要探討短期預測市場中看似存在的「定價優勢 (Pricing edge)」，是否能在滑價、成交機率、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
+      "這是一個公開的金融科技與市場微結構 (market microstructure) 研究項目，主要探討短期預測市場中看似存在的定價優勢 (pricing edge)，是否能在滑價、成交機率 (fill probability)、延遲、部位限制與結算結果等真實執行摩擦中存活下來。",
     category: "市場微觀結構研究",
     status: "公開 GitHub 研究報告",
     year: "2026",
@@ -454,7 +456,7 @@ const projectsZh: Project[] = [
     ],
     tags: ["Python", "Streamlit", "Polymarket", "Research", "Data Analysis"],
     highlights: [
-      "嚴格區分「理論定價優勢」與實際的「可執行優勢」。",
+      "嚴格區分理論定價優勢 (pricing edge) 與實際的可執行優勢 (executable edge)。",
       "提供安全公開的樣本數據、研究報告、Notebooks 以及即時互動儀表板。",
       "深入分析執行漏斗 (Execution funnel)、機率校準、機器學習過濾與風險模擬。",
       "明確避免不實的獲利宣稱與暴露敏感的真實交易執行資料。",
@@ -483,11 +485,11 @@ const projectsZh: Project[] = [
     detail: {
       whyItMatters: {
         title: "專案價值",
-        body: "這個專案區分了表面上的市場優勢與實際的可執行優勢，這更貼近真實交易與執行研究應該被評估的方式。",
+        body: "這個專案區分了表面上的市場優勢與實際的可執行優勢 (executable edge)，這更貼近真實交易與執行研究 (prediction market execution research) 應該被評估的方式。",
       },
       context: {
         title: "背景與挑戰",
-        body: "短期預測市場有時會展現出理論上的定價優勢，但理論優勢並不等於最終能落袋的可執行優勢。",
+        body: "短期預測市場有時會展現出理論上的定價優勢 (pricing edge)，但理論優勢並不等於最終能落袋的可執行優勢 (executable edge)。",
       },
       whatIBuilt: {
         title: "解決方案",
@@ -508,7 +510,7 @@ const projectsZh: Project[] = [
       demonstrates: {
         title: "核心能力展現",
         items: [
-          "市場微觀結構邏輯推論",
+          "市場微觀結構 (market microstructure) 邏輯推論",
           "數據分析與研究報告的溝通能力",
           "區分理論訊號與實際可執行結果",
           "在不暴露敏感執行資料的前提下，建置安全公開的研究產出",
@@ -524,7 +526,7 @@ const projectsZh: Project[] = [
             id: "pm-lab-funnel",
             title: "執行漏斗分析",
             description:
-              "視覺化呈現理論優勢如何因市場摩擦而衰減成最終的可執行優勢。",
+              "視覺化呈現理論優勢 (pricing edge) 如何因市場摩擦而衰減成最終的可執行優勢 (executable edge)。",
           },
           {
             id: "pm-lab-calibration",
