@@ -4,6 +4,7 @@ import { Globe, Menu, X } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import * as React from "react"
 import { buttonVariants } from "@/components/ui/button"
+import { LogoIcon } from "@/components/ui/logo-icon"
 import type { Profile } from "@/data/profile"
 import { Link, usePathname, useRouter } from "@/i18n/routing"
 import { cn } from "@/lib/utils"
@@ -46,7 +47,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            className="relative z-50 flex items-center gap-2 font-semibold"
+            className="relative z-50 flex items-center gap-2 font-semibold group"
             onClick={(e) => {
               setIsMobileMenuOpen(false)
               if (
@@ -65,6 +66,8 @@ export function SiteHeader({ profile }: { profile: Profile }) {
               }
             }}
           >
+            <LogoIcon className="h-7 w-7 text-foreground/90 transition-transform duration-200 group-hover:scale-105" />
+            <div className="h-6 w-[1px] bg-border/60" />
             <span className="text-xl tracking-tight">{profile.name}</span>
           </Link>
         </div>
