@@ -22,6 +22,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { getProfile } from "@/data/profile"
 import { getProjects, projects } from "@/data/projects"
 import { Link, routing } from "@/i18n/routing"
+import { siteConfig } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 function ArtifactPreview({ id }: { id: string }) {
@@ -67,12 +68,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  const canonicalPath =
+    locale === "en" ? `/projects/${slug}` : `/${locale}/projects/${slug}`
+
   return {
     title: project.title,
     description: project.shortDescription || project.description,
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        en: `/projects/${slug}`,
+        "zh-TW": `/zh-TW/projects/${slug}`,
+        "x-default": `/projects/${slug}`,
+      },
+    },
     openGraph: {
       title: project.title,
       description: project.shortDescription || project.description,
+      url: `${siteConfig.url}${canonicalPath}`,
       locale: locale === "zh-TW" ? "zh_TW" : "en_US",
       type: "article",
       images: [
