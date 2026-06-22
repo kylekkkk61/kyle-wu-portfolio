@@ -18,7 +18,13 @@
     "BackToWork": "返回專案列表",
     "LiveDemo": "線上 Demo",
     "KeyHighlights": "專案亮點",
-    "TechStack": "技術堆疊"
+    "TechStack": "技術堆疊",
+    "AtAGlance": "專案速覽",
+    "ProjectType": "專案類型",
+    "Focus": "核心專注",
+    "BuiltWith": "技術堆疊",
+    "Artifact": "公開成果",
+    "Disclaimer": "免責聲明"
   },
   "Footer": {
     "BuiltWith": "Powered by",
@@ -53,7 +59,7 @@
   "Metadata": {
     "title": "Kyle Wu — FinTech 系統建置與加密貨幣市場應用研究",
     "titleShort": "Kyle Wu",
-    "description": "Kyle Wu 的個人作品集，專注於金融科技系統實作、加密貨幣交易工作流、數據驅動的市場研究與商業邏輯落地。",
+    "description": "Kyle Wu 的個人作品集，聚焦金融科技系統建置、交易工作流自動化、加密貨幣市場營運、市場微結構研究、執行品質分析與 AI 原生產品開發。",
     "resumeTitle": "個人履歷 | Kyle Wu",
     "resumeDescription": "Kyle Wu 的專業履歷與背景資料"
   }
