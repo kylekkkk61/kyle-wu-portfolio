@@ -17,12 +17,14 @@ import {
   PmLabFunnelArtifact,
 } from "@/components/project-artifacts/pm-lab-artifacts"
 import { ProjectVisual } from "@/components/project-visuals/project-visual"
+import { JsonLd } from "@/components/seo/json-ld"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { getProfile } from "@/data/profile"
 import { getProjects, projects } from "@/data/projects"
 import { Link, routing } from "@/i18n/routing"
 import { siteConfig } from "@/lib/seo"
+import { getProjectSchema } from "@/lib/structured-data"
 import { cn } from "@/lib/utils"
 
 function ArtifactPreview({ id }: { id: string }) {
@@ -119,8 +121,11 @@ export default async function ProjectPage({ params }: Props) {
     notFound()
   }
 
+  const projectSchema = getProjectSchema(project, locale)
+
   return (
     <>
+      <JsonLd data={projectSchema} />
       <SiteHeader profile={profile} />
       <main className="flex-1 pt-12 pb-24 md:pt-16 md:pb-32">
         <SectionContainer>
