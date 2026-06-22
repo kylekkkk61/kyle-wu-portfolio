@@ -103,12 +103,12 @@ export function SiteHeader({ profile }: { profile: Profile }) {
                   ? "Switch to Light Mode"
                   : "Switch to Dark Mode"
               }
-              className="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg border border-black/10 bg-black/5 transition-colors dark:border-white/10 dark:bg-white/5 cursor-pointer"
+              className="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center transition-colors cursor-pointer"
             >
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
           ) : (
-            <div className="h-9 w-9 rounded-lg border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5 opacity-50" />
+            <div className="h-9 w-9" />
           )}
 
           <button

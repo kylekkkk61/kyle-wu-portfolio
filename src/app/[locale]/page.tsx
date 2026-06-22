@@ -16,7 +16,7 @@ import {
 
 const SectionDivider = () => (
   <div className="mx-auto w-full max-w-5xl px-6 md:px-8">
-    <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
   </div>
 )
 

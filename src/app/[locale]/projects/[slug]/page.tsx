@@ -417,7 +417,7 @@ export default async function ProjectPage({ params }: Props) {
                             {artifact.description}
                           </p>
                         </div>
-                        <div className="relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-[#f4f0e6] dark:bg-[#161616]">
+                        <div className="relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-[#f5f2eb] dark:bg-[#161616]">
                           <ArtifactPreview id={artifact.id} />
                         </div>
                       </div>

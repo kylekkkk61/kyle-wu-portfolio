@@ -21,10 +21,10 @@ export function SectionContainer({
     "relative py-16 md:py-24 my-4", // Added my-4 for vertical spacing between blocks
     isColorBlock ? "mx-2 md:mx-4 lg:mx-6 rounded-[2.5rem]" : "",
     variant === "teal"
-      ? "dark:bg-[#1e241c] dark:border-white/[0.06] bg-[#f1f5ef] border border-black/[0.04] shadow-2xl"
+      ? "dark:bg-[#1e241c] dark:border-white/[0.06] bg-[#b5c1b2] border border-black/[0.04] shadow-2xl"
       : "",
     variant === "plum"
-      ? "dark:bg-[#261c24] dark:border-white/[0.06] bg-[#f6f1f5] border border-black/[0.04] shadow-2xl"
+      ? "dark:bg-[#261c24] dark:border-white/[0.06] bg-[#c5b6c2] border border-black/[0.04] shadow-2xl"
       : "",
     className,
   )

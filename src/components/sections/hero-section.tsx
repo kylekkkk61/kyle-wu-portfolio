@@ -69,7 +69,7 @@ export function HeroSection({ profile }: { profile: Profile }) {
               href={links.github}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:drop-shadow-[0_0_8px_rgba(44,42,41,0.3)] dark:hover:text-white dark:hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
               aria-label="GitHub"
             >
               <SiGithub className="h-6 w-6" />
@@ -78,14 +78,14 @@ export function HeroSection({ profile }: { profile: Profile }) {
               href={links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:drop-shadow-[0_0_8px_rgba(44,42,41,0.3)] dark:hover:text-white dark:hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
               aria-label="LinkedIn"
             >
               <IconBrandLinkedinFilled className="h-6 w-6" />
             </a>
             <a
               href={links.email}
-              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:drop-shadow-[0_0_8px_rgba(44,42,41,0.3)] dark:hover:text-white dark:hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
               aria-label="Email"
             >
               <IconMailFilled className="h-6 w-6" />
@@ -94,7 +94,7 @@ export function HeroSection({ profile }: { profile: Profile }) {
               href={links.telegram}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+              className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:drop-shadow-[0_0_8px_rgba(44,42,41,0.3)] dark:hover:text-white dark:hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
               aria-label="Telegram"
             >
               <SiTelegram className="h-6 w-6" />

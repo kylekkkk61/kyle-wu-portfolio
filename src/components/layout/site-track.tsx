@@ -117,12 +117,10 @@ export function SiteTrack() {
                   <div
                     className={cn(
                       "z-10 rounded-full transition-all duration-500",
-                      // Base state: Solid circle
-                      "h-[6px] w-[6px] bg-[#d8d3c5] dark:bg-[#232323]",
-                      // Past state
+                      isCurrent ? "h-3 w-3" : "h-[6px] w-[6px]",
+                      !isPast && !isCurrent && "bg-[#d8d3c5] dark:bg-[#232323]",
                       isPast && currentTheme.nodePast,
-                      // Current state
-                      isCurrent && cn("h-3 w-3", currentTheme.nodeActive),
+                      isCurrent && currentTheme.nodeActive,
                     )}
                   />
                 </div>

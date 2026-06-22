@@ -74,10 +74,10 @@
   --background: #fbfaf7;
   --foreground: #2c2a29;
 
-  --card: #f4f0e6;
+  --card: #f5f2eb;
   --card-foreground: #2c2a29;
 
-  --popover: #f4f0e6;
+  --popover: #f5f2eb;
   --popover-foreground: #2c2a29;
 
   --primary: #2c2a29;
@@ -103,7 +103,7 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: #f4f0e6;
+  --sidebar: #f5f2eb;
   --sidebar-foreground: #2c2a29;
   --sidebar-primary: #2c2a29;
   --sidebar-primary-foreground: #fbfaf7;
@@ -120,7 +120,7 @@
   --track-train-plum: #61465b;
   --track-line-plum: #e9dee6;
   --track-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-  --spotlight-color: rgba(44, 42, 41, 0.06);
+  --spotlight-color: rgba(44, 42, 41, 0.09);
   --primary-teal: #4d6146;
   --primary-plum: #61465b;
 }
