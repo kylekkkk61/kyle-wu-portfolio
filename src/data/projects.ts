@@ -64,6 +64,7 @@ export type Project = {
   visual: ProjectVisualType
   featured?: boolean
   image?: string
+  ogImage?: string
   video?: string
   videoPoster?: string
   order?: number
@@ -112,6 +113,7 @@ const projectsEn: Project[] = [
     featured: true,
     order: 1,
     updatedAt: "2026-06-22",
+    ogImage: "/og/kaiyn-trading-bot-og.png",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -242,6 +244,7 @@ const projectsEn: Project[] = [
     featured: true,
     order: 2,
     updatedAt: "2026-06-22",
+    ogImage: "/og/prediction-market-execution-lab-og.png",
     detail: {
       whyItMatters: {
         title: "Why It Matters",
@@ -346,6 +349,7 @@ const projectsZh: Project[] = [
     featured: true,
     order: 1,
     updatedAt: "2026-06-22",
+    ogImage: "/og/kaiyn-trading-bot-og.png",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -475,6 +479,7 @@ const projectsZh: Project[] = [
     featured: true,
     order: 2,
     updatedAt: "2026-06-22",
+    ogImage: "/og/prediction-market-execution-lab-og.png",
     detail: {
       whyItMatters: {
         title: "專案價值",
