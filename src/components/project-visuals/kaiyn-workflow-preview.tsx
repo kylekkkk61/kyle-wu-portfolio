@@ -8,7 +8,7 @@ export function KaiynWorkflowPreview() {
       <div className="relative z-10 flex w-full max-w-lg flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         {/* Layer 1: Signal Payload */}
         <div className="flex flex-1 flex-col items-center gap-3">
-          <div className="group relative w-full rounded-xl border border-white/[0.06] bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
+          <div className="group relative w-full rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.01] dark:bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-black/[0.03] dark:hover:bg-white/[0.03]">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#8da3b5]/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
               <Terminal className="h-4 w-4 text-[#8da3b5]" />
@@ -17,17 +17,17 @@ export function KaiynWorkflowPreview() {
               </span>
             </div>
             <div className="w-full space-y-2">
-              <div className="h-1.5 w-3/4 rounded-full bg-white/10" />
-              <div className="h-1.5 w-1/2 rounded-full bg-white/10" />
+              <div className="h-1.5 w-3/4 rounded-full bg-black/10 dark:bg-white/10" />
+              <div className="h-1.5 w-1/2 rounded-full bg-black/10 dark:bg-white/10" />
             </div>
           </div>
         </div>
 
-        <ArrowRight className="hidden h-5 w-5 shrink-0 text-white/20 sm:block" />
+        <ArrowRight className="hidden h-5 w-5 shrink-0 text-black/20 dark:text-white/20 sm:block" />
 
         {/* Layer 2: Confirmation UI */}
         <div className="flex flex-1 flex-col items-center gap-3">
-          <div className="group relative w-full rounded-xl border border-white/10 bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
+          <div className="group relative w-full rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-black/[0.03] dark:hover:bg-white/[0.03]">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c2a3bc]/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
               <MessageCircle className="h-4 w-4 text-[#c2a3bc]" />
@@ -35,7 +35,7 @@ export function KaiynWorkflowPreview() {
                 Telegram Auth
               </span>
             </div>
-            <div className="flex w-full flex-col gap-2 rounded border border-white/5 bg-white/[0.02] p-2">
+            <div className="flex w-full flex-col gap-2 rounded border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] p-2">
               <span className="text-muted-foreground text-[10px] tracking-wider uppercase">
                 Confirm Execute
               </span>
@@ -51,11 +51,11 @@ export function KaiynWorkflowPreview() {
           </div>
         </div>
 
-        <ArrowRight className="hidden h-5 w-5 shrink-0 text-white/20 sm:block" />
+        <ArrowRight className="hidden h-5 w-5 shrink-0 text-black/20 dark:text-white/20 sm:block" />
 
         {/* Layer 3: Backend State */}
         <div className="flex flex-1 flex-col items-center gap-3">
-          <div className="group relative w-full rounded-xl border border-white/10 bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-white/[0.03]">
+          <div className="group relative w-full rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] p-4 shadow-sm backdrop-blur transition-all hover:bg-black/[0.03] dark:hover:bg-white/[0.03]">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#9fb396]/30 to-transparent" />
             <div className="mb-3 flex items-center gap-2">
               <Database className="h-4 w-4 text-[#9fb396]" />
@@ -97,7 +97,7 @@ export function KaiynWorkflowPreview() {
           <Badge
             key={chip}
             variant="secondary"
-            className="text-foreground/70 rounded-full border-white/10 bg-white/[0.02] px-2.5 py-0.5 text-[10px] font-medium hover:bg-white/[0.05]"
+            className="text-foreground/70 rounded-full border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] px-2.5 py-0.5 text-[10px] font-medium hover:bg-black/[0.05] dark:hover:bg-white/[0.05]"
           >
             {chip}
           </Badge>

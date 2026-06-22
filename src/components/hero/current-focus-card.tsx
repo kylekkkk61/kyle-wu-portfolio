@@ -36,7 +36,7 @@ export function CurrentFocusCard() {
       <div
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover/card:opacity-100"
         style={{
-          background: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, rgba(240, 234, 221, 0.1), transparent 80%)`,
+          background: `radial-gradient(200px circle at ${mousePos.x}px ${mousePos.y}px, var(--spotlight-color), transparent 80%)`,
         }}
       />
 
@@ -56,7 +56,7 @@ export function CurrentFocusCard() {
         <div className="flex flex-col gap-6">
           {/* Education */}
           <div className="flex gap-3">
-            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
               <GraduationCap className="text-muted-foreground h-4 w-4" />
             </div>
             <div>
@@ -69,7 +69,7 @@ export function CurrentFocusCard() {
 
           {/* Career Interests */}
           <div className="flex gap-3">
-            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
               <Compass className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="w-full space-y-2">
@@ -77,22 +77,22 @@ export function CurrentFocusCard() {
                 {t("CareerInterests")}
               </p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                <div className="group flex h-full items-center justify-start rounded-md border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] px-3 py-2 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
                     {t("FinTechProduct")}
                   </span>
                 </div>
-                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                <div className="group flex h-full items-center justify-start rounded-md border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] px-3 py-2 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
                     {t("TradingOps")}
                   </span>
                 </div>
-                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                <div className="group flex h-full items-center justify-start rounded-md border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] px-3 py-2 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
                     {t("DataAnalysis")}
                   </span>
                 </div>
-                <div className="group flex h-full items-center justify-start rounded-md border border-white/5 bg-white/[0.02] px-3 py-2 transition-colors hover:bg-white/[0.04]">
+                <div className="group flex h-full items-center justify-start rounded-md border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] px-3 py-2 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
                   <span className="text-muted-foreground group-hover:text-foreground text-left text-xs transition-colors">
                     {t("MarketInfra")}
                   </span>
@@ -103,7 +103,7 @@ export function CurrentFocusCard() {
 
           {/* Focus Areas */}
           <div className="flex gap-3">
-            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+            <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
               <Target className="text-muted-foreground h-4 w-4" />
             </div>
             <div className="space-y-2">
@@ -111,23 +111,23 @@ export function CurrentFocusCard() {
                 {t("FocusAreas")}
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-xs">
                   <Network className="h-3 w-3" />
                   {t("TradingInfra")}
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-xs">
                   <LineChart className="h-3 w-3" />
                   {t("DataAnalysisSkill")}
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-xs">
                   <GitBranch className="h-3 w-3" />
                   {t("MarketMicrostructure")}
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-xs">
                   <Terminal className="h-3 w-3" />
                   {t("BusinessToSystem")}
                 </span>
-                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs">
+                <span className="text-muted-foreground inline-flex items-center gap-1.5 rounded-md bg-black/5 dark:bg-white/5 px-2 py-1 text-xs">
                   <Cpu className="h-3 w-3" />
                   {t("AiNativeWorkflow")}
                 </span>

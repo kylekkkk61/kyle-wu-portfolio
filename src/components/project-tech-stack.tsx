@@ -66,7 +66,7 @@ export function ProjectTechStack({ techStack }: { techStack: string[] }) {
       {icons.slice(0, 8).map((item) => (
         <div
           key={item.name}
-          className="text-muted-foreground/70 hover:text-foreground relative flex h-10 w-10 shrink-0 cursor-default items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white/[0.08] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] active:scale-95"
+          className="text-muted-foreground/70 hover:text-foreground relative flex h-10 w-10 shrink-0 cursor-default items-center justify-center rounded-xl border border-black/10 bg-black/[0.02] shadow-[inset_0_1px_0_rgba(0,0,0,0.02)] transition-all duration-300 hover:bg-black/[0.05] active:scale-95 dark:border-white/10 dark:bg-white/[0.02] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:hover:bg-white/[0.08] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]"
           title={item.name}
         >
           {item.icon}
