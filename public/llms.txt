@@ -1,0 +1,16 @@
+# Kyle Wu
+
+Kyle Wu is a fintech builder focused on trading workflow automation, market microstructure research, execution quality, and AI-native product-building.
+
+Primary site:
+https://kylewu.me
+
+Selected projects:
+- Kaiyn Trading Bot: https://kylewu.me/projects/kaiyn-trading-bot
+- Prediction Market Execution Lab: https://kylewu.me/projects/prediction-market-execution-lab
+
+Public profiles:
+- GitHub: https://github.com/kylekkkk61
+- LinkedIn: https://www.linkedin.com/in/kylewu0610/
+- Twitter: https://x.com/kylekkkkwu61
+- Email: itskyle610610@gmail.com
