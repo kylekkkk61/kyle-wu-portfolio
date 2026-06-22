@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next"
 import { projects } from "@/data/projects"
 import { routing } from "@/i18n/routing"
+import { siteConfig } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kylewu.me"
+  const baseUrl = siteConfig.url
 
   const getUrl = (locale: string, path = "") => {
     // Under localePrefix: "as-needed", default locale 'en' has no prefix
@@ -11,10 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return `${baseUrl}${prefix}${path}`
   }
 
+  const lastModified = new Date("2026-06-22")
+
   // Home pages
   const homePages = routing.locales.map((locale) => ({
     url: getUrl(locale),
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 1,
   }))
@@ -23,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectPages = routing.locales.flatMap((locale) =>
     projects.map((p) => ({
       url: getUrl(locale, `/projects/${p.slug}`),
-      lastModified: new Date(),
+      lastModified: p.updatedAt ? new Date(p.updatedAt) : lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
@@ -32,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Resume pages
   const resumePages = routing.locales.map((locale) => ({
     url: getUrl(locale, "/resume"),
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.5,
   }))

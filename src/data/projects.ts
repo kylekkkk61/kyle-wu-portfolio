@@ -67,6 +67,7 @@ export type Project = {
   video?: string
   videoPoster?: string
   order?: number
+  updatedAt?: string
   detail: ProjectDetail
 }
 
@@ -110,6 +111,7 @@ const projectsEn: Project[] = [
     ],
     featured: true,
     order: 1,
+    updatedAt: "2026-06-22",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -239,6 +241,7 @@ const projectsEn: Project[] = [
     ],
     featured: true,
     order: 2,
+    updatedAt: "2026-06-22",
     detail: {
       whyItMatters: {
         title: "Why It Matters",
@@ -342,6 +345,7 @@ const projectsZh: Project[] = [
     ],
     featured: true,
     order: 1,
+    updatedAt: "2026-06-22",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -470,6 +474,7 @@ const projectsZh: Project[] = [
     ],
     featured: true,
     order: 2,
+    updatedAt: "2026-06-22",
     detail: {
       whyItMatters: {
         title: "專案價值",

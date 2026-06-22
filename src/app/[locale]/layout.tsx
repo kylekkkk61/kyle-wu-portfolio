@@ -23,6 +23,7 @@ const newsreader = Newsreader({
 })
 
 import { getTranslations } from "next-intl/server"
+import { siteConfig } from "@/lib/seo"
 
 export async function generateMetadata({
   params,
@@ -32,17 +33,27 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: "Metadata" })
 
+  const canonicalPath = locale === "en" ? "/" : `/${locale}`
+
   return {
-    metadataBase: new URL("https://kylewu.me"),
+    metadataBase: new URL(siteConfig.url),
     title: {
       default: t("title"),
       template: `%s | ${t("titleShort")}`,
     },
     description: t("description"),
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        en: "/",
+        "zh-TW": "/zh-TW",
+        "x-default": "/",
+      },
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: "https://kylewu.me",
+      url: `${siteConfig.url}${canonicalPath === "/" ? "" : canonicalPath}`,
       siteName: t("titleShort"),
       locale: locale === "zh-TW" ? "zh_TW" : "en_US",
       type: "website",
