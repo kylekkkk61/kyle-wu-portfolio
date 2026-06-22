@@ -208,6 +208,59 @@ export default async function ProjectPage({ params }: Props) {
 
             {/* Content Sections */}
             <div className="mx-auto mt-16 max-w-3xl space-y-16">
+              {/* At a Glance Section */}
+              <section
+                aria-labelledby="at-a-glance"
+                className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6 space-y-4"
+              >
+                <h2
+                  id="at-a-glance"
+                  className="text-lg font-medium tracking-tight text-white"
+                >
+                  {t("AtAGlance")}
+                </h2>
+                <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 text-sm">
+                  <div className="space-y-1">
+                    <dt className="text-muted-foreground font-medium">
+                      {t("ProjectType")}
+                    </dt>
+                    <dd className="text-foreground">{project.category}</dd>
+                  </div>
+                  <div className="space-y-1">
+                    <dt className="text-muted-foreground font-medium">
+                      {t("Focus")}
+                    </dt>
+                    <dd className="text-foreground">
+                      {project.capabilities.join(" / ")}
+                    </dd>
+                  </div>
+                  <div className="space-y-1 sm:col-span-2">
+                    <dt className="text-muted-foreground font-medium">
+                      {t("BuiltWith")}
+                    </dt>
+                    <dd className="text-foreground">
+                      {project.detail.techStack.join(", ")}
+                    </dd>
+                  </div>
+                  <div className="space-y-1">
+                    <dt className="text-muted-foreground font-medium">
+                      {t("Artifact")}
+                    </dt>
+                    <dd className="text-foreground">{project.status}</dd>
+                  </div>
+                  {project.detail.disclaimer && (
+                    <div className="space-y-1 sm:col-span-2 border-t border-white/[0.04] pt-3 mt-1">
+                      <dt className="text-muted-foreground font-medium text-xs uppercase tracking-wider">
+                        {t("Disclaimer")}
+                      </dt>
+                      <dd className="text-muted-foreground text-xs italic">
+                        {project.detail.disclaimer}
+                      </dd>
+                    </div>
+                  )}
+                </dl>
+              </section>
+
               {/* Community Context */}
               {project.detail.communityContext && (
                 <section className="bg-primary/5 border-primary/10 space-y-4 rounded-xl border p-6">

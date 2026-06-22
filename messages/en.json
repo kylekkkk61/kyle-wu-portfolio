@@ -18,7 +18,13 @@
     "BackToWork": "Back to Selected Work",
     "LiveDemo": "Live Demo",
     "KeyHighlights": "Key Highlights",
-    "TechStack": "Tech Stack"
+    "TechStack": "Tech Stack",
+    "AtAGlance": "At a Glance",
+    "ProjectType": "Type",
+    "Focus": "Focus",
+    "BuiltWith": "Built with",
+    "Artifact": "Public artifact",
+    "Disclaimer": "Disclaimer"
   },
   "Footer": {
     "BuiltWith": "Built with",
@@ -53,7 +59,7 @@
   "Metadata": {
     "title": "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
     "titleShort": "Kyle Wu",
-    "description": "Personal portfolio of Kyle Wu, focused on fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.",
+    "description": "Personal portfolio of Kyle Wu, a fintech builder focused on trading workflow automation, crypto market operations, market microstructure research, execution quality, and AI-native product-building.",
     "resumeTitle": "Resume | Kyle Wu",
     "resumeDescription": "Kyle Wu's Professional Resume and Curriculum Vitae"
   }
