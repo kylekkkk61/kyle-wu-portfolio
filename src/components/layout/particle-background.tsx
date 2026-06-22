@@ -62,7 +62,12 @@ export function ParticleBackground() {
         const x = this.col * spacing
         const y = this.row * spacing
 
-        ctx.fillStyle = `rgba(255, 255, 255, ${currentOpacity})`
+        const isDark =
+          typeof document !== "undefined" &&
+          document.documentElement.classList.contains("dark")
+        const colorRgb = isDark ? "255, 255, 255" : "44, 42, 41"
+
+        ctx.fillStyle = `rgba(${colorRgb}, ${currentOpacity})`
         ctx.fillRect(x, y, size, size)
       }
     }
@@ -95,7 +100,11 @@ export function ParticleBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Draw base grid
-      ctx.fillStyle = "rgba(255, 255, 255, 0.01)" // Very faint base background for all squares
+      const isDark =
+        typeof document !== "undefined" &&
+        document.documentElement.classList.contains("dark")
+      const baseColorRgb = isDark ? "255, 255, 255" : "44, 42, 41"
+      ctx.fillStyle = `rgba(${baseColorRgb}, 0.01)` // Very faint base background for all squares
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Cut out the gaps to form discrete squares
@@ -127,7 +136,7 @@ export function ParticleBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 mix-blend-plus-lighter"
+      className="pointer-events-none absolute inset-0 z-0 dark:mix-blend-plus-lighter mix-blend-normal"
       style={{
         maskImage:
           "radial-gradient(ellipse at top, black 10%, transparent 80%)",

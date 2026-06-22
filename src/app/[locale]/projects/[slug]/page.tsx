@@ -215,11 +215,11 @@ export default async function ProjectPage({ params }: Props) {
               {/* At a Glance Section */}
               <section
                 aria-labelledby="at-a-glance"
-                className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6 space-y-4"
+                className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/[0.08] dark:border-white/[0.08] rounded-xl p-6 space-y-4"
               >
                 <h2
                   id="at-a-glance"
-                  className="text-lg font-medium tracking-tight text-white"
+                  className="text-lg font-medium tracking-tight text-foreground dark:text-white"
                 >
                   {t("AtAGlance")}
                 </h2>
@@ -253,7 +253,7 @@ export default async function ProjectPage({ params }: Props) {
                     <dd className="text-foreground">{project.status}</dd>
                   </div>
                   {project.detail.disclaimer && (
-                    <div className="space-y-1 sm:col-span-2 border-t border-white/[0.04] pt-3 mt-1">
+                    <div className="space-y-1 sm:col-span-2 border-t border-black/[0.04] dark:border-white/[0.04] pt-3 mt-1">
                       <dt className="text-muted-foreground font-medium text-xs uppercase tracking-wider">
                         {t("Disclaimer")}
                       </dt>
@@ -417,7 +417,7 @@ export default async function ProjectPage({ params }: Props) {
                             {artifact.description}
                           </p>
                         </div>
-                        <div className="relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-xl border border-white/[0.06] bg-[#161616]">
+                        <div className="relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-[#f5f2eb] dark:bg-[#161616]">
                           <ArtifactPreview id={artifact.id} />
                         </div>
                       </div>

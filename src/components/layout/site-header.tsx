@@ -1,7 +1,8 @@
 "use client"
 
-import { Globe, Menu, X } from "lucide-react"
+import { Globe, Menu, Moon, Sun, X } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
+import { useTheme } from "next-themes"
 import * as React from "react"
 import { buttonVariants } from "@/components/ui/button"
 import { LogoIcon } from "@/components/ui/logo-icon"
@@ -15,6 +16,12 @@ export function SiteHeader({ profile }: { profile: Profile }) {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Prevent scrolling when mobile menu is open
   React.useEffect(() => {
@@ -87,6 +94,23 @@ export function SiteHeader({ profile }: { profile: Profile }) {
 
         {/* Desktop & Mobile Actions */}
         <div className="relative z-50 flex items-center gap-4">
+          {mounted ? (
+            <button
+              type="button"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label={
+                theme === "dark"
+                  ? "Switch to Light Mode"
+                  : "Switch to Dark Mode"
+              }
+              className="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center transition-colors cursor-pointer"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          ) : (
+            <div className="h-9 w-9" />
+          )}
+
           <button
             type="button"
             onClick={toggleLanguage}
@@ -131,7 +155,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground text-lg font-medium transition-colors hover:text-white"
+                className="text-foreground text-lg font-medium transition-colors dark:hover:text-white hover:text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -139,7 +163,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
             ))}
             <Link
               href="/#contact"
-              className="text-foreground text-lg font-medium transition-colors hover:text-white"
+              className="text-foreground text-lg font-medium transition-colors dark:hover:text-white hover:text-foreground"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t("Contact")}

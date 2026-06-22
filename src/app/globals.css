@@ -48,6 +48,13 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
+  --color-track-train-default: var(--track-train-default);
+  --color-track-line-default: var(--track-line-default);
+  --color-track-train-teal: var(--track-train-teal);
+  --color-track-line-teal: var(--track-line-teal);
+  --color-track-train-plum: var(--track-train-plum);
+  --color-track-line-plum: var(--track-line-plum);
+
   --animate-fade-up: fade-up 0.5s ease-out both;
 
   @keyframes fade-up {
@@ -64,38 +71,58 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: #fbfaf7;
+  --foreground: #2c2a29;
+
+  --card: #f5f2eb;
+  --card-foreground: #2c2a29;
+
+  --popover: #f5f2eb;
+  --popover-foreground: #2c2a29;
+
+  --primary: #2c2a29;
+  --primary-foreground: #fbfaf7;
+
+  --secondary: #4d6146;
+  --secondary-foreground: #fbfaf7;
+
+  --muted: #ebe5da;
+  --muted-foreground: #736e64;
+
+  --accent: #ebe5da;
+  --accent-foreground: #2c2a29;
+
+  --destructive: #ef4444;
+  --border: #e6e0d2;
+  --input: #e6e0d2;
+  --ring: #2c2a29;
+
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #f5f2eb;
+  --sidebar-foreground: #2c2a29;
+  --sidebar-primary: #2c2a29;
+  --sidebar-primary-foreground: #fbfaf7;
+  --sidebar-accent: #ebe5da;
+  --sidebar-accent-foreground: #2c2a29;
+  --sidebar-border: #e6e0d2;
+  --sidebar-ring: #2c2a29;
+
+  /* Custom Track and Spotlight variables for Light Morandi */
+  --track-train-default: #2c2a29;
+  --track-line-default: #d8d3c5;
+  --track-train-teal: #4d6146;
+  --track-line-teal: #dce5d9;
+  --track-train-plum: #61465b;
+  --track-line-plum: #e9dee6;
+  --track-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  --spotlight-color: rgba(44, 42, 41, 0.09);
+  --primary-teal: #4d6146;
+  --primary-plum: #61465b;
 }
 
 .dark {
@@ -139,6 +166,18 @@
   --sidebar-accent-foreground: #f3f2ee;
   --sidebar-border: #333333;
   --sidebar-ring: #f0eadd;
+
+  /* Custom Track and Spotlight variables for Dark Morandi */
+  --track-train-default: #f0eadd;
+  --track-line-default: #3b3b3b;
+  --track-train-teal: #9fb396;
+  --track-line-teal: #1e241c;
+  --track-train-plum: #c2a3bc;
+  --track-line-plum: #261c24;
+  --track-shadow: 0 0 8px rgba(240, 234, 221, 0.3);
+  --spotlight-color: rgba(240, 234, 221, 0.1);
+  --primary-teal: #9fb396;
+  --primary-plum: #c2a3bc;
 }
 
 @layer base {

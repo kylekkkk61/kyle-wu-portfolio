@@ -4,11 +4,11 @@ export function PmLabResearchPreview() {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center p-6 lg:p-8">
       {/* Mini Dashboard Frame */}
-      <div className="relative z-10 flex w-full max-w-lg flex-col gap-4 rounded-xl border border-white/[0.06] bg-white/[0.01] p-4 shadow-xl backdrop-blur-sm">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="relative z-10 flex w-full max-w-lg flex-col gap-4 rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.01] dark:bg-white/[0.01] p-4 shadow-xl backdrop-blur-sm">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/20 to-transparent" />
 
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-3">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-[#8da3b5] shadow-[0_0_8px_rgba(141,163,181,0.5)]" />
             <span className="text-muted-foreground font-mono text-xs font-medium tracking-wider uppercase">
@@ -26,7 +26,7 @@ export function PmLabResearchPreview() {
         {/* Funnel Layout */}
         <div className="grid grid-cols-3 gap-3">
           {/* Column 1: Theoretical */}
-          <div className="flex flex-col gap-2 rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-colors hover:bg-white/[0.04]">
+          <div className="flex flex-col gap-2 rounded-lg border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
             <span className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
               Theoretical Edge
             </span>
@@ -39,7 +39,7 @@ export function PmLabResearchPreview() {
           </div>
 
           {/* Column 2: Frictions */}
-          <div className="flex flex-col gap-2 rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-colors hover:bg-white/[0.04]">
+          <div className="flex flex-col gap-2 rounded-lg border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
             <span className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
               Frictions
             </span>
@@ -52,7 +52,7 @@ export function PmLabResearchPreview() {
           </div>
 
           {/* Column 3: Executable */}
-          <div className="relative flex flex-col gap-2 overflow-hidden rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-colors hover:bg-white/[0.04]">
+          <div className="relative flex flex-col gap-2 overflow-hidden rounded-lg border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3 transition-colors hover:bg-black/[0.04] dark:hover:bg-white/[0.04]">
             <span className="text-muted-foreground z-10 text-[10px] font-medium tracking-wide uppercase">
               Executable
             </span>
@@ -68,7 +68,7 @@ export function PmLabResearchPreview() {
         </div>
 
         {/* Bottom Abstract Chart curve */}
-        <div className="mt-2 flex h-8 w-full items-center justify-between border-t border-dashed border-white/10 pt-4 opacity-50">
+        <div className="mt-2 flex h-8 w-full items-center justify-between border-t border-dashed border-black/10 dark:border-white/10 pt-4 opacity-50">
           <svg
             aria-hidden="true"
             className="text-primary/40 h-4 w-full"

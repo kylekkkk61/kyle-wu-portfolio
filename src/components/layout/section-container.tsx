@@ -21,10 +21,10 @@ export function SectionContainer({
     "relative py-16 md:py-24 my-4", // Added my-4 for vertical spacing between blocks
     isColorBlock ? "mx-2 md:mx-4 lg:mx-6 rounded-[2.5rem]" : "",
     variant === "teal"
-      ? "bg-[#1e241c] border border-white/[0.06] shadow-2xl"
+      ? "dark:bg-[#1e241c] dark:border-white/[0.06] bg-[#b5c1b2] border border-black/[0.04] shadow-2xl"
       : "",
     variant === "plum"
-      ? "bg-[#261c24] border border-white/[0.06] shadow-2xl"
+      ? "dark:bg-[#261c24] dark:border-white/[0.06] bg-[#c5b6c2] border border-black/[0.04] shadow-2xl"
       : "",
     className,
   )
@@ -35,9 +35,9 @@ export function SectionContainer({
 
   // Scope CSS variables locally so text-primary and bg-primary match the block's vibe
   if (variant === "teal") {
-    sectionStyle["--primary"] = "#9fb396" // Warm Sage Green
+    sectionStyle["--primary"] = "var(--primary-teal)"
   } else if (variant === "plum") {
-    sectionStyle["--primary"] = "#c2a3bc" // Warm Muted Purple
+    sectionStyle["--primary"] = "var(--primary-plum)"
   }
 
   return (
