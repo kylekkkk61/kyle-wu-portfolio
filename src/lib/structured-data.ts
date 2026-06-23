@@ -2,15 +2,24 @@ import { links } from "@/data/links"
 import { siteConfig } from "@/lib/seo"
 
 /**
- * Generate Person schema markup
+ * Generate Person schema markup with stable @id
  */
 export function getPersonSchema() {
+  const sameAs = [links.github, links.linkedin]
+  if (links.telegram) {
+    sameAs.push(links.telegram)
+  }
+  if (links.twitter) {
+    sameAs.push(links.twitter)
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://kylewu.me/#person",
     name: siteConfig.name,
     url: siteConfig.url,
-    sameAs: [links.github, links.linkedin],
+    sameAs: sameAs,
     jobTitle: "FinTech Builder",
     affiliation: {
       "@type": "CollegeOrUniversity",
@@ -29,30 +38,37 @@ export function getPersonSchema() {
 }
 
 /**
- * Generate WebSite schema markup
+ * Generate WebSite schema markup with stable @id and publisher/author links
  */
 export function getWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://kylewu.me/#website",
     name: siteConfig.name,
     url: siteConfig.url,
     inLanguage: siteConfig.locales,
     description: siteConfig.description,
+    publisher: { "@id": "https://kylewu.me/#person" },
+    author: { "@id": "https://kylewu.me/#person" },
   }
 }
 
 /**
- * Generate ProfilePage schema markup for the home page
+ * Generate ProfilePage schema markup for the home page with stable @id
  */
 export function getProfilePageSchema(locale: string) {
   const canonicalPath = locale === "en" ? "" : `/${locale}`
+  const pageUrl = `${siteConfig.url}${canonicalPath}`
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    url: `${siteConfig.url}${canonicalPath}`,
+    "@id": `${pageUrl}#profile`,
+    url: pageUrl,
+    isPartOf: { "@id": "https://kylewu.me/#website" },
     mainEntity: {
       "@type": "Person",
+      "@id": "https://kylewu.me/#person",
       name: siteConfig.name,
       jobTitle: "FinTech Builder",
       description:
@@ -64,7 +80,7 @@ export function getProfilePageSchema(locale: string) {
 }
 
 /**
- * Generate project-specific schema markup
+ * Generate project-specific schema markup with stable @id
  */
 export function getProjectSchema(
   project: {
@@ -72,6 +88,8 @@ export function getProjectSchema(
     slug: string
     shortDescription?: string
     description: string
+    updatedAt?: string
+    links?: { type: string; href: string }[]
   },
   locale: string,
 ) {
@@ -80,17 +98,27 @@ export function getProjectSchema(
       ? `/projects/${project.slug}`
       : `/${locale}/projects/${project.slug}`
   const url = `${siteConfig.url}${canonicalPath}`
+  const repoLink = project.links?.find((l) => l.type === "github")?.href
 
   const baseSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
+    "@id": `${url}#project`,
     name: project.title,
     description: project.shortDescription || project.description,
     url: url,
+    mainEntityOfPage: url,
     inLanguage: locale === "zh-TW" ? "zh-TW" : "en",
-    creator: {
-      "@type": "Person",
-      name: siteConfig.name,
-    },
+    isPartOf: { "@id": "https://kylewu.me/#website" },
+    creator: { "@id": "https://kylewu.me/#person" },
+    author: { "@id": "https://kylewu.me/#person" },
+  }
+
+  if (project.updatedAt) {
+    baseSchema.dateModified = project.updatedAt
+  }
+
+  if (repoLink) {
+    baseSchema.codeRepository = repoLink
   }
 
   if (project.slug === "kaiyn-trading-bot") {
@@ -98,7 +126,6 @@ export function getProjectSchema(
       ...baseSchema,
       "@type": "SoftwareSourceCode",
       programmingLanguage: "Python",
-      codeRepository: "https://github.com/kaiyn-capital/kaiyn-trading-bot",
       targetProduct: {
         "@type": "SoftwareApplication",
         name: "Kaiyn Trading Bot",
@@ -152,24 +179,41 @@ export function getVideoSchema(
 ) {
   if (!project.video) return null
 
+  const canonicalPath =
+    locale === "en"
+      ? `/projects/${project.slug}`
+      : `/${locale}/projects/${project.slug}`
+  const projectUrl = `${siteConfig.url}${canonicalPath}`
+
   const uploadDate = project.updatedAt
     ? `${project.updatedAt}T08:00:00Z`
     : "2026-06-22T08:00:00Z"
 
+  let thumbnail =
+    project.videoPoster || project.ogImage || "/og/portfolio-og.png"
+  if (thumbnail.startsWith("/")) {
+    thumbnail = `${siteConfig.url}${thumbnail}`
+  }
+
+  let videoUrl = project.video
+  if (videoUrl.startsWith("/")) {
+    videoUrl = `${siteConfig.url}${videoUrl}`
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",
+    "@id": `${projectUrl}#video`,
+    isPartOf: { "@id": `${projectUrl}#project` },
+    creator: { "@id": "https://kylewu.me/#person" },
     name:
       locale === "zh-TW"
         ? `${project.title} 示範影片`
         : `${project.title} Demo Video`,
     description: project.shortDescription || project.description,
-    thumbnailUrl:
-      project.videoPoster ||
-      project.ogImage ||
-      `${siteConfig.url}/og/portfolio-og.png`,
+    thumbnailUrl: thumbnail,
     uploadDate: uploadDate,
-    contentUrl: project.video,
-    embedUrl: project.video,
+    contentUrl: videoUrl,
+    embedUrl: videoUrl,
   }
 }
