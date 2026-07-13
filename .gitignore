@@ -42,7 +42,6 @@ next-env.d.ts
 
 # tmp
 /tmp
-AGENTS.md
 CLAUDE.md
 
 # codegraph
