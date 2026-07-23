@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, ExternalLink, Mail } from "lucide-react"
+import { ArrowLeft, Download } from "lucide-react"
 import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { SectionContainer } from "@/components/layout/section-container"
@@ -136,55 +136,48 @@ export default async function ResumePage({ params }: Props) {
 
         <article className="border-border/70 bg-card/45 overflow-hidden rounded-3xl border shadow-2xl">
           <header className="border-border/70 bg-card border-b px-6 py-9 md:px-10 md:py-12">
-            <div className="flex flex-col gap-7 md:flex-row md:items-start md:justify-between">
-              <div className="flex items-start gap-4">
-                <LogoIcon
-                  aria-hidden="true"
-                  className="text-foreground mt-1 h-10 w-10 shrink-0"
-                />
-                <div>
-                  <h1 className="font-heading text-4xl font-semibold tracking-tight md:text-5xl">
-                    {profile.name}
-                  </h1>
-                  <p className="text-muted-foreground mt-2 text-base">
-                    {profile.alternateName}
-                  </p>
-                </div>
-              </div>
-
-              <div className="text-muted-foreground grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-1 md:text-right">
-                <a
-                  href={links.email}
-                  className="hover:text-foreground inline-flex items-center gap-2 md:justify-end"
-                >
-                  <Mail className="h-4 w-4" />
-                  {email}
-                </a>
-                <a
-                  href={siteConfig.url}
-                  className="hover:text-foreground inline-flex items-center gap-2 md:justify-end"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  kylewu.me
-                </a>
-                <a
-                  href={links.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-foreground inline-flex items-center gap-2 md:justify-end"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  LinkedIn
-                </a>
-                <a
-                  href={links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-foreground inline-flex items-center gap-2 md:justify-end"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  GitHub
-                </a>
+            <div className="flex items-start gap-4">
+              <LogoIcon
+                aria-hidden="true"
+                className="text-foreground mt-1 h-10 w-10 shrink-0"
+              />
+              <div>
+                <h1 className="font-heading text-4xl font-semibold tracking-tight md:text-5xl">
+                  {profile.name}
+                </h1>
+                <p className="text-muted-foreground mt-2 text-base">
+                  {profile.alternateName}
+                </p>
+                <address className="text-muted-foreground mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm not-italic">
+                  <a
+                    href={links.email}
+                    className="hover:text-foreground underline-offset-4 hover:underline"
+                  >
+                    {email}
+                  </a>
+                  <a
+                    href={siteConfig.url}
+                    className="hover:text-foreground underline-offset-4 hover:underline"
+                  >
+                    kylewu.me
+                  </a>
+                  <a
+                    href={links.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground underline-offset-4 hover:underline"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href={links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground underline-offset-4 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </address>
               </div>
             </div>
           </header>

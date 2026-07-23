@@ -83,7 +83,7 @@ export function getProfilePageSchema(locale: string) {
       jobTitle: "FinTech Builder",
       description:
         locale === "zh-TW"
-          ? "Kyle Wu（吳秉儒）是來自台灣的 FinTech 建置者，即將就讀華威商學院金融科技碩士，專注於產品策略、市場分析、數位金融與 AI 原生軟體實作。"
+          ? "Kyle Wu（吳秉儒）來自台灣，是即將就讀華威商學院金融科技碩士的 FinTech Builder，專注於產品策略、市場分析、數位金融與 AI 原生軟體開發。"
           : siteConfig.description,
     },
   }
