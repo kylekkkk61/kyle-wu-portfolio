@@ -24,6 +24,11 @@ export function FadeIn({
     const el = ref.current
     if (!el) return
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -50,7 +55,7 @@ export function FadeIn({
     <div
       ref={ref}
       className={cn(
-        "opacity-0", // Start hidden
+        "opacity-0 motion-reduce:animate-none motion-reduce:opacity-100",
         isVisible && "animate-fade-up opacity-100",
         className,
       )}

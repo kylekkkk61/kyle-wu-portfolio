@@ -42,6 +42,7 @@ export type ProjectDetail = {
   demonstrates: ProjectSection
   techStack: string[]
   disclaimer?: string
+  visualDisclaimer?: string
   artifacts?: {
     title: string
     items: ProjectArtifact[]
@@ -52,6 +53,7 @@ export type Project = {
   slug: string
   title: string
   subtitle: string
+  ogSubtitle?: string
   shortDescription: string
   description: string
   category: string
@@ -64,7 +66,6 @@ export type Project = {
   visual: ProjectVisualType
   featured?: boolean
   image?: string
-  ogImage?: string
   video?: string
   videoPoster?: string
   order?: number
@@ -78,6 +79,8 @@ const projectsEn: Project[] = [
     title: "Kaiyn Trading Bot",
     subtitle:
       "Structured trading workflow system for community-based market operations.",
+    ogSubtitle:
+      "Confirmation-first workflows for community-based market operations.",
     shortDescription:
       "A Telegram-based workflow system that turns informal community trading signals into structured signal creation, chart updates, risk checks, and confirmation-first execution flows.",
     description:
@@ -112,8 +115,7 @@ const projectsEn: Project[] = [
     ],
     featured: true,
     order: 1,
-    updatedAt: "2026-06-22",
-    ogImage: "/og/kaiyn-trading-bot-og.png",
+    updatedAt: "2026-07-23",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -193,7 +195,7 @@ const projectsEn: Project[] = [
             id: "kaiyn-audit",
             title: "Backend Audit Pipeline",
             description:
-              "Immutable state tracking in PostgreSQL ensuring no duplicated orders.",
+              "PostgreSQL-backed state tracking designed to reduce duplicate submissions through idempotency controls and explicit execution states.",
           },
         ],
       },
@@ -204,6 +206,8 @@ const projectsEn: Project[] = [
     title: "Prediction Market Execution Lab",
     subtitle:
       "Testing whether apparent pricing edge survives real execution frictions.",
+    ogSubtitle:
+      "Testing executable edge after spread, fills, latency, and settlement.",
     shortDescription:
       "A public research lab testing whether apparent short-horizon prediction-market pricing edge survives spread, failed fills, latency, risk limits, and settlement frictions.",
     description:
@@ -243,8 +247,7 @@ const projectsEn: Project[] = [
     ],
     featured: true,
     order: 2,
-    updatedAt: "2026-06-22",
-    ogImage: "/og/prediction-market-execution-lab-og.png",
+    updatedAt: "2026-07-23",
     detail: {
       whyItMatters: {
         title: "Why It Matters",
@@ -282,6 +285,8 @@ const projectsEn: Project[] = [
       techStack: ["Python", "Streamlit", "Pandas", "NumPy"],
       disclaimer:
         "This project is presented as a public research and portfolio artifact. It does not represent financial advice, trading advice, or a claim of trading profitability.",
+      visualDisclaimer:
+        "Illustrative interface values — not live trading performance or empirical research results.",
       artifacts: {
         title: "Representative Artifacts",
         items: [
@@ -315,6 +320,7 @@ const projectsZh: Project[] = [
     title: "Kaiyn Trading Bot",
     subtitle:
       "專為社群化市場營運設計的結構化交易工作流系統 (trading workflow automation)",
+    ogSubtitle: "將社群交易訊號轉化為確認優先、具風險控制的執行工作流。",
     shortDescription:
       "一套基於 Telegram 的工作流系統 (trading workflow automation)，能將社群非正式的交易訊號，轉化為結構化的訊號生成、圖表同步、風險檢查與確認優先的執行流程 (confirmation-first execution)。",
     description:
@@ -349,8 +355,7 @@ const projectsZh: Project[] = [
     ],
     featured: true,
     order: 1,
-    updatedAt: "2026-06-22",
-    ogImage: "/og/kaiyn-trading-bot-og.png",
+    updatedAt: "2026-07-23",
     video: "https://cv.kylewu.me/kaiyn-demo.mp4",
     videoPoster: "https://cv.kylewu.me/kaiyn-demo-poster.webp",
     detail: {
@@ -430,7 +435,7 @@ const projectsZh: Project[] = [
             id: "kaiyn-audit",
             title: "後端稽核管線",
             description:
-              "透過 PostgreSQL 進行不可變的狀態追蹤，確保訂單絕不重複執行。",
+              "以 PostgreSQL 為基礎的狀態追蹤，透過冪等性控制與明確的執行狀態降低重複送單風險。",
           },
         ],
       },
@@ -441,6 +446,7 @@ const projectsZh: Project[] = [
     title: "Prediction Market Execution Lab",
     subtitle:
       "實測市場上看似存在的定價優勢 (pricing edge)，是否能在真實的執行摩擦 (execution frictions) 中存活",
+    ogSubtitle: "檢驗理論定價優勢能否通過價差、成交、延遲與結算摩擦。",
     shortDescription:
       "一個公開的研究實驗室 (prediction market execution research)，實測預測市場中短期定價的理論優勢，是否能克服價差 (spread)、未成交 (failed fills)、延遲、風險限制以及結算摩擦等真實執行阻礙。",
     description:
@@ -480,8 +486,7 @@ const projectsZh: Project[] = [
     ],
     featured: true,
     order: 2,
-    updatedAt: "2026-06-22",
-    ogImage: "/og/prediction-market-execution-lab-og.png",
+    updatedAt: "2026-07-23",
     detail: {
       whyItMatters: {
         title: "專案價值",
@@ -519,6 +524,8 @@ const projectsZh: Project[] = [
       techStack: ["Python", "Streamlit", "Pandas", "NumPy"],
       disclaimer:
         "本專案作為公開研究與作品集展示。不代表任何財務建議、交易建議或獲利保證。",
+      visualDisclaimer:
+        "介面中的數值僅供示意，不代表即時交易績效或實證研究結果。",
       artifacts: {
         title: "代表性產出",
         items: [

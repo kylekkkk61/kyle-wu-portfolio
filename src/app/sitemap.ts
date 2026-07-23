@@ -12,14 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return `${baseUrl}${prefix}${path}`
   }
 
-  const lastModified = new Date("2026-06-22")
+  const lastModified = new Date("2026-07-23")
 
   // Home pages
   const homePages = routing.locales.map((locale) => ({
     url: getUrl(locale),
     lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 1,
   }))
 
   // Project pages
@@ -27,8 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     projects.map((p) => ({
       url: getUrl(locale, `/projects/${p.slug}`),
       lastModified: p.updatedAt ? new Date(p.updatedAt) : lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
     })),
   )
 
@@ -36,8 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const resumePages = routing.locales.map((locale) => ({
     url: getUrl(locale, "/resume"),
     lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.5,
   }))
 
   return [...homePages, ...projectPages, ...resumePages]

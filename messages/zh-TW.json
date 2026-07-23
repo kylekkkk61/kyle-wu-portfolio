@@ -3,7 +3,14 @@
     "Work": "精選專案",
     "Capabilities": "專業能力",
     "About": "關於我",
-    "Contact": "聯絡我"
+    "Contact": "聯絡我",
+    "SwitchToLight": "切換至淺色模式",
+    "SwitchToDark": "切換至深色模式",
+    "SwitchToChinese": "切換至繁體中文",
+    "SwitchToEnglish": "切換至英文",
+    "OpenMenu": "開啟導覽選單",
+    "CloseMenu": "關閉導覽選單",
+    "NavigationMenu": "導覽選單"
   },
   "Hero": {
     "PersonalPortfolio": "個人作品集",
@@ -12,7 +19,33 @@
   },
   "Contact": {
     "LetsTalk": "歡迎交流",
-    "Description": "非常歡迎與我交流關於金融科技策略、產品與商業分析、數位金融、交易工作流自動化、市場微結構研究，以及 AI 原生產品開發流程等主題。"
+    "Description": "非常歡迎與我交流關於金融科技策略、產品與商業分析、數位金融、交易工作流自動化、市場微結構研究，以及 AI 原生產品開發流程等主題。",
+    "EmailMe": "寄信給我",
+    "CopyEmail": "複製電子郵件",
+    "Copied": "已複製"
+  },
+  "Evidence": {
+    "VentureLabel": "創業實作",
+    "VenturePrimary": "Kaiyn Capital 創辦人",
+    "VentureSecondary": "Prinsur 共同創辦人",
+    "WorkLabel": "公開作品",
+    "WorkPrimary": "2 個公開 FinTech 專案",
+    "EducationLabel": "教育",
+    "EducationPrimary": "即將就讀金融科技碩士",
+    "EducationSecondary": "Warwick Business School"
+  },
+  "Resume": {
+    "BackToHome": "返回首頁",
+    "DownloadPdf": "下載 PDF",
+    "Education": "教育背景",
+    "SelectedWork": "精選專案與創業經歷",
+    "Experience": "工作經歷",
+    "Leadership": "領導與活動經驗",
+    "Skills": "專業技能",
+    "Technical": "技術",
+    "Analytics": "分析",
+    "BusinessProduct": "商業／產品",
+    "Languages": "語言"
   },
   "ProjectDetail": {
     "BackToWork": "返回專案列表",
@@ -57,10 +90,10 @@
     "AiNativeWorkflow": "AI 原生工作流"
   },
   "Metadata": {
-    "title": "Kyle Wu — FinTech 系統建置與加密貨幣市場應用研究",
+    "title": "Kyle Wu — FinTech 系統建置｜產品策略規劃與市場數據分析",
     "titleShort": "Kyle Wu",
-    "description": "Kyle Wu 的個人作品集，聚焦金融科技系統建置、交易工作流自動化、加密貨幣市場營運、市場微結構研究、執行品質分析與 AI 原生產品開發。",
-    "resumeTitle": "個人履歷 | Kyle Wu",
-    "resumeDescription": "Kyle Wu 的專業履歷與背景資料"
+    "description": "Kyle Wu（吳秉儒）是來自台灣的 FinTech 建置者，即將就讀華威商學院金融科技碩士，專注於產品策略、市場分析、數位金融與 AI 原生軟體實作。",
+    "resumeTitle": "個人履歷",
+    "resumeDescription": "Kyle Wu（吳秉儒）的履歷，涵蓋金融科技產品策略、市場分析、創業經驗、精選專案、工作經歷與教育背景。"
   }
 }

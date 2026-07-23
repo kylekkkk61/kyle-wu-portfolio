@@ -12,7 +12,9 @@ export function ParticleBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    let animationFrameId: number
+    let animationFrameId: number | undefined
+    let isRunning = false
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
     const size = 12 // Size of each square
     const gap = 1 // Gap between squares
     const spacing = size + gap
@@ -95,8 +97,7 @@ export function ParticleBackground() {
 
     window.addEventListener("resize", initSquares)
 
-    // Animation loop
-    const animate = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Draw base grid
@@ -121,15 +122,49 @@ export function ParticleBackground() {
         activeSquares[i].update(cols, rows, now)
         activeSquares[i].draw(ctx, now)
       }
+    }
+
+    const animate = () => {
+      if (!isRunning) return
+      drawFrame()
       animationFrameId = requestAnimationFrame(animate)
     }
 
-    animate()
+    const stopAnimation = () => {
+      isRunning = false
+      if (animationFrameId !== undefined) {
+        cancelAnimationFrame(animationFrameId)
+        animationFrameId = undefined
+      }
+    }
+
+    const startAnimation = () => {
+      if (motionQuery.matches || document.hidden || isRunning) return
+      isRunning = true
+      animate()
+    }
+
+    const syncAnimation = () => {
+      if (motionQuery.matches || document.hidden) {
+        stopAnimation()
+        drawFrame()
+      } else {
+        startAnimation()
+      }
+    }
+
+    document.addEventListener("visibilitychange", syncAnimation)
+    motionQuery.addEventListener("change", syncAnimation)
+    window.addEventListener("resize", syncAnimation)
+    syncAnimation()
 
     return () => {
       window.removeEventListener("resize", resizeCanvas)
       window.removeEventListener("resize", initSquares)
-      cancelAnimationFrame(animationFrameId)
+      document.removeEventListener("visibilitychange", syncAnimation)
+      motionQuery.removeEventListener("change", syncAnimation)
+      window.removeEventListener("resize", syncAnimation)
+      stopAnimation()
     }
   }, [])
 

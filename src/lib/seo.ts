@@ -1,9 +1,9 @@
 export const siteConfig = {
   url: "https://kylewu.me",
   name: "Kyle Wu",
-  title: "Kyle Wu — FinTech Builder & Applied Market Research",
+  title: "Kyle Wu — FinTech Builder | Product Strategy & Market Analysis",
   description:
-    "Personal portfolio of Kyle Wu, focused on fintech systems, trading workflow automation, market microstructure research, execution quality, and AI-native product-building.",
+    "Kyle Wu is a Taiwan-based FinTech builder and incoming MSc Financial Technology student at Warwick Business School, working across product strategy, market analysis, digital finance, and AI-native software execution.",
   locales: ["en", "zh-TW"],
   defaultLocale: "en",
 }

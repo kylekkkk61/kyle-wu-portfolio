@@ -1,5 +1,6 @@
 export type Profile = {
   name: string
+  alternateName: string
   positioning: string
   heroDescription: string
   whatIDo: {
@@ -16,6 +17,7 @@ export type Profile = {
 
 const profileEn: Profile = {
   name: "Kyle Wu",
+  alternateName: "Ping-Ju Wu · 吳秉儒",
   positioning: "FinTech Builder / Product Strategy / Market Analysis",
   heroDescription:
     "I turn market problems, product ideas, and financial workflows into practical fintech systems — combining business thinking, data analysis, and AI-native software execution.",
@@ -56,6 +58,7 @@ const profileEn: Profile = {
 
 const profileZh: Profile = {
   name: "Kyle Wu",
+  alternateName: "Ping-Ju Wu · 吳秉儒",
   positioning: "FinTech 系統建置 / 產品策略規劃 / 市場數據分析",
   heroDescription:
     "我擅長將市場問題、產品構想與金融工作流轉化為實用的 FinTech 系統——結合商業思維、數據分析，以及導入 AI 原生的軟體執行力。",

@@ -10,6 +10,24 @@ import { cn } from "@/lib/utils"
 
 export function HeroSection({ profile }: { profile: Profile }) {
   const t = useTranslations("Hero")
+  const evidence = useTranslations("Evidence")
+  const evidenceItems = [
+    {
+      label: evidence("VentureLabel"),
+      primary: evidence("VenturePrimary"),
+      secondary: evidence("VentureSecondary"),
+    },
+    {
+      label: evidence("WorkLabel"),
+      primary: evidence("WorkPrimary"),
+    },
+    {
+      label: evidence("EducationLabel"),
+      primary: evidence("EducationPrimary"),
+      secondary: evidence("EducationSecondary"),
+    },
+  ]
+
   return (
     <SectionContainer
       id="hero"
@@ -109,6 +127,27 @@ export function HeroSection({ profile }: { profile: Profile }) {
           <CurrentFocusCard />
         </div>
       </div>
+
+      <dl className="border-border/70 bg-card/35 relative z-10 mt-12 grid overflow-hidden rounded-2xl border sm:grid-cols-3">
+        {evidenceItems.map((item) => (
+          <div
+            key={item.label}
+            className="border-border/70 space-y-2 border-b p-5 last:border-b-0 sm:border-r sm:border-b-0 sm:last:border-r-0 md:p-6"
+          >
+            <dt className="text-muted-foreground font-mono text-[0.68rem] font-medium tracking-[0.14em] uppercase">
+              {item.label}
+            </dt>
+            <dd className="text-foreground text-sm font-semibold md:text-base">
+              {item.primary}
+            </dd>
+            {item.secondary && (
+              <dd className="text-muted-foreground text-sm">
+                {item.secondary}
+              </dd>
+            )}
+          </div>
+        ))}
+      </dl>
     </SectionContainer>
   )
 }
