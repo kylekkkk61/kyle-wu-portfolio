@@ -19,22 +19,27 @@ Do not proceed if validation reports errors or new, unapproved warnings. Explici
 **IMPORTANT:** Even after validations pass, you **MUST** stop and ask the user for explicit permission BEFORE running `git commit`, `git push`, or creating a Pull Request. Do not chain these commands automatically after testing.
 
 ## 2. Environment & CLI Rules
+- **Language**: Communicate with the user in Traditional Chinese. Write source-code comments in English.
 - **Authentication**: This repository is developed through Codex. Use Git and GitHub CLI normally; do not apply Antigravity-specific workarounds such as prefixing commands with `unset GITHUB_TOKEN &&`. If authentication fails, inspect the current Codex environment instead of unsetting tokens by default.
 - **Clean Working Tree**: Always generate temporary files (like PR bodies) in `/tmp/` (e.g., `/tmp/.pr-body.txt`). Do not create them in the project directory.
 
 ## 3. Technology Stack & Pointers
-- **Core**: Next.js 16.2 (App Router) + TypeScript.
+- **Core**: Next.js App Router + TypeScript. Treat `package.json` as the source of truth for exact versions.
 - **Package Manager**: `pnpm`.
-- **Styling**: Tailwind CSS v4 + `shadcn/ui`. (Use `prettier-plugin-tailwindcss` for formatting).
-- **Design System**: Linear-style FinTech UI. Locked in **Dark Mode** by default. Use `motion/react` for micro-animations.
+- **TypeScript Toolchain**: The project intentionally uses `@typescript/native` for the TypeScript 7 CLI and an npm-aliased TypeScript 6 package for API compatibility. Do not collapse or replace this setup without compatibility validation.
+- **Styling**: Tailwind CSS v4 + `shadcn/ui`. Use the repository's Biome configuration for formatting and linting.
+- **Design System**: Linear-style FinTech UI. Dark mode is the default, with user-selectable light and dark themes. Prefer existing CSS and Tailwind animation patterns for micro-interactions.
 - **No Emojis**: Do NOT use emojis anywhere in the documentation, READMEs, or code.
 - **CodeGraph**: This project uses CodeGraph. Always prioritize `codegraph_*` tools for structural queries.
-- **Sitemap Dates**: To optimize search crawl frequency, `sitemap.ts` uses stable timestamps. Projects fetch their `lastModified` date dynamically from the `updatedAt` field (YYYY-MM-DD) in `src/data/projects.ts`. When changing a project's content, you MUST update its `updatedAt` field.
-
+- **Sitemap Dates**: Sitemap dates must reflect meaningful content updates and must not change merely because of a deployment. Projects fetch their `lastModified` date from the `updatedAt` field (YYYY-MM-DD) in `src/data/projects.ts`. When changing a project's content, you MUST update its `updatedAt` field.
+- **Locale Content**: Traditional Chinese copy must use natural Taiwanese wording rather than literal English translation. Preserve official English project names when they function as proper names. In Chinese prose, describe Prediction Market Execution Lab as a `公開研究專案`.
+- **Resume PDF**: The public resume PDF is manually maintained by the site owner. Do not regenerate or replace it unless the user provides or explicitly requests a new version.
+- **SEO & OG Verification**: When changing profile positioning, project titles, descriptions, or metadata, verify the English and Traditional Chinese dynamic Open Graph image routes.
+- **Locale Middleware**: Keep the current Edge `src/middleware.ts` implementation. Do not migrate it to `proxy.ts` without an equivalent preview deployment and regional p50/p95 TTFB comparison. The current middleware deprecation and experimental Edge runtime warnings are explicitly accepted existing warnings.
 
 ## 4. External References & Skills
 Instead of redefining extensive rules, agents should refer to:
-- **UI/CSS Patterns**: [Modern Web Guidance](file:///Users/kyle/.gemini/config/plugins/modern-web-guidance-plugin/skills/modern-web-guidance/SKILL.md)
+- **UI/CSS Patterns**: [Design Taste Frontend Skill](file:///Users/kyle/dotfiles/codex/skills/taste-skill/SKILL.md)
 - **Commits**: [Conventional Commits Skill](file:///Users/kyle/dotfiles/codex/skills/commit/SKILL.md)
 - **Pull Requests**: [Pull Request Skill](file:///Users/kyle/dotfiles/codex/skills/pull-request/SKILL.md)
 - **Next.js Breaking Changes**: See local docs at `node_modules/next/dist/docs/` if available.

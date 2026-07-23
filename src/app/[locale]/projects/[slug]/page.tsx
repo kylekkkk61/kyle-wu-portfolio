@@ -73,8 +73,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalPath =
     locale === "en" ? `/projects/${slug}` : `/${locale}/projects/${slug}`
 
-  const ogImageUrl = project.ogImage || "/og/portfolio-og.png"
-
   return {
     title: project.title,
     description: project.shortDescription || project.description,
@@ -92,20 +90,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${siteConfig.url}${canonicalPath}`,
       locale: locale === "zh-TW" ? "zh_TW" : "en_US",
       type: "article",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: project.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.shortDescription || project.description,
-      images: [ogImageUrl],
     },
   }
 }
@@ -205,8 +194,15 @@ export default async function ProjectPage({ params }: Props) {
                 </div>
               </div>
 
-              <div className="bg-muted/30 border-border/50 relative flex min-h-[300px] w-full items-center justify-center rounded-xl border lg:col-span-7">
-                <ProjectVisual type={project.visual} />
+              <div className="space-y-3 lg:col-span-7">
+                <div className="bg-muted/30 border-border/50 relative flex min-h-[300px] w-full items-center justify-center rounded-xl border">
+                  <ProjectVisual type={project.visual} />
+                </div>
+                {project.detail.visualDisclaimer && (
+                  <p className="text-muted-foreground px-1 text-xs italic">
+                    {project.detail.visualDisclaimer}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -406,6 +402,11 @@ export default async function ProjectPage({ params }: Props) {
                   <h2 className="text-2xl font-semibold tracking-tight">
                     {project.detail.artifacts.title}
                   </h2>
+                  {project.detail.visualDisclaimer && (
+                    <p className="text-muted-foreground text-sm italic">
+                      {project.detail.visualDisclaimer}
+                    </p>
+                  )}
                   <div className="grid grid-cols-1 gap-8">
                     {project.detail.artifacts.items.map((artifact) => (
                       <div key={artifact.id} className="space-y-4">

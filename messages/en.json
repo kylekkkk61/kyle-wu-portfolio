@@ -3,7 +3,14 @@
     "Work": "Work",
     "Capabilities": "Capabilities",
     "About": "About",
-    "Contact": "Contact"
+    "Contact": "Contact",
+    "SwitchToLight": "Switch to light mode",
+    "SwitchToDark": "Switch to dark mode",
+    "SwitchToChinese": "Switch to Traditional Chinese",
+    "SwitchToEnglish": "Switch to English",
+    "OpenMenu": "Open navigation menu",
+    "CloseMenu": "Close navigation menu",
+    "NavigationMenu": "Navigation menu"
   },
   "Hero": {
     "PersonalPortfolio": "Personal Portfolio",
@@ -12,7 +19,33 @@
   },
   "Contact": {
     "LetsTalk": "Let's Talk",
-    "Description": "Open to conversations around fintech strategy, product and business analysis, digital finance, trading workflow automation, market-structure research, and AI-native product-building workflows."
+    "Description": "Open to conversations around fintech strategy, product and business analysis, digital finance, trading workflow automation, market-structure research, and AI-native product-building workflows.",
+    "EmailMe": "Email Me",
+    "CopyEmail": "Copy email",
+    "Copied": "Copied"
+  },
+  "Evidence": {
+    "VentureLabel": "Venture Building",
+    "VenturePrimary": "Founder, Kaiyn Capital",
+    "VentureSecondary": "Co-founder, Prinsur",
+    "WorkLabel": "Public Work",
+    "WorkPrimary": "2 public FinTech projects",
+    "EducationLabel": "Education",
+    "EducationPrimary": "Incoming MSc Financial Technology",
+    "EducationSecondary": "Warwick Business School"
+  },
+  "Resume": {
+    "BackToHome": "Back to Home",
+    "DownloadPdf": "Download PDF",
+    "Education": "Education",
+    "SelectedWork": "Selected Projects & Entrepreneurship",
+    "Experience": "Experience",
+    "Leadership": "Leadership & Activities",
+    "Skills": "Skills",
+    "Technical": "Technical",
+    "Analytics": "Analytics",
+    "BusinessProduct": "Business / Product",
+    "Languages": "Languages"
   },
   "ProjectDetail": {
     "BackToWork": "Back to Selected Work",
@@ -27,8 +60,6 @@
     "Disclaimer": "Disclaimer"
   },
   "Footer": {
-    "BuiltWith": "Built with",
-    "And": "and",
     "AllRightsReserved": "All rights reserved."
   },
   "Sections": {
@@ -57,10 +88,10 @@
     "AiNativeWorkflow": "AI-Native Workflow"
   },
   "Metadata": {
-    "title": "Kyle Wu — FinTech Builder & Applied Crypto Market Research",
+    "title": "Kyle Wu — FinTech Builder | Product Strategy & Market Analysis",
     "titleShort": "Kyle Wu",
-    "description": "Personal portfolio of Kyle Wu, a fintech builder focused on trading workflow automation, crypto market operations, market microstructure research, execution quality, and AI-native product-building.",
-    "resumeTitle": "Resume | Kyle Wu",
-    "resumeDescription": "Kyle Wu's Professional Resume and Curriculum Vitae"
+    "description": "Kyle Wu is a Taiwan-based FinTech builder and incoming MSc Financial Technology student at Warwick Business School, working across product strategy, market analysis, digital finance, and AI-native software execution.",
+    "resumeTitle": "Resume",
+    "resumeDescription": "Kyle Wu's resume covering FinTech product strategy, market analysis, venture building, selected projects, professional experience, and education."
   }
 }

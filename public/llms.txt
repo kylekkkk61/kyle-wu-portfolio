@@ -1,6 +1,8 @@
 # Kyle Wu
 
-Kyle Wu is a fintech builder focused on trading workflow automation, market microstructure research, execution quality, and AI-native product-building.
+Kyle Wu (Ping-Ju Wu, 吳秉儒) is a Taiwan-based FinTech builder working across product strategy, market analysis, digital finance, and AI-native software execution.
+
+He is an incoming MSc Financial Technology student at Warwick Business School. His public work includes trading workflow automation and prediction-market execution research.
 
 Primary site:
 https://kylewu.me
@@ -13,4 +15,3 @@ Public profiles:
 - GitHub: https://github.com/kylekkkk61
 - LinkedIn: https://www.linkedin.com/in/kylewu0610/
 - X: https://x.com/kylekkkkwu61
-- Email: itskyle610610@gmail.com

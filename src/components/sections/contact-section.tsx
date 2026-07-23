@@ -1,7 +1,7 @@
 "use client"
 
 import { IconBrandLinkedinFilled, IconMailFilled } from "@tabler/icons-react"
-import { ArrowUpRight, Check } from "lucide-react"
+import { ArrowUpRight, Check, Copy } from "lucide-react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
 import { SectionContainer } from "@/components/layout/section-container"
@@ -14,13 +14,15 @@ export function ContactSection() {
   const [copied, setCopied] = React.useState(false)
   const t = useTranslations("Contact")
 
-  const handleCopyEmail = (e: React.MouseEvent) => {
-    e.preventDefault()
-    // Extract email from mailto: link
+  const handleCopyEmail = async () => {
     const email = links.email.replace("mailto:", "")
-    navigator.clipboard.writeText(email)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      setCopied(false)
+    }
   }
 
   return (
@@ -41,23 +43,33 @@ export function ContactSection() {
         </div>
 
         <div className="relative z-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
+          <a
+            href={links.email}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-12 w-full px-8 text-base sm:w-auto",
+            )}
+          >
+            <IconMailFilled className="mr-2 h-5 w-5" />
+            {t("EmailMe")}
+          </a>
           <button
             type="button"
             onClick={handleCopyEmail}
             className={cn(
-              buttonVariants({ size: "lg" }),
+              buttonVariants({ size: "lg", variant: "outline" }),
               "h-12 w-full cursor-pointer px-8 text-base sm:w-auto",
             )}
           >
             {copied ? (
               <>
                 <Check className="mr-2 h-5 w-5" />
-                Copied!
+                <span aria-live="polite">{t("Copied")}</span>
               </>
             ) : (
               <>
-                <IconMailFilled className="mr-2 h-5 w-5" />
-                Email Me
+                <Copy className="mr-2 h-5 w-5" />
+                {t("CopyEmail")}
               </>
             )}
           </button>

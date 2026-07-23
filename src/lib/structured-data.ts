@@ -18,6 +18,7 @@ export function getPersonSchema() {
     "@type": "Person",
     "@id": "https://kylewu.me/#person",
     name: siteConfig.name,
+    alternateName: ["Ping-Ju Wu", "吳秉儒"],
     url: siteConfig.url,
     sameAs: sameAs,
     jobTitle: "FinTech Builder",
@@ -25,14 +26,22 @@ export function getPersonSchema() {
       "@type": "CollegeOrUniversity",
       name: "Warwick Business School",
     },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "National Cheng Kung University",
+      alternateName: "NCKU",
+    },
     knowsAbout: [
       "Financial Technology",
-      "Trading Infrastructure",
+      "Product Strategy",
+      "Market Analysis",
+      "Business Analysis",
+      "Digital Finance",
+      "AI-native Product Building",
+      "Trading Workflow Automation",
       "Crypto Market Operations",
       "Market Microstructure",
       "Execution Quality",
-      "Applied Market Research",
-      "AI-native product building",
     ],
   }
 }
@@ -70,10 +79,11 @@ export function getProfilePageSchema(locale: string) {
       "@type": "Person",
       "@id": "https://kylewu.me/#person",
       name: siteConfig.name,
+      alternateName: ["Ping-Ju Wu", "吳秉儒"],
       jobTitle: "FinTech Builder",
       description:
         locale === "zh-TW"
-          ? "Kyle Wu 的個人作品集，聚焦金融科技系統建置、交易工作流自動化、加密貨幣市場營運、市場微結構研究、執行品質分析與 AI 原生產品開發。"
+          ? "Kyle Wu（吳秉儒）來自台灣，是即將就讀華威商學院金融科技碩士的 FinTech Builder，專注於產品策略、市場分析、數位金融與 AI 原生軟體開發。"
           : siteConfig.description,
     },
   }
@@ -172,7 +182,6 @@ export function getVideoSchema(
     description: string
     video?: string
     videoPoster?: string
-    ogImage?: string
     updatedAt?: string
   },
   locale: string,
@@ -189,8 +198,7 @@ export function getVideoSchema(
     ? `${project.updatedAt}T08:00:00Z`
     : "2026-06-22T08:00:00Z"
 
-  let thumbnail =
-    project.videoPoster || project.ogImage || "/og/portfolio-og.png"
+  let thumbnail = project.videoPoster || "/og/og-background.png"
   if (thumbnail.startsWith("/")) {
     thumbnail = `${siteConfig.url}${thumbnail}`
   }

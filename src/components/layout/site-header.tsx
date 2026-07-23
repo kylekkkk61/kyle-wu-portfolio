@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils"
 
 export function SiteHeader({ profile }: { profile: Profile }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const menuButtonRef = React.useRef<HTMLButtonElement>(null)
+  const mobileMenuRef = React.useRef<HTMLDivElement>(null)
   const t = useTranslations("Navigation")
   const locale = useLocale()
   const router = useRouter()
@@ -33,6 +35,38 @@ export function SiteHeader({ profile }: { profile: Profile }) {
     return () => {
       document.body.style.overflow = "unset"
     }
+  }, [isMobileMenuOpen])
+
+  React.useEffect(() => {
+    if (!isMobileMenuOpen) return
+
+    mobileMenuRef.current?.querySelector<HTMLAnchorElement>("a")?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false)
+        menuButtonRef.current?.focus()
+        return
+      }
+
+      if (event.key !== "Tab") return
+      const links =
+        mobileMenuRef.current?.querySelectorAll<HTMLAnchorElement>("a[href]")
+      if (!links?.length) return
+
+      const firstLink = links[0]
+      const lastLink = links[links.length - 1]
+      if (event.shiftKey && document.activeElement === firstLink) {
+        event.preventDefault()
+        lastLink.focus()
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault()
+        firstLink.focus()
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
   }, [isMobileMenuOpen])
 
   const navLinks = [
@@ -99,9 +133,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
               type="button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label={
-                theme === "dark"
-                  ? "Switch to Light Mode"
-                  : "Switch to Dark Mode"
+                theme === "dark" ? t("SwitchToLight") : t("SwitchToDark")
               }
               className="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center transition-colors cursor-pointer"
             >
@@ -115,7 +147,7 @@ export function SiteHeader({ profile }: { profile: Profile }) {
             type="button"
             onClick={toggleLanguage}
             aria-label={
-              locale === "en" ? "Switch to Chinese" : "Switch to English"
+              locale === "en" ? t("SwitchToChinese") : t("SwitchToEnglish")
             }
             className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm font-medium transition-colors"
           >
@@ -137,10 +169,13 @@ export function SiteHeader({ profile }: { profile: Profile }) {
           </Link>
 
           <button
+            ref={menuButtonRef}
             type="button"
             className="text-muted-foreground hover:text-foreground -mr-2 p-2 transition-colors md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
+            aria-label={isMobileMenuOpen ? t("CloseMenu") : t("OpenMenu")}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -149,7 +184,14 @@ export function SiteHeader({ profile }: { profile: Profile }) {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="bg-background border-border/40 animate-fade-up absolute top-16 left-0 w-full border-b shadow-lg md:hidden">
+        <div
+          ref={mobileMenuRef}
+          id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t("NavigationMenu")}
+          className="bg-background border-border/40 animate-fade-up absolute top-16 left-0 w-full border-b shadow-lg md:hidden"
+        >
           <nav className="flex flex-col gap-6 p-6">
             {navLinks.map((link) => (
               <Link
