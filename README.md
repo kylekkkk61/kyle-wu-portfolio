@@ -2,19 +2,19 @@
 
 # Kyle Wu — Personal Portfolio
 
-**FinTech Builder & Applied Crypto Market Research**
+**FinTech Builder · Product Strategy · Market Analysis**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.9-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.10-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.7-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Biome](https://img.shields.io/badge/Biome-2.5.0-F8B334?style=for-the-badge&logo=biome&logoColor=white)](https://biomejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.2-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Biome](https://img.shields.io/badge/Biome-2.5.3-F8B334?style=for-the-badge&logo=biome&logoColor=white)](https://biomejs.dev/)
 
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-11.6.0-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](./package.json)
 
 <p align="center">
-A modern personal portfolio showcasing fintech systems, crypto trading workflows, data-driven market research, execution quality, and business-to-system implementation.
+A bilingual portfolio showcasing fintech product strategy, market analysis, venture building, and practical software execution through selected public projects.
 </p>
 
 <p align="center">
@@ -29,13 +29,13 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 
 | Area                  | Choice                                       |
 | :-------------------- | :------------------------------------------- |
-| **Runtime / Core**    | `Node.js 24` + `Next.js 16.2.9 (App Router)` |
-| **Language**          | `TypeScript 6.0.3` (strict)                  |
-| **UI & Styling**      | `React 19.2.7` + `Tailwind CSS 4.3.1`        |
-| **Component Library** | `shadcn/ui` + `motion/react`                 |
+| **Runtime / Core**    | `Node.js 24` + `Next.js 16.2.10 (App Router)` |
+| **Language**          | `TypeScript 7.0.2` (strict)                   |
+| **UI & Styling**      | `React 19.2.7` + `Tailwind CSS 4.3.2`         |
+| **Component Library** | `shadcn/ui`                                   |
 | **i18n**              | `next-intl` (`en` / `zh-TW`)                 |
 | **Package Manager**   | `pnpm 11.6.0` (Corepack pinned)              |
-| **Lint / Format**     | `Biome 2.5.0` (integrated Rust toolchain)    |
+| **Lint / Format**     | `Biome 2.5.3` (integrated Rust toolchain)    |
 | **CI**                | GitHub Actions (parallel lint / typecheck / test / build) |
 | **Automation**        | Dependabot (weekly, npm + github-actions)    |
 | **Deployment**        | Vercel (Production / Preview)                |
@@ -44,7 +44,7 @@ A modern personal portfolio showcasing fintech systems, crypto trading workflows
 
 - **Dark Morandi Aesthetic**: A custom color palette balancing warm off-whites with deep grays and muted accents, enforcing a highly readable, premium interface.
 - **Unified UI Surfaces**: All card components converge on a centralized `surfaceClass` architecture, ensuring consistent styles without background grid-bleed.
-- **Code-Driven Visuals**: Project previews bypass static images in favor of live React components (`framer-motion` + syntax highlighting) to demonstrate real execution flows dynamically.
+- **Code-Driven Visuals**: Project previews use lightweight React components and CSS to demonstrate execution and research workflows without shipping large screenshots.
 - **Intersection-Aware Navigation**: A custom "Railway Timeline" track (`site-track.tsx`) automatically scales and color-binds to viewport scroll progression.
 
 ## Getting Started
@@ -70,7 +70,7 @@ pnpm dev
 
 Then open:
 
-- **English (Default)**: http://localhost:3000/en
+- **English (Default)**: http://localhost:3000/
 - **Traditional Chinese**: http://localhost:3000/zh-TW
 
 ## Validation & CI Checks
@@ -97,7 +97,7 @@ pnpm build      # Run a production Next.js build
 src/
 ├── app/
 │   ├── page.tsx               # Homepage
-│   ├── resume/page.tsx        # Integrated Resume Viewer
+│   ├── resume/page.tsx        # Semantic HTML Resume
 │   └── projects/[slug]/       # Dynamic Project Detail Pages
 ├── components/
 │   ├── sections/              # Homepage UI sections
