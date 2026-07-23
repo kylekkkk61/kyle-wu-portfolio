@@ -154,7 +154,7 @@ export async function createOgImage({
           }}
         >
           <span>{footer}</span>
-          <span style={{ color: "#c2a3bc" }}>kylewu.me</span>
+          <span>kylewu.me</span>
         </div>
       </div>
     </div>,
